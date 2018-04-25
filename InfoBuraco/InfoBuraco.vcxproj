@@ -105,6 +105,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -133,10 +135,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CadastroBuraco.cpp" />
     <ClCompile Include="Dashboard.cpp" />
+    <ClCompile Include="DetalhaOS.cpp" />
+    <ClCompile Include="VisualizaOS.cpp" />
+    <ClCompile Include="VisualizaRelatorio.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CadastroBuraco.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Dashboard.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DetalhaOS.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="VisualizaOS.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="VisualizaRelatorio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -148,8 +166,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CadastroBuraco.resx">
+      <DependentUpon>CadastroBuraco.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalhaOS.resx">
+      <DependentUpon>DetalhaOS.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizaOS.resx">
+      <DependentUpon>VisualizaOS.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
