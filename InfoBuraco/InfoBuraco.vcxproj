@@ -138,12 +138,15 @@
     <ClCompile Include="Dashboard.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Equipamento.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dashboard.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+
     <ClInclude Include="Login.h">
+    <ClInclude Include="Equipamento.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -159,6 +162,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
+    <EmbeddedResource Include="Equipamento.resx">
+      <DependentUpon>Equipamento.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

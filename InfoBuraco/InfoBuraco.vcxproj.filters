@@ -18,10 +18,13 @@
     <ClCompile Include="Dashboard.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+
     <ClCompile Include="Login.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+    <ClCompile Include="Equipamento.cpp">
+
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,6 +33,7 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Login.h">
+    <ClInclude Include="Equipamento.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
@@ -61,6 +65,11 @@
       <Filter>Arquivos de Recurso</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
+      <Filter>Arquivos de Recurso</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dashboard.resx">
       <Filter>Arquivos de Recurso</Filter>
     </EmbeddedResource>
   </ItemGroup>
