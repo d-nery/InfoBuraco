@@ -105,6 +105,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -134,9 +136,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dashboard.cpp" />
+    <ClCompile Include="Login.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dashboard.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -144,16 +151,22 @@
     <None Include="ClassDiagram.cd" />
     <None Include="mapa.htm">
       <DeploymentContent>true</DeploymentContent>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="cement.png" />
+    <Image Include="contract.png" />
     <Image Include="logo_info_buraco.png" />
+    <Image Include="wall.jpg" />
+    <Image Include="wheelbarrow.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
