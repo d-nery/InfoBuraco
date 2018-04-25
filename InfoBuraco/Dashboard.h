@@ -23,9 +23,7 @@ namespace InfoBuraco {
 			//
 		}
 
-		System::Windows::Forms::WebBrowser^ get_map() {
-			return this->mapa;
-		}
+
 
 	protected:
 		/// <summary>
