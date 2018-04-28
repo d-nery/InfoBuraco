@@ -178,9 +178,9 @@
   <ItemGroup>
     <Image Include="res\cement.png" />
     <Image Include="res\contract.png" />
+    <Image Include="res\equipamentos.png" />
     <Image Include="res\logo_info_buraco.png" />
     <Image Include="res\wall.jpg" />
-    <Image Include="res\wheelbarrow.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

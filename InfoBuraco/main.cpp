@@ -9,7 +9,7 @@ void Main(array<String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
 
-    InfoBuraco::Dashboard^ dashboard = gcnew InfoBuraco::Dashboard;
+//    InfoBuraco::Dashboard^ dashboard = gcnew InfoBuraco::Dashboard;
 
     InfoBuraco::Login login;
 

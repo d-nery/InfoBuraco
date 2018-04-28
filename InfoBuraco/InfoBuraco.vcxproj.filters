@@ -64,7 +64,7 @@
     <Image Include="res\wall.jpg">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
-    <Image Include="res\wheelbarrow.png">
+    <Image Include="res\equipamentos.png">
       <Filter>Arquivos de Recurso</Filter>
     </Image>
   </ItemGroup>
