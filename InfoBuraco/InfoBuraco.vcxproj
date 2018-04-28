@@ -157,7 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
-    <None Include="mapa.htm">
+    <None Include="res\mapa.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
   </ItemGroup>
@@ -176,11 +176,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="cement.png" />
-    <Image Include="contract.png" />
-    <Image Include="logo_info_buraco.png" />
-    <Image Include="wall.jpg" />
-    <Image Include="wheelbarrow.png" />
+    <Image Include="res\cement.png" />
+    <Image Include="res\contract.png" />
+    <Image Include="res\logo_info_buraco.png" />
+    <Image Include="res\wall.jpg" />
+    <Image Include="res\wheelbarrow.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
