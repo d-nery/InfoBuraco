@@ -116,26 +116,26 @@ namespace InfoBuraco {
             this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
             this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
             this->panel4 = (gcnew System::Windows::Forms::Panel());
-            this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-            this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
-            this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
-            this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
-            this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
-            this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
             this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
+            this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
+            this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
+            this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
+            this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
+            this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
+            this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
             this->lateral_menu->SuspendLayout();
             this->panel3->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->user_image))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
             this->panel4->SuspendLayout();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
             this->SuspendLayout();
             // 
             // lateral_menu
@@ -213,7 +213,7 @@ namespace InfoBuraco {
             this->pictureBox1->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
             this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
             this->pictureBox1->ImageLocation = L"";
-            this->pictureBox1->Location = System::Drawing::Point(260, 440);
+            this->pictureBox1->Location = System::Drawing::Point(260, 417);
             this->pictureBox1->Name = L"pictureBox1";
             this->pictureBox1->Size = System::Drawing::Size(280, 80);
             this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
@@ -229,6 +229,7 @@ namespace InfoBuraco {
             this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
             this->pictureBox2->TabIndex = 3;
             this->pictureBox2->TabStop = false;
+            this->pictureBox2->Click += gcnew System::EventHandler(this, &Dashboard::equipamentosBtn_click);
             // 
             // panel4
             // 
@@ -241,60 +242,20 @@ namespace InfoBuraco {
             this->panel4->Controls->Add(this->pictureBox4);
             this->panel4->Controls->Add(this->pictureBox3);
             this->panel4->Controls->Add(this->pictureBox2);
-            this->panel4->Location = System::Drawing::Point(105, 131);
+            this->panel4->Location = System::Drawing::Point(105, 119);
             this->panel4->Name = L"panel4";
             this->panel4->Size = System::Drawing::Size(590, 260);
             this->panel4->TabIndex = 23;
             // 
-            // pictureBox3
+            // pictureBox9
             // 
-            this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-            this->pictureBox3->Location = System::Drawing::Point(153, 3);
-            this->pictureBox3->Name = L"pictureBox3";
-            this->pictureBox3->Size = System::Drawing::Size(125, 121);
-            this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-            this->pictureBox3->TabIndex = 4;
-            this->pictureBox3->TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
-            this->pictureBox4->Location = System::Drawing::Point(303, 3);
-            this->pictureBox4->Name = L"pictureBox4";
-            this->pictureBox4->Size = System::Drawing::Size(125, 121);
-            this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-            this->pictureBox4->TabIndex = 5;
-            this->pictureBox4->TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
-            this->pictureBox5->Location = System::Drawing::Point(459, 3);
-            this->pictureBox5->Name = L"pictureBox5";
-            this->pictureBox5->Size = System::Drawing::Size(125, 121);
-            this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-            this->pictureBox5->TabIndex = 6;
-            this->pictureBox5->TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
-            this->pictureBox6->Location = System::Drawing::Point(3, 137);
-            this->pictureBox6->Name = L"pictureBox6";
-            this->pictureBox6->Size = System::Drawing::Size(125, 121);
-            this->pictureBox6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-            this->pictureBox6->TabIndex = 7;
-            this->pictureBox6->TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
-            this->pictureBox7->Location = System::Drawing::Point(153, 137);
-            this->pictureBox7->Name = L"pictureBox7";
-            this->pictureBox7->Size = System::Drawing::Size(125, 121);
-            this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-            this->pictureBox7->TabIndex = 8;
-            this->pictureBox7->TabStop = false;
+            this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
+            this->pictureBox9->Location = System::Drawing::Point(459, 137);
+            this->pictureBox9->Name = L"pictureBox9";
+            this->pictureBox9->Size = System::Drawing::Size(125, 121);
+            this->pictureBox9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+            this->pictureBox9->TabIndex = 10;
+            this->pictureBox9->TabStop = false;
             // 
             // pictureBox8
             // 
@@ -306,15 +267,55 @@ namespace InfoBuraco {
             this->pictureBox8->TabIndex = 9;
             this->pictureBox8->TabStop = false;
             // 
-            // pictureBox9
+            // pictureBox7
             // 
-            this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
-            this->pictureBox9->Location = System::Drawing::Point(459, 137);
-            this->pictureBox9->Name = L"pictureBox9";
-            this->pictureBox9->Size = System::Drawing::Size(125, 121);
-            this->pictureBox9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-            this->pictureBox9->TabIndex = 10;
-            this->pictureBox9->TabStop = false;
+            this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
+            this->pictureBox7->Location = System::Drawing::Point(153, 137);
+            this->pictureBox7->Name = L"pictureBox7";
+            this->pictureBox7->Size = System::Drawing::Size(125, 121);
+            this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+            this->pictureBox7->TabIndex = 8;
+            this->pictureBox7->TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
+            this->pictureBox6->Location = System::Drawing::Point(3, 137);
+            this->pictureBox6->Name = L"pictureBox6";
+            this->pictureBox6->Size = System::Drawing::Size(125, 121);
+            this->pictureBox6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+            this->pictureBox6->TabIndex = 7;
+            this->pictureBox6->TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
+            this->pictureBox5->Location = System::Drawing::Point(459, 3);
+            this->pictureBox5->Name = L"pictureBox5";
+            this->pictureBox5->Size = System::Drawing::Size(125, 121);
+            this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+            this->pictureBox5->TabIndex = 6;
+            this->pictureBox5->TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
+            this->pictureBox4->Location = System::Drawing::Point(303, 3);
+            this->pictureBox4->Name = L"pictureBox4";
+            this->pictureBox4->Size = System::Drawing::Size(125, 121);
+            this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+            this->pictureBox4->TabIndex = 5;
+            this->pictureBox4->TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+            this->pictureBox3->Location = System::Drawing::Point(153, 3);
+            this->pictureBox3->Name = L"pictureBox3";
+            this->pictureBox3->Size = System::Drawing::Size(125, 121);
+            this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+            this->pictureBox3->TabIndex = 4;
+            this->pictureBox3->TabStop = false;
             // 
             // Dashboard
             // 
@@ -338,13 +339,13 @@ namespace InfoBuraco {
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
             this->panel4->ResumeLayout(false);
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
             this->ResumeLayout(false);
 
         }
@@ -355,7 +356,8 @@ namespace InfoBuraco {
 
     }
     private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
-private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
-}
+    private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
+    }
+    private: System::Void equipamentosBtn_click(System::Object^  sender, System::EventArgs^  e);
 };
 }
