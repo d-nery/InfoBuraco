@@ -45,36 +45,11 @@ namespace InfoBuraco {
     private: System::Windows::Forms::Panel^  lateral_menu;
     private: System::Windows::Forms::PictureBox^  pictureBox1;
     private: System::Windows::Forms::Button^  logout_btn;
-
-
     private: System::Windows::Forms::Label^  user_name;
     private: System::Windows::Forms::Label^  user_cargo;
-
-
     private: System::Windows::Forms::PictureBox^  user_image;
-
     private: System::Windows::Forms::PictureBox^  pictureBox2;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private: System::Windows::Forms::Panel^  panel3;
-
     private: System::Windows::Forms::Panel^  panel4;
     private: System::Windows::Forms::PictureBox^  pictureBox9;
     private: System::Windows::Forms::PictureBox^  pictureBox8;
@@ -83,11 +58,6 @@ namespace InfoBuraco {
     private: System::Windows::Forms::PictureBox^  pictureBox5;
     private: System::Windows::Forms::PictureBox^  pictureBox4;
     private: System::Windows::Forms::PictureBox^  pictureBox3;
-
-
-
-
-
 
     protected:
 
@@ -213,7 +183,7 @@ namespace InfoBuraco {
             this->pictureBox1->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
             this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
             this->pictureBox1->ImageLocation = L"";
-            this->pictureBox1->Location = System::Drawing::Point(260, 417);
+            this->pictureBox1->Location = System::Drawing::Point(253, 446);
             this->pictureBox1->Name = L"pictureBox1";
             this->pictureBox1->Size = System::Drawing::Size(280, 80);
             this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
@@ -242,9 +212,9 @@ namespace InfoBuraco {
             this->panel4->Controls->Add(this->pictureBox4);
             this->panel4->Controls->Add(this->pictureBox3);
             this->panel4->Controls->Add(this->pictureBox2);
-            this->panel4->Location = System::Drawing::Point(105, 119);
+            this->panel4->Location = System::Drawing::Point(105, 95);
             this->panel4->Name = L"panel4";
-            this->panel4->Size = System::Drawing::Size(590, 260);
+            this->panel4->Size = System::Drawing::Size(585, 260);
             this->panel4->TabIndex = 23;
             // 
             // pictureBox9
@@ -351,13 +321,12 @@ namespace InfoBuraco {
         }
 #pragma endregion
     private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+
     }
     private: System::Void Dashboard_Load(System::Object^  sender, System::EventArgs^  e) {
 
     }
     private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
-    private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
-    }
     private: System::Void equipamentosBtn_click(System::Object^  sender, System::EventArgs^  e);
 };
 }

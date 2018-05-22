@@ -10,16 +10,13 @@ namespace InfoBuraco {
             user_lb->ForeColor = System::Drawing::Color::Red;
             pass_lb->ForeColor = System::Drawing::Color::Red;
             MessageBox::Show("Preencha o login e senha!");
-        }
-        else if (this->user_tb->Text == String::Empty) {
+        } else if (this->user_tb->Text == String::Empty) {
             user_lb->ForeColor = System::Drawing::Color::Red;
             MessageBox::Show("Preencha o login!");
-        }
-        else if (this->pass_tb->Text == String::Empty) {
+        } else if (this->pass_tb->Text == String::Empty) {
             pass_lb->ForeColor = System::Drawing::Color::Red;
             MessageBox::Show("Preencha a senha!");
-        }
-        else {
+        } else {
             Dashboard^ dash = gcnew Dashboard(this->user_tb->Text, L"Despachador", this);
             dash->Visible = true;
             this->Visible = false;

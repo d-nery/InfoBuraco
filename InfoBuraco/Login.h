@@ -160,6 +160,7 @@ namespace InfoBuraco {
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->ClientSize = System::Drawing::Size(324, 231);
             this->Controls->Add(this->panel1);
+            this->MaximizeBox = false;
             this->MaximumSize = System::Drawing::Size(340, 270);
             this->MinimumSize = System::Drawing::Size(340, 270);
             this->Name = L"Login";

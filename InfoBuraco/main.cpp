@@ -13,6 +13,5 @@ void Main(array<String^>^ args) {
 
     InfoBuraco::Login login;
 
-
     Application::Run(%login);
 }
