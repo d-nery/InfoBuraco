@@ -102,11 +102,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\pcs3443\mysql-connector-c++-8.0.11-windows-x86-64bit\include\jdbc;D:\pcs3443\boost_1_67_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
+      <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
+      <AdditionalLibraryDirectories>D:\pcs3443\mysql-connector-c++-8.0.11-windows-x86-64bit\lib64\vs14;D:\pcs3443\boost_1_67_0\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -137,9 +139,15 @@
   <ItemGroup>
     <ClCompile Include="Dashboard.cpp" />
     <ClCompile Include="DetalheOS.cpp" />
+    <ClCompile Include="Equipamento.cpp" />
+    <ClCompile Include="EquipamentoDAO.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Equipamento.cpp" />
+    <ClCompile Include="TelaEquipamento.cpp" />
+    <ClCompile Include="MySQL.cpp" />
+    <ClCompile Include="SecurityController.cpp" />
+    <ClCompile Include="Usuario.cpp" />
+    <ClCompile Include="UsuarioDAO.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dashboard.h">
@@ -148,12 +156,18 @@
     <ClInclude Include="DetalheOS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Equipamento.h" />
+    <ClInclude Include="EquipamentoDAO.h" />
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Equipamento.h">
+    <ClInclude Include="TelaEquipamento.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MySQL.h" />
+    <ClInclude Include="SecurityController.h" />
+    <ClInclude Include="Usuario.h" />
+    <ClInclude Include="UsuarioDAO.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -171,8 +185,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Equipamento.resx">
-      <DependentUpon>Equipamento.h</DependentUpon>
+    <EmbeddedResource Include="TelaEquipamento.resx">
+      <DependentUpon>TelaEquipamento.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

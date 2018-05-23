@@ -320,13 +320,13 @@ namespace InfoBuraco {
 
         }
 #pragma endregion
-    private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+    private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 
     }
-    private: System::Void Dashboard_Load(System::Object^  sender, System::EventArgs^  e) {
+    private: System::Void Dashboard_Load(System::Object^ sender, System::EventArgs^ e) {
 
     }
-    private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
-    private: System::Void equipamentosBtn_click(System::Object^  sender, System::EventArgs^  e);
+    private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
+    private: System::Void equipamentosBtn_click(System::Object^ sender, System::EventArgs^ e);
 };
 }

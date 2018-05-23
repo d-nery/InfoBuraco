@@ -22,6 +22,24 @@ namespace InfoBuraco {
             //TODO: Add the constructor code here
             //
         }
+        
+        property String^ login_txt {
+            String^ get() {
+                return user_tb->Text;
+            }
+            void set(String^ txt) {
+                user_tb->Text = txt;
+            }
+        }
+
+        property String^ pass_txt {
+            String^ get() {
+                return pass_tb->Text;
+            }
+            void set(String^ txt) {
+                pass_tb->Text = txt;
+            }
+        }
 
     protected:
         /// <summary>
