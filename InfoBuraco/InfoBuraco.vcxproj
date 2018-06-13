@@ -150,7 +150,10 @@
     <ClCompile Include="TelaEquipamento.cpp" />
     <ClCompile Include="MySQL.cpp" />
     <ClCompile Include="SecurityController.cpp" />
+    <ClCompile Include="TelaMaterial.cpp" />
     <ClCompile Include="TelaNotificacao.cpp" />
+    <ClCompile Include="TelaNovoBuraco.cpp" />
+    <ClCompile Include="TelaNovoMaterial.cpp" />
     <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -175,7 +178,16 @@
     </ClInclude>
     <ClInclude Include="MySQL.h" />
     <ClInclude Include="SecurityController.h" />
+    <ClInclude Include="TelaMaterial.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="TelaNotificacao.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="TelaNovoBuraco.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="TelaNovoMaterial.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Usuario.h" />
