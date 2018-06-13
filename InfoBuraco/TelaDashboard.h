@@ -256,6 +256,7 @@ namespace InfoBuraco {
             this->pictureBox6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
             this->pictureBox6->TabIndex = 7;
             this->pictureBox6->TabStop = false;
+            this->pictureBox6->Click += gcnew System::EventHandler(this, &TelaDashboard::pictureBox6_Click);
             // 
             // pictureBox5
             // 
@@ -293,7 +294,7 @@ namespace InfoBuraco {
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::Color::BurlyWood;
             this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-            this->ClientSize = System::Drawing::Size(784, 561);
+            this->ClientSize = System::Drawing::Size(784, 584);
             this->ControlBox = false;
             this->Controls->Add(this->pictureBox1);
             this->Controls->Add(this->panel4);
@@ -328,5 +329,6 @@ namespace InfoBuraco {
     }
     private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
     private: System::Void equipamentosBtn_click(System::Object^ sender, System::EventArgs^ e);
+    private: System::Void pictureBox6_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

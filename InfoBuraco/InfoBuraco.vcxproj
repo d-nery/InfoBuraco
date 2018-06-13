@@ -137,6 +137,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cidadao.cpp" />
+    <ClCompile Include="CidadaoController.cpp" />
+    <ClCompile Include="DAO\CidadaoDAO.cpp" />
     <ClCompile Include="DAO\EquipamentoDAO.cpp" />
     <ClCompile Include="DAO\UsuarioDAO.cpp" />
     <ClCompile Include="TelaDashboard.cpp" />
@@ -151,6 +154,9 @@
     <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cidadao.h" />
+    <ClInclude Include="CidadaoController.h" />
+    <ClInclude Include="DAO\CidadaoDAO.h" />
     <ClInclude Include="DAO\EquipamentoDAO.h" />
     <ClInclude Include="DAO\UsuarioDAO.h" />
     <ClInclude Include="resource.h" />
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaEquipamento.resx">
       <DependentUpon>TelaEquipamento.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNotificacao.resx">
+      <DependentUpon>TelaNotificacao.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
