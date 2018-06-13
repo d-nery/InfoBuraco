@@ -1,5 +1,5 @@
 #include "Login.h"
-#include "Dashboard.h"
+#include "TelaDashboard.h"
 
 using namespace System;
 using namespace System::Windows::Forms;

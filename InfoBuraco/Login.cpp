@@ -1,7 +1,7 @@
 #include <msclr/marshal_cppstd.h>
 
 #include "Login.h"
-#include "Dashboard.h"
+#include "TelaDashboard.h"
 #include "SecurityController.h"
 #include "Usuario.h"
 

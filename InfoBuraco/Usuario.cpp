@@ -1,11 +1,12 @@
 #include "Usuario.h"
 
 namespace InfoBuraco {
-
     Usuario::Usuario() {
         this->login = "";
         this->password = "";
     }
+
+    Usuario::~Usuario() {}
 
     void Usuario::setLogin(std::string login) {
         this->login = login;
@@ -29,8 +30,5 @@ namespace InfoBuraco {
 
     std::string Usuario::getEmail() {
         return this->email;
-    }
-
-    Usuario::~Usuario() {
     }
 }

@@ -2,9 +2,7 @@
 #include "MySQL.h"
 
 namespace InfoBuraco {
-    EquipamentoDAO::EquipamentoDAO() {
-    
-    }
+    EquipamentoDAO::EquipamentoDAO() {}
 
     Equipamento* EquipamentoDAO::getEquipment(std::string name) {
         std::string log;
@@ -33,7 +31,5 @@ namespace InfoBuraco {
         return equip;
     }
 
-    EquipamentoDAO::~EquipamentoDAO() {
-    
-    }
+    EquipamentoDAO::~EquipamentoDAO() {}
 }
