@@ -64,6 +64,6 @@ namespace InfoBuraco {
         data["email"] = msclr::interop::marshal_as<std::string>(this->ctzEmail_txt);
         data["telefone"] = msclr::interop::marshal_as<std::string>(this->ctzPhone_txt);
 
-        cidCtrl.buscarECriarCidadao(data);
+        cidCtrl.criarCidadao(data);
     }
 }

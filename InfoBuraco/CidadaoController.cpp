@@ -15,7 +15,7 @@ namespace InfoBuraco {
 
     }
     
-    void CidadaoController::buscarECriarCidadao(std::map<std::string, std::string> data) {
+    void CidadaoController::criarCidadao(std::map<std::string, std::string> data) {
         Cidadao* cidadao = nullptr;
         CidadaoDAO cidadaoDAO;
 

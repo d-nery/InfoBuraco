@@ -12,7 +12,7 @@ namespace InfoBuraco {
         virtual ~CidadaoController();
         
         Cidadao* CidadaoController::buscarCidadao(std::string nome);
-        void buscarECriarCidadao(std::map<std::string, std::string> data);
+        void criarCidadao(std::map<std::string, std::string> data);
     };
 }
 
