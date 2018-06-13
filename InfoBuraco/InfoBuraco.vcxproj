@@ -24,7 +24,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>InfoBuraco</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -102,13 +102,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;.\DAO;C:\Users\dnery\MySQLConnector\include\jdbc;C:\Users\dnery\boost\boost_1_67_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\DAO;D:\pcs3443\mysql-connector-c++-8.0.11-windows-x86-64bit\include\jdbc;D:\pcs3443\boost_1_67_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
-      <AdditionalLibraryDirectories>C:\Users\dnery\MySQLConnector\lib64\vs14;C:\Users\dnery\boost\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\pcs3443\mysql-connector-c++-8.0.11-windows-x86-64bit\lib64\vs14;D:\pcs3443\boost_1_67_0\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -147,11 +147,13 @@
     <ClCompile Include="TelaEquipamento.cpp" />
     <ClCompile Include="MySQL.cpp" />
     <ClCompile Include="SecurityController.cpp" />
+    <ClCompile Include="TelaNotificacao.cpp" />
     <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DAO\EquipamentoDAO.h" />
     <ClInclude Include="DAO\UsuarioDAO.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="TelaDashboard.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -167,6 +169,9 @@
     </ClInclude>
     <ClInclude Include="MySQL.h" />
     <ClInclude Include="SecurityController.h" />
+    <ClInclude Include="TelaNotificacao.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Usuario.h" />
   </ItemGroup>
   <ItemGroup>
@@ -195,6 +200,9 @@
     <Image Include="res\equipamentos.png" />
     <Image Include="res\logo_info_buraco.png" />
     <Image Include="res\wall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="InfoBuraco.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

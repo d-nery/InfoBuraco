@@ -11,12 +11,12 @@ namespace InfoBuraco {
     using namespace System::Drawing;
 
     /// <summary>
-    /// Sum�rio para Dashboard
+    /// Sum�rio para TelaDashboard
     /// </summary>
-    public ref class Dashboard : public System::Windows::Forms::Form
+    public ref class TelaDashboard : public System::Windows::Forms::Form
     {
     public:
-        Dashboard(String^ user, String^ cargo, Login^ org_login)
+        TelaDashboard(String^ user, String^ cargo, Login^ org_login)
         {
             InitializeComponent();
             //
@@ -32,7 +32,7 @@ namespace InfoBuraco {
         /// <summary>
         /// Limpar os recursos que est�o sendo usados.
         /// </summary>
-        ~Dashboard()
+        ~TelaDashboard()
         {
             if (components)
             {
@@ -76,7 +76,7 @@ namespace InfoBuraco {
         /// </summary>
         void InitializeComponent(void)
         {
-            System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Dashboard::typeid));
+            System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(TelaDashboard::typeid));
             this->lateral_menu = (gcnew System::Windows::Forms::Panel());
             this->panel3 = (gcnew System::Windows::Forms::Panel());
             this->logout_btn = (gcnew System::Windows::Forms::Button());
@@ -118,7 +118,7 @@ namespace InfoBuraco {
             this->lateral_menu->Name = L"lateral_menu";
             this->lateral_menu->Size = System::Drawing::Size(784, 38);
             this->lateral_menu->TabIndex = 0;
-            this->lateral_menu->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Dashboard::panel1_Paint);
+            this->lateral_menu->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &TelaDashboard::panel1_Paint);
             // 
             // panel3
             // 
@@ -147,7 +147,7 @@ namespace InfoBuraco {
             this->logout_btn->TabIndex = 1;
             this->logout_btn->Text = L"Sair";
             this->logout_btn->UseVisualStyleBackColor = false;
-            this->logout_btn->Click += gcnew System::EventHandler(this, &Dashboard::button1_Click);
+            this->logout_btn->Click += gcnew System::EventHandler(this, &TelaDashboard::button1_Click);
             // 
             // user_name
             // 
@@ -199,7 +199,7 @@ namespace InfoBuraco {
             this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
             this->pictureBox2->TabIndex = 3;
             this->pictureBox2->TabStop = false;
-            this->pictureBox2->Click += gcnew System::EventHandler(this, &Dashboard::equipamentosBtn_click);
+            this->pictureBox2->Click += gcnew System::EventHandler(this, &TelaDashboard::equipamentosBtn_click);
             // 
             // panel4
             // 
@@ -287,7 +287,7 @@ namespace InfoBuraco {
             this->pictureBox3->TabIndex = 4;
             this->pictureBox3->TabStop = false;
             // 
-            // Dashboard
+            // TelaDashboard
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -299,9 +299,9 @@ namespace InfoBuraco {
             this->Controls->Add(this->panel4);
             this->Controls->Add(this->lateral_menu);
             this->MinimumSize = System::Drawing::Size(800, 600);
-            this->Name = L"Dashboard";
-            this->Text = L"Dashboard";
-            this->Load += gcnew System::EventHandler(this, &Dashboard::Dashboard_Load);
+            this->Name = L"TelaDashboard";
+            this->Text = L"TelaDashboard";
+            this->Load += gcnew System::EventHandler(this, &TelaDashboard::Dashboard_Load);
             this->lateral_menu->ResumeLayout(false);
             this->panel3->ResumeLayout(false);
             this->panel3->PerformLayout();

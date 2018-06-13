@@ -29,7 +29,7 @@ namespace InfoBuraco {
             Usuario* usuario = secCtrl.login(login, pass);
 
             if (usuario != nullptr) {
-                Dashboard^ dash = gcnew Dashboard(this->login_txt, L"Despachador", this);
+                TelaDashboard^ dash = gcnew TelaDashboard(this->login_txt, L"Despachador", this);
                 dash->Visible = true;
                 this->Visible = false;
             } else {
