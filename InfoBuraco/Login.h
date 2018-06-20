@@ -178,11 +178,12 @@ namespace InfoBuraco {
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->ClientSize = System::Drawing::Size(324, 231);
             this->Controls->Add(this->panel1);
+            this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
             this->MaximizeBox = false;
             this->MaximumSize = System::Drawing::Size(340, 270);
             this->MinimumSize = System::Drawing::Size(340, 270);
             this->Name = L"Login";
-            this->Text = L"Login";
+            this->Text = L"Info Buraco";
             this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
             this->panel1->ResumeLayout(false);
             this->panel1->PerformLayout();

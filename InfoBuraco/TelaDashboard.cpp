@@ -13,7 +13,7 @@ namespace InfoBuraco {
         telaEquipamento->Visible = true;
     }
 
-    System::Void TelaDashboard::pictureBox6_Click(System::Object^  sender, System::EventArgs^  e) {
+    System::Void TelaDashboard::notificacoesBtn_Click(System::Object^  sender, System::EventArgs^  e) {
         TelaNotificacao^ telaNotificacao = gcnew TelaNotificacao;
         telaNotificacao->Visible = true;
     }

@@ -24,7 +24,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>InfoBuraco</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -102,13 +102,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;.\DAO;D:\pcs3443\mysql-connector-c++-8.0.11-windows-x86-64bit\include\jdbc;D:\pcs3443\boost_1_67_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\Controller;.\DAO;C:\PCS\MySQLConnector\include\jdbc;C:\PCS\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
-      <AdditionalLibraryDirectories>D:\pcs3443\mysql-connector-c++-8.0.11-windows-x86-64bit\lib64\vs14;D:\pcs3443\boost_1_67_0\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\PCS\MySQLConnector\lib64\vs14;C:\PCS\boost\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -138,7 +138,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cidadao.cpp" />
-    <ClCompile Include="CidadaoController.cpp" />
+    <ClCompile Include="Controller\CidadaoController.cpp" />
+    <ClCompile Include="Controller\SecurityController.cpp" />
     <ClCompile Include="DAO\CidadaoDAO.cpp" />
     <ClCompile Include="DAO\EquipamentoDAO.cpp" />
     <ClCompile Include="DAO\UsuarioDAO.cpp" />
@@ -149,7 +150,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TelaEquipamento.cpp" />
     <ClCompile Include="MySQL.cpp" />
-    <ClCompile Include="SecurityController.cpp" />
     <ClCompile Include="TelaMaterial.cpp" />
     <ClCompile Include="TelaNotificacao.cpp" />
     <ClCompile Include="TelaNovoBuraco.cpp" />
@@ -158,7 +158,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cidadao.h" />
-    <ClInclude Include="CidadaoController.h" />
+    <ClInclude Include="Controller\CidadaoController.h" />
+    <ClInclude Include="Controller\SecurityController.h" />
     <ClInclude Include="DAO\CidadaoDAO.h" />
     <ClInclude Include="DAO\EquipamentoDAO.h" />
     <ClInclude Include="DAO\UsuarioDAO.h" />
@@ -177,7 +178,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MySQL.h" />
-    <ClInclude Include="SecurityController.h" />
     <ClInclude Include="TelaMaterial.h">
       <FileType>CppForm</FileType>
     </ClInclude>

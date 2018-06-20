@@ -27,9 +27,6 @@
     <ClCompile Include="MySQL.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="SecurityController.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
     <ClCompile Include="Usuario.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
@@ -54,9 +51,6 @@
     <ClCompile Include="Cidadao.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="CidadaoController.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
     <ClCompile Include="DAO\CidadaoDAO.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
@@ -69,6 +63,12 @@
     <ClCompile Include="TelaNovoMaterial.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="Controller\CidadaoController.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller\SecurityController.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
@@ -78,9 +78,6 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="MySQL.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="SecurityController.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="Usuario.h">
@@ -110,9 +107,6 @@
     <ClInclude Include="Cidadao.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="CidadaoController.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
     <ClInclude Include="DAO\CidadaoDAO.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
@@ -123,6 +117,12 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="TelaNovoMaterial.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\CidadaoController.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\SecurityController.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
@@ -160,6 +160,9 @@
       <Filter>Arquivos de Recurso</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaDashboard.resx">
+      <Filter>Arquivos de Recurso</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNotificacao.resx">
       <Filter>Arquivos de Recurso</Filter>
     </EmbeddedResource>
   </ItemGroup>

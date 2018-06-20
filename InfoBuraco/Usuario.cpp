@@ -4,6 +4,8 @@ namespace InfoBuraco {
     Usuario::Usuario() {
         this->login = "";
         this->password = "";
+        this->name = "";
+        this->email = "";
     }
 
     Usuario::~Usuario() {}
@@ -20,6 +22,10 @@ namespace InfoBuraco {
         this->email = email;
     }
 
+    void Usuario::setName(std::string name) {
+        this->name = name;
+    }
+
     std::string Usuario::getLogin() {
         return this->login;
     }
@@ -30,5 +36,9 @@ namespace InfoBuraco {
 
     std::string Usuario::getEmail() {
         return this->email;
+    }
+
+    std::string Usuario::getName() {
+        return this->name;
     }
 }
