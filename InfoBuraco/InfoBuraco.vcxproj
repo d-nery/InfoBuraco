@@ -150,6 +150,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TelaEquipamento.cpp" />
     <ClCompile Include="MySQL.cpp" />
+    <ClCompile Include="TelaListaNotificacao.cpp" />
     <ClCompile Include="TelaMaterial.cpp" />
     <ClCompile Include="TelaNotificacao.cpp" />
     <ClCompile Include="TelaNovoBuraco.cpp" />
@@ -178,6 +179,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MySQL.h" />
+    <ClInclude Include="TelaListaNotificacao.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="TelaMaterial.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -210,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaEquipamento.resx">
       <DependentUpon>TelaEquipamento.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaListaNotificacao.resx">
+      <DependentUpon>TelaListaNotificacao.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaNotificacao.resx">
       <DependentUpon>TelaNotificacao.h</DependentUpon>

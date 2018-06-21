@@ -10,9 +10,9 @@ namespace InfoBuraco {
     public:
         CidadaoController();
         virtual ~CidadaoController();
-        
-        Cidadao* CidadaoController::buscarCidadao(std::string nome);
+
+        Cidadao* buscarCidadao(std::string nome);
+        std::vector<Cidadao*>* getAll();
         void criarCidadao(std::map<std::string, std::string> data);
     };
 }
-

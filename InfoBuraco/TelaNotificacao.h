@@ -79,11 +79,6 @@ namespace InfoBuraco {
     private: System::Windows::Forms::PictureBox^  pictureBox2;
     private: System::Windows::Forms::Label^  title_lb;
 
-
-
-
-
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -148,15 +143,14 @@ namespace InfoBuraco {
             // title_lb
             // 
             this->title_lb->AutoSize = true;
-            this->title_lb->Font = (gcnew System::Drawing::Font(L"Hole", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            this->title_lb->Font = (gcnew System::Drawing::Font(L"Renner*", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->title_lb->ForeColor = System::Drawing::Color::Black;
             this->title_lb->Location = System::Drawing::Point(130, 9);
             this->title_lb->Name = L"title_lb";
-            this->title_lb->Size = System::Drawing::Size(178, 28);
+            this->title_lb->Size = System::Drawing::Size(157, 32);
             this->title_lb->TabIndex = 8;
-            this->title_lb->Text = L"Notificacao";
-            this->title_lb->Click += gcnew System::EventHandler(this, &TelaNotificacao::label1_Click);
+            this->title_lb->Text = L"Notificação";
             // 
             // pictureBox1
             // 
@@ -279,6 +273,5 @@ namespace InfoBuraco {
 
         private: System::Void createCitizenBtn_Click(System::Object^  sender, System::EventArgs^  e);
         private: System::Void findCitizenBtn_Click(System::Object^  sender, System::EventArgs^  e);
-private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {}
 };
 }

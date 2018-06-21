@@ -1,3 +1,5 @@
+#include <vector>
+
 #include "CidadaoDAO.h"
 #include "MySQL.h"
 
@@ -31,6 +33,36 @@ namespace InfoBuraco {
 
         return citizen;
     }
+
+    std::vector<Cidadao*>* CidadaoDAO::getAll() {
+        std::string log;
+        std::vector<Cidadao*>* ret = new std::vector<Cidadao*>;
+
+        sql::Connection* conn;
+        sql::ResultSet* resultSet;
+        sql::PreparedStatement* pstmt;
+
+        try {
+            conn = mySQL.getConnection();
+            pstmt = conn->prepareStatement("SELECT nome, telefone, email FROM Cidadao");
+
+            resultSet = pstmt->executeQuery();
+            while (resultSet->next()) {
+                Cidadao* citizen = new Cidadao;
+                citizen->setNome(resultSet->getString(1).c_str());
+                citizen->setTelefone(resultSet->getString(2).c_str());
+                citizen->setEmail(resultSet->getString(3).c_str());
+
+                ret->push_back(citizen);
+            }
+        } catch (sql::SQLException& e) {
+            conn->close();
+            log = e.what();
+        }
+
+        return ret;
+    }
+
 
     void CidadaoDAO::insertCidadao(Cidadao* cidadao) {
         std::string log;

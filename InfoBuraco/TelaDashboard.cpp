@@ -1,6 +1,7 @@
 #include "TelaDashboard.h"
 #include "TelaEquipamento.h"
 #include "TelaNotificacao.h"
+#include "TelaListaNotificacao.h"
 
 namespace InfoBuraco {
     System::Void TelaDashboard::button1_Click(System::Object^ sender, System::EventArgs^  e) {
@@ -14,7 +15,7 @@ namespace InfoBuraco {
     }
 
     System::Void TelaDashboard::notificacoesBtn_Click(System::Object^  sender, System::EventArgs^  e) {
-        TelaNotificacao^ telaNotificacao = gcnew TelaNotificacao;
-        telaNotificacao->Visible = true;
+        TelaListaNotificacao^ telaListaNotificacao = gcnew TelaListaNotificacao;
+        telaListaNotificacao->Visible = true;
     }
 }

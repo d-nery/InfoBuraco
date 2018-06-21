@@ -239,6 +239,7 @@ namespace InfoBuraco {
                 static_cast<System::Int32>(static_cast<System::Byte>(2)));
             this->notificacoesBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"notificacoesBtn.BackgroundImage")));
             this->notificacoesBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+            this->notificacoesBtn->Cursor = System::Windows::Forms::Cursors::Hand;
             this->notificacoesBtn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(132)),
                 static_cast<System::Int32>(static_cast<System::Byte>(2)), static_cast<System::Int32>(static_cast<System::Byte>(2)));
             this->notificacoesBtn->FlatAppearance->BorderSize = 0;
@@ -264,6 +265,7 @@ namespace InfoBuraco {
                 static_cast<System::Int32>(static_cast<System::Byte>(191)));
             this->equipesBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"equipesBtn.BackgroundImage")));
             this->equipesBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+            this->equipesBtn->Cursor = System::Windows::Forms::Cursors::Hand;
             this->equipesBtn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(116)),
                 static_cast<System::Int32>(static_cast<System::Byte>(131)), static_cast<System::Int32>(static_cast<System::Byte>(191)));
             this->equipesBtn->FlatAppearance->BorderSize = 0;
@@ -288,6 +290,7 @@ namespace InfoBuraco {
                 static_cast<System::Int32>(static_cast<System::Byte>(118)));
             this->funcionariosBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"funcionariosBtn.BackgroundImage")));
             this->funcionariosBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+            this->funcionariosBtn->Cursor = System::Windows::Forms::Cursors::Hand;
             this->funcionariosBtn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(54)),
                 static_cast<System::Int32>(static_cast<System::Byte>(73)), static_cast<System::Int32>(static_cast<System::Byte>(118)));
             this->funcionariosBtn->FlatAppearance->BorderSize = 0;
@@ -312,6 +315,7 @@ namespace InfoBuraco {
                 static_cast<System::Int32>(static_cast<System::Byte>(43)));
             this->ordensBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ordensBtn.BackgroundImage")));
             this->ordensBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+            this->ordensBtn->Cursor = System::Windows::Forms::Cursors::Hand;
             this->ordensBtn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(218)),
                 static_cast<System::Int32>(static_cast<System::Byte>(103)), static_cast<System::Int32>(static_cast<System::Byte>(43)));
             this->ordensBtn->FlatAppearance->BorderSize = 0;
@@ -336,6 +340,7 @@ namespace InfoBuraco {
                 static_cast<System::Int32>(static_cast<System::Byte>(44)));
             this->equipamentosBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"equipamentosBtn.BackgroundImage")));
             this->equipamentosBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+            this->equipamentosBtn->Cursor = System::Windows::Forms::Cursors::Hand;
             this->equipamentosBtn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(180)),
                 static_cast<System::Int32>(static_cast<System::Byte>(129)), static_cast<System::Int32>(static_cast<System::Byte>(44)));
             this->equipamentosBtn->FlatAppearance->BorderSize = 0;
