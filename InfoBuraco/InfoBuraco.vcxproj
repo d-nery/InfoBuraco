@@ -143,6 +143,7 @@
     <ClCompile Include="DAO\CidadaoDAO.cpp" />
     <ClCompile Include="DAO\EquipamentoDAO.cpp" />
     <ClCompile Include="DAO\UsuarioDAO.cpp" />
+    <ClCompile Include="Notificacao.cpp" />
     <ClCompile Include="TelaDashboard.cpp" />
     <ClCompile Include="DetalheOS.cpp" />
     <ClCompile Include="Equipamento.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="DAO\CidadaoDAO.h" />
     <ClInclude Include="DAO\EquipamentoDAO.h" />
     <ClInclude Include="DAO\UsuarioDAO.h" />
+    <ClInclude Include="Notificacao.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="TelaDashboard.h">
       <FileType>CppForm</FileType>

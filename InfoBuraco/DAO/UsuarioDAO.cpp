@@ -15,7 +15,7 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT login, senha, email, nome FROM Usuario where login = ? and senha = ?");
+            pstmt = conn->prepareStatement("SELECT login, senha, nome FROM usuario WHERE login = ? and senha = ?");
             pstmt->setString(1, login.data());
             pstmt->setString(2, password.data());
 
@@ -24,8 +24,7 @@ namespace InfoBuraco {
                 usuario = new Usuario;
                 usuario->setLogin(resultSet->getString(1).c_str());
                 usuario->setPassword(resultSet->getString(2).c_str());
-                usuario->setEmail(resultSet->getString(3).c_str());
-                usuario->setName(resultSet->getString(4).c_str());
+                usuario->setName(resultSet->getString(3).c_str());
             }
         } catch (sql::SQLException& e) {
             conn->close();

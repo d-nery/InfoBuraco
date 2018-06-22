@@ -44,7 +44,7 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT nome, telefone, email FROM Cidadao");
+            pstmt = conn->prepareStatement("SELECT nome, telefone, email FROM cidadao");
 
             resultSet = pstmt->executeQuery();
             while (resultSet->next()) {
@@ -62,7 +62,6 @@ namespace InfoBuraco {
 
         return ret;
     }
-
 
     void CidadaoDAO::insertCidadao(Cidadao* cidadao) {
         std::string log;

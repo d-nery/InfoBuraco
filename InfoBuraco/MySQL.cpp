@@ -17,7 +17,6 @@ namespace InfoBuraco {
         this->user = "grupo04";
         this->pass = "grupo04";
 
-
         try {
             this->driver = get_driver_instance();
             this->conn = this->driver->connect(url.data(), user.data(), pass.data());

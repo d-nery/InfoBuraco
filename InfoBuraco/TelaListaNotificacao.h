@@ -108,7 +108,7 @@ namespace InfoBuraco {
             this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
             this->panel1->Location = System::Drawing::Point(0, 0);
             this->panel1->Name = L"panel1";
-            this->panel1->Size = System::Drawing::Size(554, 501);
+            this->panel1->Size = System::Drawing::Size(827, 501);
             this->panel1->TabIndex = 2;
             // 
             // notificationsGrid
@@ -125,8 +125,9 @@ namespace InfoBuraco {
             this->notificationsGrid->Location = System::Drawing::Point(0, 94);
             this->notificationsGrid->Name = L"notificationsGrid";
             this->notificationsGrid->ReadOnly = true;
-            this->notificationsGrid->Size = System::Drawing::Size(554, 407);
+            this->notificationsGrid->Size = System::Drawing::Size(827, 407);
             this->notificationsGrid->TabIndex = 1;
+            this->notificationsGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &TelaListaNotificacao::notificationsGrid_CellContentClick);
             // 
             // colunaNome
             // 
@@ -162,11 +163,12 @@ namespace InfoBuraco {
             this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
             this->panel2->Location = System::Drawing::Point(0, 0);
             this->panel2->Name = L"panel2";
-            this->panel2->Size = System::Drawing::Size(554, 94);
+            this->panel2->Size = System::Drawing::Size(827, 94);
             this->panel2->TabIndex = 4;
             // 
             // addBtn
             // 
+            this->addBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
             this->addBtn->BackColor = System::Drawing::Color::Transparent;
             this->addBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"addBtn.BackgroundImage")));
             this->addBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
@@ -175,7 +177,7 @@ namespace InfoBuraco {
             this->addBtn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
             this->addBtn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
             this->addBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->addBtn->Location = System::Drawing::Point(506, 12);
+            this->addBtn->Location = System::Drawing::Point(779, 12);
             this->addBtn->Name = L"addBtn";
             this->addBtn->Size = System::Drawing::Size(36, 34);
             this->addBtn->TabIndex = 4;
@@ -188,7 +190,7 @@ namespace InfoBuraco {
             this->label1->AutoSize = true;
             this->label1->Font = (gcnew System::Drawing::Font(L"Renner*", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label1->Location = System::Drawing::Point(201, 30);
+            this->label1->Location = System::Drawing::Point(337, 30);
             this->label1->Name = L"label1";
             this->label1->Size = System::Drawing::Size(169, 35);
             this->label1->TabIndex = 3;
@@ -198,7 +200,7 @@ namespace InfoBuraco {
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-            this->ClientSize = System::Drawing::Size(554, 501);
+            this->ClientSize = System::Drawing::Size(827, 501);
             this->Controls->Add(this->panel1);
             this->MinimumSize = System::Drawing::Size(570, 540);
             this->Name = L"TelaListaNotificacao";
@@ -214,5 +216,6 @@ namespace InfoBuraco {
 #pragma endregion
     private: System::Void load(System::Object^  sender, System::EventArgs^  e);
     private: System::Void addBtn_Click(System::Object^  sender, System::EventArgs^  e);
+    private: System::Void notificationsGrid_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e);
 };
 }

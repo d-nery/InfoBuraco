@@ -72,6 +72,9 @@
     <ClCompile Include="TelaListaNotificacao.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="Notificacao.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
@@ -131,6 +134,9 @@
     <ClInclude Include="TelaListaNotificacao.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="Notificacao.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -169,6 +175,9 @@
       <Filter>Arquivos de Recurso</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaNotificacao.resx">
+      <Filter>Arquivos de Recurso</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaListaNotificacao.resx">
       <Filter>Arquivos de Recurso</Filter>
     </EmbeddedResource>
   </ItemGroup>

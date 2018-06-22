@@ -14,14 +14,13 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT numeroPatrimonio, nome FROM Equipamento where nome = ?");
+            pstmt = conn->prepareStatement("SELECT nome FROM Equipamento where nome = ?");
             pstmt->setString(1, name.data());
 
             resultSet = pstmt->executeQuery();
             if (resultSet->next()) {
                 equip = new Equipamento;
-                equip->setNumeroPatrimonio(resultSet->getInt(1));
-                equip->setNome(resultSet->getString(2).c_str());
+                equip->setNome(resultSet->getString(1).c_str());
             }
         } catch (sql::SQLException& e) {
             conn->close();

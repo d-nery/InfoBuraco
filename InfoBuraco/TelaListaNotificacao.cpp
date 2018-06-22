@@ -26,4 +26,9 @@ namespace InfoBuraco {
         telaNotificacao->ShowDialog();
     }
 
+    System::Void TelaListaNotificacao::notificationsGrid_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+        System::Windows::Forms::MessageBox::Show(this->notificationsGrid->Rows[e->RowIndex]->Cells[0]->Value->ToString());
+
+    }
+
 }
