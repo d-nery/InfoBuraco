@@ -6,13 +6,17 @@ namespace InfoBuraco {
     std::string Cidadao::getNome() {
         return this->nome;
     }
-    
+
     std::string Cidadao::getTelefone() {
         return this->telefone;
     }
 
     std::string Cidadao::getEmail() {
         return this->email;
+    }
+
+    std::string Cidadao::getFacebook() {
+        return this->facebook;
     }
 
     void Cidadao::setNome(std::string value) {
@@ -25,6 +29,10 @@ namespace InfoBuraco {
 
     void Cidadao::setEmail(std::string value) {
         this->email = value;
+    }
+
+    void Cidadao::setFacebook(std::string value) {
+        this->facebook = value;
     }
 
     Cidadao::~Cidadao() {}

@@ -1,3 +1,5 @@
+#include <msclr/marshal_cppstd.h>
+
 #include "MySQL.h"
 #include "UsuarioDAO.h"
 
@@ -6,29 +8,29 @@ namespace InfoBuraco {
     }
 
     Usuario* UsuarioDAO::getUser(std::string login, std::string password) {
-        std::string log;
         Usuario* usuario = nullptr;
 
-        sql::Connection* conn;
+        sql::Connection* conn = nullptr;
         sql::PreparedStatement* pstmt;
         sql::ResultSet* resultSet;
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT login, senha, nome FROM usuario WHERE login = ? and senha = ?");
+            pstmt = conn->prepareStatement("SELECT * FROM lala2_usuario WHERE login = ? and senha = ?");
             pstmt->setString(1, login.data());
             pstmt->setString(2, password.data());
 
             resultSet = pstmt->executeQuery();
             if (resultSet->next()) {
                 usuario = new Usuario;
-                usuario->setLogin(resultSet->getString(1).c_str());
-                usuario->setPassword(resultSet->getString(2).c_str());
-                usuario->setName(resultSet->getString(3).c_str());
+                usuario->login = resultSet->getString("login").c_str();
+                usuario->password = resultSet->getString("senha").c_str();
+                usuario->name = resultSet->getString("nome").c_str();
             }
         } catch (sql::SQLException& e) {
-            conn->close();
-            log = e.what();
+            if (conn != nullptr)
+                conn->close();
+            System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
         }
 
         return usuario;

@@ -26,13 +26,13 @@ namespace InfoBuraco {
         }
 
         MessageBox::Show("Cidadao Encontrado");
-        this->citizenTelephone_tb->Text = msclr::interop::marshal_as<String^>(cidadao->getTelefone());
-        this->ctzEmail_txt = msclr::interop::marshal_as<String^>(cidadao->getEmail());
+        this->citizenTelephone_tb->Text = msclr::interop::marshal_as<System::String^>(cidadao->getTelefone());
+        this->ctzEmail_txt = msclr::interop::marshal_as<System::String^>(cidadao->getEmail());
     }
 
     System::Void TelaNotificacao::createCitizenBtn_Click(System::Object^  sender, System::EventArgs^  e) {
         bool error = false;
-        
+
         ctzName_lb->ForeColor = System::Drawing::Color::Black;
         ctzPhone_lb->ForeColor = System::Drawing::Color::Black;
         ctzEmail_lb->ForeColor = System::Drawing::Color::Black;
@@ -41,7 +41,7 @@ namespace InfoBuraco {
             ctzName_lb->ForeColor = System::Drawing::Color::Red;
             error = true;
         }
-        
+
         if (this->ctzPhone_txt == String::Empty) {
             ctzPhone_lb->ForeColor = System::Drawing::Color::Red;
             error = true;

@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "Login.h"
 #include "TelaDashboard.h"
 
@@ -10,6 +12,8 @@ void Main(array<String^>^ args) {
     Application::SetCompatibleTextRenderingDefault(false);
 
 //    InfoBuraco::TelaDashboard^ TelaDashboard = gcnew InfoBuraco::TelaDashboard;
+
+    System::Diagnostics::Debug::Print("Inicializando");
 
     InfoBuraco::Login login;
 

@@ -5,6 +5,8 @@
 #include "Notificacao.h"
 
 namespace InfoBuraco {
+    class Notificacao;
+
     class NotificacaoDAO {
     public:
         NotificacaoDAO();

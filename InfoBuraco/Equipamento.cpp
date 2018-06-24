@@ -1,8 +1,9 @@
 #include "Equipamento.h"
 
 namespace InfoBuraco {
-    Equipamento::Equipamento() {
-    }
+    Equipamento::Equipamento() {}
+
+    Equipamento::~Equipamento() {}
 
     void Equipamento::setNome(std::string nome) {
         this->nome = nome;
@@ -18,8 +19,5 @@ namespace InfoBuraco {
 
     int Equipamento::getNumeroPatrimonio() {
         return this->numeroPatrimonio;
-    }
-
-    Equipamento::~Equipamento() {
     }
 }

@@ -202,9 +202,10 @@ namespace InfoBuraco {
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->ClientSize = System::Drawing::Size(827, 501);
             this->Controls->Add(this->panel1);
+            this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
             this->MinimumSize = System::Drawing::Size(570, 540);
             this->Name = L"TelaListaNotificacao";
-            this->Text = L"TelaListaNotificacao";
+            this->Text = L"Notificações";
             this->Load += gcnew System::EventHandler(this, &TelaListaNotificacao::load);
             this->panel1->ResumeLayout(false);
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->notificationsGrid))->EndInit();

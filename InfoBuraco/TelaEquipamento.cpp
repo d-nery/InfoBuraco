@@ -19,7 +19,7 @@ namespace InfoBuraco {
         } else {
             std::stringstream npat;
             npat << "Numero do patrimonio: " << equip->getNumeroPatrimonio();
-            MessageBox::Show(msclr::interop::marshal_as<String^>(npat.str()));
+            MessageBox::Show(msclr::interop::marshal_as<System::String^>(npat.str()));
         }
     }
 

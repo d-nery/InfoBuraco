@@ -1,6 +1,7 @@
-#include "MySQL.h"
-
+#include <msclr/marshal_cppstd.h>
 #include <stdexcept>
+
+#include "MySQL.h"
 
 namespace InfoBuraco {
     static bool mysql_instanced = false;
@@ -11,17 +12,19 @@ namespace InfoBuraco {
 
         mysql_instanced = true;
 
-        std::string log = "";
+        //this->url = "tcp://143.107.102.55:3306/db04";
+        //this->user = "grupo04";
+        //this->pass = "grupo04";
 
-        this->url = "tcp://143.107.102.55:3306/db04";
-        this->user = "grupo04";
-        this->pass = "grupo04";
+        this->url = "tcp://127.0.0.1:3306/teste";
+        this->user = "root";
+        this->pass = "admin";
 
         try {
             this->driver = get_driver_instance();
             this->conn = this->driver->connect(url.data(), user.data(), pass.data());
         } catch (sql::SQLException& e) {
-            log = e.what();
+            System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
         }
     }
 
