@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include "BuracoDAO.h"
 
 namespace InfoBuraco {

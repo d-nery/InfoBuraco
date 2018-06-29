@@ -3,6 +3,7 @@
 #include <string>
 
 #include "BuracoDAO.h"
+#include "Cargo.h"
 
 namespace InfoBuraco {
     class Usuario {
@@ -19,10 +20,12 @@ namespace InfoBuraco {
         std::string getLogin();
         std::string getPassword();
         std::string getName();
+        Cargo* getCargo();
 
     private:
         std::string login;
         std::string password;
         std::string name;
+        Cargo* cargo;
     };
 }

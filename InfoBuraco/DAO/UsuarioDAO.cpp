@@ -2,12 +2,14 @@
 
 #include "MySQL.h"
 #include "UsuarioDAO.h"
+#include "CargoDAO.h"
 
 namespace InfoBuraco {
     UsuarioDAO::UsuarioDAO() {
     }
 
     Usuario* UsuarioDAO::getUser(std::string login, std::string password) {
+        CargoDAO cargoDAO;
         Usuario* usuario = nullptr;
 
         sql::Connection* conn = nullptr;
@@ -16,7 +18,7 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT * FROM lala2_usuario WHERE login = ? and senha = ?");
+            pstmt = conn->prepareStatement("SELECT * FROM usuario WHERE login = ? and senha = UNHEX(SHA2(?, 256));");
             pstmt->setString(1, login.data());
             pstmt->setString(2, password.data());
 
@@ -26,6 +28,7 @@ namespace InfoBuraco {
                 usuario->login = resultSet->getString("login").c_str();
                 usuario->password = resultSet->getString("senha").c_str();
                 usuario->name = resultSet->getString("nome").c_str();
+                usuario->cargo = cargoDAO.getCargo(resultSet->getInt("cargo_id"));
             }
         } catch (sql::SQLException& e) {
             if (conn != nullptr)

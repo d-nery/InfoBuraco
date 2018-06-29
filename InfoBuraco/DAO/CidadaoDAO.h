@@ -6,6 +6,8 @@
 #include "Cidadao.h"
 
 namespace InfoBuraco {
+    class Cidadao;
+
     class CidadaoDAO {
     public:
         CidadaoDAO();

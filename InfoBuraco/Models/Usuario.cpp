@@ -32,4 +32,8 @@ namespace InfoBuraco {
     std::string Usuario::getName() {
         return this->name;
     }
+
+    Cargo* Usuario::getCargo() {
+        return this->cargo;
+    }
 }

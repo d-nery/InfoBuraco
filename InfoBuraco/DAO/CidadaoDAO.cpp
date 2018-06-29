@@ -7,7 +7,7 @@
 namespace InfoBuraco {
     CidadaoDAO::CidadaoDAO() {}
 
-    Cidadao* CidadaoDAO::getCitizen(std::string name) {
+    Cidadao* CidadaoDAO::getCitizen(std::string email) {
         Cidadao* citizen = nullptr;
 
         sql::Connection* conn = nullptr;
@@ -16,15 +16,16 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT nome, telefone, email FROM lala2_cidadao where nome = ?");
-            pstmt->setString(1, name.data());
+            pstmt = conn->prepareStatement("SELECT * FROM cidadao where email = ?");
+            pstmt->setString(1, email.data());
 
             resultSet = pstmt->executeQuery();
             if (resultSet->next()) {
                 citizen = new Cidadao;
-                citizen->setNome(resultSet->getString(1).c_str());
-                citizen->setTelefone(resultSet->getString(2).c_str());
-                citizen->setEmail(resultSet->getString(3).c_str());
+                citizen->nome = resultSet->getString("nome").c_str();
+                citizen->telefone = resultSet->getString("telefone").c_str();
+                citizen->email = resultSet->getString("email").c_str();
+                citizen->facebook = resultSet->getString("facebook").c_str();
             }
         } catch (sql::SQLException& e) {
             if (conn != nullptr)
@@ -44,7 +45,7 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT nome, telefone, email, facebook FROM lala2_cidadao");
+            pstmt = conn->prepareStatement("SELECT nome, telefone, email, facebook FROM cidadao");
 
             resultSet = pstmt->executeQuery();
             while (resultSet->next()) {
@@ -71,7 +72,7 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("INSERT INTO lala2_cidadao (`nome`, `telefone`, `email`) VALUES ( ? , ? , ? );");
+            pstmt = conn->prepareStatement("INSERT INTO cidadao (`nome`, `telefone`, `email`) VALUES ( ? , ? , ? );");
             pstmt->setString(1, cidadao->getNome().data());
             pstmt->setString(2, cidadao->getTelefone().data());
             pstmt->setString(3, cidadao->getEmail().data());

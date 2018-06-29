@@ -1,8 +1,5 @@
 #pragma once
 
-#include <string>
-#include <vector>
-
 #include "Buraco.h"
 
 namespace InfoBuraco {
@@ -14,6 +11,7 @@ namespace InfoBuraco {
         virtual ~BuracoDAO();
 
         Buraco* getBuraco(int id);
+        Buraco* getBuraco(std::string localizcao, std::string regional);
         int insertBuraco(Buraco* buraco);
     };
 }

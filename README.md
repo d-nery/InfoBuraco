@@ -1,13 +1,19 @@
+![](InfoBuraco/res/logo.png)
+
 # InfoBuraco
 
-PCS3443 - Laboratório de Engenharia de Software
+Trabalho da disciplina PCS3443 - Laboratório de Engenharia de Software da Escola Politécnica da USP - Primeiro Semestre de 2018
 
-Repositório para o projeto InfoBuraco.
-
-Turma 1 - Grupo 4
-
-Alunos:
+Turma 1 - Grupo 4:
 * Beatriz de Oliveira Silva
 * Bruno Henrique Vasconcelos Lemos
 * Daniel Nery Silva de Oliveira
 * João Morales
+
+-------------------------------
+
+## Introdução
+
+## Como usar
+
+...

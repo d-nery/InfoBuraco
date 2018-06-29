@@ -1,13 +1,14 @@
 #include <msclr/marshal_cppstd.h>
 
-#include "EquipamentoDAO.h"
 #include "MySQL.h"
+#include "CargoDAO.h"
 
 namespace InfoBuraco {
-    EquipamentoDAO::EquipamentoDAO() {}
+    CargoDAO::CargoDAO() {
+    }
 
-    Equipamento* EquipamentoDAO::getEquipment(std::string name) {
-        Equipamento* equip = nullptr;
+    Cargo* CargoDAO::getCargo(int id) {
+        Cargo* cargo = nullptr;
 
         sql::Connection* conn = nullptr;
         sql::PreparedStatement* pstmt;
@@ -15,13 +16,15 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT nome FROM equipamento where nome = ?");
-            pstmt->setString(1, name.data());
+            pstmt = conn->prepareStatement("SELECT * FROM cargo WHERE id = ?;");
+            pstmt->setInt(1, id);
 
             resultSet = pstmt->executeQuery();
             if (resultSet->next()) {
-                equip = new Equipamento;
-                equip->setNome(resultSet->getString("nome").c_str());
+                cargo = new Cargo;
+                cargo->id = resultSet->getInt("id");
+                cargo->name = resultSet->getString("name").c_str();
+                cargo->permission_mask = resultSet->getInt("permission_mask");
             }
         } catch (sql::SQLException& e) {
             if (conn != nullptr)
@@ -29,8 +32,9 @@ namespace InfoBuraco {
             System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
         }
 
-        return equip;
+        return cargo;
     }
 
-    EquipamentoDAO::~EquipamentoDAO() {}
+    CargoDAO::~CargoDAO() {
+    }
 }

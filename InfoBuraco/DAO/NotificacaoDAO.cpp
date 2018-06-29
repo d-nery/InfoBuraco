@@ -17,7 +17,7 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT * FROM lala2_notificacao WHERE id_notificacao = ?");
+            pstmt = conn->prepareStatement("SELECT * FROM notificacao WHERE id_notificacao = ?");
             pstmt->setInt(1, id);
 
             resultSet = pstmt->executeQuery();

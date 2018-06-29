@@ -16,8 +16,40 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT * FROM lala2_buraco where id_buraco = ?;");
+            pstmt = conn->prepareStatement("SELECT * FROM buraco where id_buraco = ?;");
             pstmt->setInt(1, id);
+
+            resultSet = pstmt->executeQuery();
+            if (resultSet->next()) {
+                buraco = new Buraco;
+                buraco->id_buraco = resultSet->getInt("id_buraco");
+                buraco->localizacao = resultSet->getString("localizacao").c_str();
+                buraco->regional = resultSet->getString("regional").c_str();
+                buraco->tamanho = resultSet->getInt("tamanho");
+                buraco->posicao = resultSet->getInt("posicao");
+                buraco->n_reclamacoes = resultSet->getInt("n_reclamacoes");
+            }
+        } catch (sql::SQLException& e) {
+            if (conn != nullptr)
+                conn->close();
+            System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
+        }
+
+        return buraco;
+    }
+
+    Buraco* BuracoDAO::getBuraco(std::string localizacao, std::string regional) {
+        Buraco* buraco = nullptr;
+
+        sql::Connection* conn = nullptr;
+        sql::PreparedStatement* pstmt;
+        sql::ResultSet* resultSet;
+
+        try {
+            conn = mySQL.getConnection();
+            pstmt = conn->prepareStatement("SELECT * FROM buraco where localizacao = ? and regional = ?;");
+            pstmt->setString(1, localizacao.data());
+            pstmt->setString(2, regional.data());
 
             resultSet = pstmt->executeQuery();
             if (resultSet->next()) {
@@ -45,7 +77,7 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("INSERT INTO lala2_buraco VALUES ( null , ? , ? , ? , ? , ? ); SELECT @@identity AS id;");
+            pstmt = conn->prepareStatement("INSERT INTO buraco VALUES ( null , ? , ? , ? , ? , ? ); SELECT @@identity AS id;");
 
             pstmt->setString(1, buraco->getLocalizacao().data());
             pstmt->setInt(2, buraco->getTamanho());

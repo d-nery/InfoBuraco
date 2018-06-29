@@ -2,8 +2,11 @@
 
 #include <string>
 
+#include "CidadaoDAO.h"
+
 namespace InfoBuraco {
     class Cidadao {
+        friend class CidadaoDAO;
     public:
         Cidadao();
         virtual ~Cidadao();

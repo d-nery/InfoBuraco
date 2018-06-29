@@ -16,9 +16,9 @@ namespace InfoBuraco {
         //this->user = "grupo04";
         //this->pass = "grupo04";
 
-        this->url = "tcp://127.0.0.1:3306/teste";
-        this->user = "root";
-        this->pass = "admin";
+        this->url = "tcp://labsoft.ccbpqdxlsfij.us-east-2.rds.amazonaws.com:3306/db04";
+        this->user = "dnery";
+        this->pass = "grupo004";
 
         try {
             this->driver = get_driver_instance();

@@ -137,15 +137,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Controller\BuracoController.cpp" />
     <ClCompile Include="Controller\CidadaoController.cpp" />
     <ClCompile Include="Controller\NotificacaoController.cpp" />
     <ClCompile Include="Controller\SecurityController.cpp" />
     <ClCompile Include="DAO\BuracoDAO.cpp" />
+    <ClCompile Include="DAO\CargoDAO.cpp" />
     <ClCompile Include="DAO\CidadaoDAO.cpp" />
     <ClCompile Include="DAO\EquipamentoDAO.cpp" />
     <ClCompile Include="DAO\NotificacaoDAO.cpp" />
     <ClCompile Include="DAO\UsuarioDAO.cpp" />
     <ClCompile Include="Models\Buraco.cpp" />
+    <ClCompile Include="Models\Cargo.cpp" />
     <ClCompile Include="Models\Cidadao.cpp" />
     <ClCompile Include="Models\Notificacao.cpp" />
     <ClCompile Include="Models\Usuario.cpp" />
@@ -162,15 +165,18 @@
     <ClCompile Include="TelaNovoMaterial.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Controller\BuracoController.h" />
     <ClInclude Include="Controller\CidadaoController.h" />
     <ClInclude Include="Controller\NotificacaoController.h" />
     <ClInclude Include="Controller\SecurityController.h" />
     <ClInclude Include="DAO\BuracoDAO.h" />
+    <ClInclude Include="DAO\CargoDAO.h" />
     <ClInclude Include="DAO\CidadaoDAO.h" />
     <ClInclude Include="DAO\EquipamentoDAO.h" />
     <ClInclude Include="DAO\NotificacaoDAO.h" />
     <ClInclude Include="DAO\UsuarioDAO.h" />
     <ClInclude Include="Models\Buraco.h" />
+    <ClInclude Include="Models\Cargo.h" />
     <ClInclude Include="Models\Cidadao.h" />
     <ClInclude Include="Models\Notificacao.h" />
     <ClInclude Include="Models\Usuario.h" />

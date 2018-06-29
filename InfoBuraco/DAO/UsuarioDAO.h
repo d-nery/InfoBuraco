@@ -5,6 +5,8 @@
 #include "Usuario.h"
 
 namespace InfoBuraco {
+    class Usuario;
+
     class UsuarioDAO {
     public:
         UsuarioDAO();
@@ -13,4 +15,3 @@ namespace InfoBuraco {
         Usuario* getUser(std::string login, std::string password);
     };
 }
-

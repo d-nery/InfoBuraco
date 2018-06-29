@@ -9,18 +9,10 @@ namespace InfoBuraco {
     using namespace System::Data;
     using namespace System::Drawing;
 
-    /// <summary>
-    /// Summary for Login
-    /// </summary>
-    public ref class Login : public System::Windows::Forms::Form
-    {
+    public ref class Login : public System::Windows::Forms::Form {
     public:
-        Login(void)
-        {
+        Login() {
             InitializeComponent();
-            //
-            //TODO: Add the constructor code here
-            //
         }
         
         property String^ login_txt {
@@ -45,27 +37,19 @@ namespace InfoBuraco {
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        ~Login()
-        {
-            if (components)
-            {
+        ~Login() {
+            if (components) {
                 delete components;
             }
         }
-    private: System::Windows::Forms::TextBox^  user_tb;
-    private: System::Windows::Forms::TextBox^  pass_tb;
-    protected:
-
-    protected:
-
-    private: System::Windows::Forms::Button^  login_btn;
-    private: System::Windows::Forms::Button^  cancelBtn;
-    private: System::Windows::Forms::Panel^  panel1;
-    private: System::Windows::Forms::PictureBox^  logo_pb;
-    private: System::Windows::Forms::Label^  pass_lb;
-    private: System::Windows::Forms::Label^  user_lb;
-
-
+    private: System::Windows::Forms::TextBox^ user_tb;
+    private: System::Windows::Forms::TextBox^ pass_tb;
+    private: System::Windows::Forms::Button^ login_btn;
+    private: System::Windows::Forms::Button^ cancelBtn;
+    private: System::Windows::Forms::Panel^ panel1;
+    private: System::Windows::Forms::PictureBox^ logo_pb;
+    private: System::Windows::Forms::Label^ pass_lb;
+    private: System::Windows::Forms::Label^ user_lb;
     private:
         /// <summary>
         /// Required designer variable.
@@ -121,6 +105,7 @@ namespace InfoBuraco {
             // 
             // cancelBtn
             // 
+            this->cancelBtn->DialogResult = System::Windows::Forms::DialogResult::Cancel;
             this->cancelBtn->Location = System::Drawing::Point(121, 125);
             this->cancelBtn->Name = L"cancelBtn";
             this->cancelBtn->Size = System::Drawing::Size(89, 24);
@@ -174,8 +159,10 @@ namespace InfoBuraco {
             // 
             // Login
             // 
+            this->AcceptButton = this->login_btn;
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+            this->CancelButton = this->cancelBtn;
             this->ClientSize = System::Drawing::Size(324, 231);
             this->Controls->Add(this->panel1);
             this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -183,8 +170,8 @@ namespace InfoBuraco {
             this->MaximumSize = System::Drawing::Size(340, 270);
             this->MinimumSize = System::Drawing::Size(340, 270);
             this->Name = L"Login";
+            this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
             this->Text = L"Info Buraco";
-            this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
             this->panel1->ResumeLayout(false);
             this->panel1->PerformLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logo_pb))->EndInit();
@@ -194,7 +181,5 @@ namespace InfoBuraco {
 #pragma endregion
     private: System::Void login_bnt_Click(System::Object^  sender, System::EventArgs^  e);
     private: System::Void cancel_btn_click(System::Object^  sender, System::EventArgs^  e);
-private: System::Void Login_Load(System::Object^  sender, System::EventArgs^  e) {
-}
 };
 }

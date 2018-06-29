@@ -11,8 +11,6 @@ void Main(array<String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
 
-//    InfoBuraco::TelaDashboard^ TelaDashboard = gcnew InfoBuraco::TelaDashboard;
-
     System::Diagnostics::Debug::Print("Inicializando");
 
     InfoBuraco::Login login;
