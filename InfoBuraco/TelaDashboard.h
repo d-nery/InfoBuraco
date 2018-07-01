@@ -150,6 +150,7 @@ namespace InfoBuraco {
             // logout_btn
             // 
             this->logout_btn->BackColor = System::Drawing::Color::DarkGoldenrod;
+            this->logout_btn->Cursor = System::Windows::Forms::Cursors::Hand;
             this->logout_btn->Dock = System::Windows::Forms::DockStyle::Right;
             this->logout_btn->FlatAppearance->BorderColor = System::Drawing::Color::BurlyWood;
             this->logout_btn->FlatAppearance->BorderSize = 0;

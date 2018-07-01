@@ -6,12 +6,15 @@
 #include "Buraco.h"
 
 namespace InfoBuraco {
+    class Buraco;
+
     class BuracoController {
     public:
         BuracoController();
         virtual ~BuracoController();
 
         Buraco* buscarBuraco(std::string localizacao, std::string regional);
-        // void criarBuraco(std::map<std::string, std::string> data);
+        Buraco* criarBuraco(std::map<std::string, std::string> data, std::map<std::string, int> int_data);
+        void atualizarBuraco(Buraco* buraco);
     };
 }

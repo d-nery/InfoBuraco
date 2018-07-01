@@ -73,17 +73,62 @@ namespace InfoBuraco {
     int BuracoDAO::insertBuraco(Buraco* buraco) {
         sql::Connection* conn = nullptr;
         sql::PreparedStatement* pstmt;
+
+        try {
+            conn = mySQL.getConnection();
+            pstmt = conn->prepareStatement("INSERT INTO buraco VALUES ( null , ? , ? , ? , ? , ? );");
+
+            pstmt->setString(1, buraco->localizacao.data());
+            pstmt->setInt(2, buraco->tamanho);
+            pstmt->setString(3, buraco->regional.data());
+            pstmt->setInt(4, buraco->tamanho);
+            pstmt->setInt(5, buraco->n_reclamacoes);
+
+            int ret = pstmt->executeUpdate();
+            if (ret == 1) {
+                return this->getLastId();
+            }
+        } catch (sql::SQLException& e) {
+            if (conn != nullptr)
+                conn->close();
+            System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
+            return -1;
+        }
+
+        return -1;
+    }
+
+    void BuracoDAO::updateBuraco(Buraco* buraco) {
+        sql::Connection* conn = nullptr;
+        sql::PreparedStatement* pstmt;
+
+        try {
+            conn = mySQL.getConnection();
+            pstmt = conn->prepareStatement("UPDATE buraco SET `localizacao` = ?, `tamanho` = ?, `regional`= ?, `posicao` = ?, `n_reclamacoes` = ? WHERE `id_buraco` = ?;");
+
+            pstmt->setString(1, buraco->localizacao.data());
+            pstmt->setInt(2, buraco->tamanho);
+            pstmt->setString(3, buraco->regional.data());
+            pstmt->setInt(4, buraco->posicao);
+            pstmt->setInt(5, buraco->n_reclamacoes);
+            pstmt->setInt(6, buraco->id_buraco);
+
+            int ret = pstmt->executeUpdate();
+        } catch (sql::SQLException& e) {
+            if (conn != nullptr)
+                conn->close();
+            System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
+        }
+    }
+
+    int BuracoDAO::getLastId() {
+        sql::Connection* conn = nullptr;
+        sql::PreparedStatement* pstmt;
         sql::ResultSet* resultSet;
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("INSERT INTO buraco VALUES ( null , ? , ? , ? , ? , ? ); SELECT @@identity AS id;");
-
-            pstmt->setString(1, buraco->getLocalizacao().data());
-            pstmt->setInt(2, buraco->getTamanho());
-            pstmt->setString(3, buraco->getRegional().data());
-            pstmt->setInt(4, buraco->getTamanho());
-            pstmt->setInt(5, buraco->getNumeroReclamacoes());
+            pstmt = conn->prepareStatement("SELECT @@identity AS id;");
 
             resultSet = pstmt->executeQuery();
             if (resultSet->next()) {
@@ -91,7 +136,7 @@ namespace InfoBuraco {
             }
         } catch (sql::SQLException& e) {
             if (conn != nullptr)
-                    conn->close();
+                conn->close();
             System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
             return -1;
         }

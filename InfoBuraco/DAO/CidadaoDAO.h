@@ -16,5 +16,6 @@ namespace InfoBuraco {
         Cidadao* getCitizen(std::string name);
         std::vector<Cidadao*>* getAll();
         void insertCidadao(Cidadao* cidadao);
+        void updateCidadao(Cidadao* cidadao);
     };
 }

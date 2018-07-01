@@ -27,5 +27,18 @@ namespace InfoBuraco {
         return this->n_reclamacoes;
     }
 
+    void Buraco::setTamanho(int t) {
+        this->tamanho = t;
+    }
+
+    void Buraco::setPosicao(int p) {
+        this->posicao = p;
+    }
+
+    void Buraco::increaseNotifications() {
+        this->n_reclamacoes++;
+    }
+
+
     Buraco::~Buraco() {}
 }

@@ -4,14 +4,16 @@
 
 #include "boost/date_time.hpp"
 
+#include "NotificacaoController.h"
 #include "NotificacaoDAO.h"
-#include "Buraco.h"
 #include "Usuario.h"
 #include "Cidadao.h"
+#include "Buraco.h"
 
 namespace InfoBuraco {
     class Notificacao {
         friend class NotificacaoDAO;
+        friend class NotificacaoController;
 
     public:
         Notificacao();
@@ -31,11 +33,6 @@ namespace InfoBuraco {
         std::string resposta;
 
         // Foreign Keys
-        int buraco_id;
-        std::string cidadao_id;
-        std::string usuario_registro_id;
-        std::string usuario_resposta_id;
-
         Buraco* buraco;
         Cidadao* cidadao;
         Usuario* usuario_registro;

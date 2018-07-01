@@ -16,26 +16,42 @@ namespace InfoBuraco {
         return buraco;
     }
 
-    // void BuracoController::criarBuraco(std::map<std::string, std::string> data) {
-    //     Buraco* Buraco = nullptr;
-    //     BuracoDAO BuracoDAO;
+    Buraco* BuracoController::criarBuraco(std::map<std::string, std::string> data, std::map<std::string, int> int_data) {
+        Buraco* buraco = nullptr;
+        BuracoDAO buracoDAO;
 
-    //     Buraco = BuracoDAO.getCitizen(data["nome"]);
+        buraco = buracoDAO.getBuraco(data["localizacao"], data["regional"]);
 
-    //     // Ja existe
-    //     if (Buraco != nullptr) {
-    //         System::Windows::Forms::MessageBox::Show("Buraco Existente");
-    //         return;
-    //     }
+        // Ja existe
+        if (buraco != nullptr) {
+            System::Windows::Forms::MessageBox::Show("Buraco Existente");
+            return buraco;
+        }
 
-    //     // Cria
-    //     Buraco = new Buraco();
-    //     Buraco->setNome(data["nome"]);
-    //     Buraco->setEmail(data["email"]);
-    //     Buraco->setTelefone(data["telefone"]);
+        // Cria
+        buraco = new Buraco();
+        buraco->localizacao = data["localizacao"];
+        buraco->regional = data["regional"];
 
-    //     BuracoDAO.insertBuraco(Buraco);
-    // }
+        buraco->tamanho = int_data["tamanho"];
+        buraco->posicao = int_data["posicao"];
+        buraco->n_reclamacoes = 1;
+
+        buraco->id_buraco = buracoDAO.insertBuraco(buraco);
+
+        return buraco;
+    }
+
+    void BuracoController::atualizarBuraco(Buraco* buraco) {
+        if (buraco == nullptr) {
+            System::Diagnostics::Debug::Print("Tried do Update null buraco");
+            return;
+        }
+
+        BuracoDAO buracoDAO;
+        buracoDAO.updateBuraco(buraco);
+    }
+
 
     BuracoController::~BuracoController() {}
 }

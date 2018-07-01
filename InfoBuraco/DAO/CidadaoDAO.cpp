@@ -88,5 +88,26 @@ namespace InfoBuraco {
         }
     }
 
+    void CidadaoDAO::updateCidadao(Cidadao* cidadao) {
+        sql::Connection* conn = nullptr;
+        sql::PreparedStatement* pstmt;
+
+        try {
+            conn = mySQL.getConnection();
+            pstmt = conn->prepareStatement("UPDATE cidadao SET `nome` = ?, `telefone`= ?, `facebook` = ? WHERE `email` = ?;");
+
+            pstmt->setString(1, cidadao->nome.data());
+            pstmt->setString(2, cidadao->telefone.data());
+            pstmt->setString(3, cidadao->facebook.data());
+            pstmt->setString(4, cidadao->email.data());
+
+            int ret = pstmt->executeUpdate();
+        } catch (sql::SQLException& e) {
+            if (conn != nullptr)
+                conn->close();
+            System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
+        }
+    }
+
     CidadaoDAO::~CidadaoDAO() {}
 }

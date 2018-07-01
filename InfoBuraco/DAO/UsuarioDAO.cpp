@@ -26,13 +26,13 @@ namespace InfoBuraco {
             if (resultSet->next()) {
                 usuario = new Usuario;
                 usuario->login = resultSet->getString("login").c_str();
-                usuario->password = resultSet->getString("senha").c_str();
                 usuario->name = resultSet->getString("nome").c_str();
                 usuario->cargo = cargoDAO.getCargo(resultSet->getInt("cargo_id"));
             }
         } catch (sql::SQLException& e) {
             if (conn != nullptr)
                 conn->close();
+            System::Diagnostics::Debug::Print("Erro getUser");
             System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
         }
 

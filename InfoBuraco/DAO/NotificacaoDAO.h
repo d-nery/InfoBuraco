@@ -13,5 +13,9 @@ namespace InfoBuraco {
         virtual ~NotificacaoDAO();
 
         Notificacao* getNotificacao(int id);
+        int insertNotificacao(Notificacao* notificacao);
+
+    private:
+        int getLastId();
     };
 }

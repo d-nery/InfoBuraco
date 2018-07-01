@@ -11,8 +11,9 @@ namespace InfoBuraco {
         CidadaoController();
         virtual ~CidadaoController();
 
-        Cidadao* buscarCidadao(std::string nome);
+        Cidadao* buscarCidadao(std::string email);
         std::vector<Cidadao*>* getAll();
-        void criarCidadao(std::map<std::string, std::string> data);
+        Cidadao* criarCidadao(std::map<std::string, std::string> data);
+        void atualizarCidadao(Cidadao* cidadao);
     };
 }
