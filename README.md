@@ -1,4 +1,4 @@
-![](InfoBuraco/res/logo.png)
+![](InfoBuraco/res/Logo.png)
 
 # InfoBuraco
 
