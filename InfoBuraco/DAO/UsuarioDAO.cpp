@@ -18,9 +18,14 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT * FROM usuario WHERE login = ? and senha = UNHEX(SHA2(?, 256));");
-            pstmt->setString(1, login.data());
-            pstmt->setString(2, password.data());
+            if (password.empty()) {
+                pstmt = conn->prepareStatement("SELECT * FROM usuario WHERE login = ?;");
+                pstmt->setString(1, login.data());
+            } else {
+                pstmt = conn->prepareStatement("SELECT * FROM usuario WHERE login = ? and senha = UNHEX(SHA2(?, 256));");
+                pstmt->setString(1, login.data());
+                pstmt->setString(2, password.data());
+            }
 
             resultSet = pstmt->executeQuery();
             if (resultSet->next()) {

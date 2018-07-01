@@ -16,14 +16,14 @@ namespace InfoBuraco {
         return notificacao;
     }
 
-    // std::vector<Notificacao*>* NotificacaoController::getAll() {
-    //     std::vector<Notificacao*>* notificacoes = nullptr;
-    //     NotificacaoDAO notificacaoDAO;
+    std::vector<Notificacao*>* NotificacaoController::getAll() {
+        std::vector<Notificacao*>* notificacoes = nullptr;
+        NotificacaoDAO notificacaoDAO;
 
-    //     notificacoes = notificacaoDAO.getAll();
+        notificacoes = notificacaoDAO.getAll();
 
-    //     return notificacoes;
-    // }
+        return notificacoes;
+    }
 
 
     Notificacao* NotificacaoController::criarNotificacao(std::string reclamacao, boost::posix_time::ptime data, Cidadao* reclamador, Buraco* buraco, Usuario* registrador) {

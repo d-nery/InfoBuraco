@@ -12,6 +12,6 @@ namespace InfoBuraco {
         UsuarioDAO();
         virtual ~UsuarioDAO();
 
-        Usuario* getUser(std::string login, std::string password);
+        Usuario* getUser(std::string login, std::string password="");
     };
 }

@@ -1,23 +1,27 @@
 #include <msclr/marshal_cppstd.h>
 #include <vector>
 
+#include "boost/date_time.hpp"
 #include "TelaListaNotificacao.h"
 #include "TelaNotificacao.h"
-#include "Cidadao.h"
-#include "CidadaoController.h"
+#include "Notificacao.h"
+#include "NotificacaoController.h"
+
+#define conv_sysstring(x) msclr::interop::marshal_as<System::String^>(x)
 
 namespace InfoBuraco {
 
     System::Void TelaListaNotificacao::load(System::Object^ sender, System::EventArgs^  e) {
-        CidadaoController cidadaoCtrl;
-        
-        std::vector<Cidadao*>* cidadaos = cidadaoCtrl.getAll();
+        NotificacaoController notificacaoCtrl;
 
-        for (Cidadao* cid : *cidadaos) {
-            String^ nome = msclr::interop::marshal_as<System::String^>(cid->getNome());
-            String^ email = msclr::interop::marshal_as<System::String^>(cid->getEmail());
-            String^ fone = msclr::interop::marshal_as<System::String^>(cid->getTelefone());
-            this->notificationsGrid->Rows->Add(gcnew array<System::String^> { nome, email, fone });
+        std::vector<Notificacao*>* notificacoes = notificacaoCtrl.getAll();
+
+        for (auto notif : *notificacoes) {
+            String^ data = conv_sysstring(boost::posix_time::to_simple_string(notif->get_data_notificacao()));
+            String^ cid = conv_sysstring(notif->getCidadao()->getNome());
+            String^ reclamacao = conv_sysstring(notif->get_reclamacao());
+            String^ respondida = notif->get_resposta().empty() ? "Não" : "Sim";
+            this->notificationsGrid->Rows->Add(gcnew array<System::String^> { data, cid, reclamacao, respondida });
         }
     }
 

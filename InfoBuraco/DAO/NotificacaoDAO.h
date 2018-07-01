@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 #include "Notificacao.h"
 
@@ -13,6 +14,7 @@ namespace InfoBuraco {
         virtual ~NotificacaoDAO();
 
         Notificacao* getNotificacao(int id);
+        std::vector<Notificacao*>* getAll();
         int insertNotificacao(Notificacao* notificacao);
 
     private:

@@ -17,7 +17,7 @@ namespace InfoBuraco {
         virtual ~NotificacaoController();
 
         Notificacao* buscarNotificacao(int id);
-        // std::vector<Notificacao*>* getAll();
+        std::vector<Notificacao*>* getAll();
         Notificacao* criarNotificacao(std::string reclamacao, boost::posix_time::ptime data, Cidadao* reclamador, Buraco* buraco, Usuario* registrador);
     };
 }

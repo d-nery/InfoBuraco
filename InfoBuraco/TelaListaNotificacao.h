@@ -37,41 +37,18 @@ namespace InfoBuraco {
     private: System::Windows::Forms::Panel^  panel1;
     protected:
     private: System::Windows::Forms::DataGridView^  notificationsGrid;
-    private: System::Windows::Forms::DataGridViewTextBoxColumn^  colunaNome;
-    private: System::Windows::Forms::DataGridViewTextBoxColumn^  colunaEmail;
-    private: System::Windows::Forms::DataGridViewTextBoxColumn^  colunaTelefone;
-    private: System::Windows::Forms::DataGridViewButtonColumn^  colunaEditBtn;
+
+
+
+
     private: System::Windows::Forms::Panel^  panel2;
     private: System::Windows::Forms::Label^  label1;
     private: System::Windows::Forms::Button^  addBtn;
-
-    protected:
-
-    protected:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    protected:
-
-    protected:
+    private: System::Windows::Forms::DataGridViewTextBoxColumn^  colunaData;
+    private: System::Windows::Forms::DataGridViewTextBoxColumn^  colunaCidadao;
+    private: System::Windows::Forms::DataGridViewTextBoxColumn^  colunaReclamacao;
+    private: System::Windows::Forms::DataGridViewTextBoxColumn^  colunaRespondida;
+    private: System::Windows::Forms::DataGridViewButtonColumn^  colunaDetailsBtn;
 
 	private:
 		/// <summary>
@@ -89,13 +66,14 @@ namespace InfoBuraco {
             System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(TelaListaNotificacao::typeid));
             this->panel1 = (gcnew System::Windows::Forms::Panel());
             this->notificationsGrid = (gcnew System::Windows::Forms::DataGridView());
-            this->colunaNome = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->colunaEmail = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->colunaTelefone = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->colunaEditBtn = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
             this->panel2 = (gcnew System::Windows::Forms::Panel());
             this->addBtn = (gcnew System::Windows::Forms::Button());
             this->label1 = (gcnew System::Windows::Forms::Label());
+            this->colunaData = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->colunaCidadao = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->colunaReclamacao = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->colunaRespondida = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->colunaDetailsBtn = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
             this->panel1->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->notificationsGrid))->BeginInit();
             this->panel2->SuspendLayout();
@@ -117,9 +95,9 @@ namespace InfoBuraco {
             this->notificationsGrid->AllowUserToDeleteRows = false;
             this->notificationsGrid->BackgroundColor = System::Drawing::Color::PapayaWhip;
             this->notificationsGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-            this->notificationsGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
-                this->colunaNome,
-                    this->colunaEmail, this->colunaTelefone, this->colunaEditBtn
+            this->notificationsGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+                this->colunaData,
+                    this->colunaCidadao, this->colunaReclamacao, this->colunaRespondida, this->colunaDetailsBtn
             });
             this->notificationsGrid->Dock = System::Windows::Forms::DockStyle::Fill;
             this->notificationsGrid->Location = System::Drawing::Point(0, 94);
@@ -128,32 +106,6 @@ namespace InfoBuraco {
             this->notificationsGrid->Size = System::Drawing::Size(827, 407);
             this->notificationsGrid->TabIndex = 1;
             this->notificationsGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &TelaListaNotificacao::notificationsGrid_CellContentClick);
-            // 
-            // colunaNome
-            // 
-            this->colunaNome->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-            this->colunaNome->HeaderText = L"Nome";
-            this->colunaNome->Name = L"colunaNome";
-            this->colunaNome->ReadOnly = true;
-            // 
-            // colunaEmail
-            // 
-            this->colunaEmail->HeaderText = L"Email";
-            this->colunaEmail->Name = L"colunaEmail";
-            this->colunaEmail->ReadOnly = true;
-            // 
-            // colunaTelefone
-            // 
-            this->colunaTelefone->HeaderText = L"Telefone";
-            this->colunaTelefone->Name = L"colunaTelefone";
-            this->colunaTelefone->ReadOnly = true;
-            // 
-            // colunaEditBtn
-            // 
-            this->colunaEditBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->colunaEditBtn->HeaderText = L"Editar";
-            this->colunaEditBtn->Name = L"colunaEditBtn";
-            this->colunaEditBtn->ReadOnly = true;
             // 
             // panel2
             // 
@@ -192,9 +144,41 @@ namespace InfoBuraco {
                 static_cast<System::Byte>(0)));
             this->label1->Location = System::Drawing::Point(337, 30);
             this->label1->Name = L"label1";
-            this->label1->Size = System::Drawing::Size(169, 35);
+            this->label1->Size = System::Drawing::Size(175, 35);
             this->label1->TabIndex = 3;
-            this->label1->Text = L"Notificações";
+            this->label1->Text = L"Notificaï¿½ï¿½es";
+            // 
+            // colunaData
+            // 
+            this->colunaData->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+            this->colunaData->HeaderText = L"Data";
+            this->colunaData->Name = L"colunaData";
+            this->colunaData->ReadOnly = true;
+            // 
+            // colunaCidadao
+            // 
+            this->colunaCidadao->HeaderText = L"Cidadao";
+            this->colunaCidadao->Name = L"colunaCidadao";
+            this->colunaCidadao->ReadOnly = true;
+            // 
+            // colunaReclamacao
+            // 
+            this->colunaReclamacao->HeaderText = L"ReclamaÃ§Ã£o";
+            this->colunaReclamacao->Name = L"colunaReclamacao";
+            this->colunaReclamacao->ReadOnly = true;
+            // 
+            // colunaRespondida
+            // 
+            this->colunaRespondida->HeaderText = L"Respondida";
+            this->colunaRespondida->Name = L"colunaRespondida";
+            this->colunaRespondida->ReadOnly = true;
+            // 
+            // colunaDetailsBtn
+            // 
+            this->colunaDetailsBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->colunaDetailsBtn->HeaderText = L"Detalhes";
+            this->colunaDetailsBtn->Name = L"colunaDetailsBtn";
+            this->colunaDetailsBtn->ReadOnly = true;
             // 
             // TelaListaNotificacao
             // 
@@ -205,7 +189,7 @@ namespace InfoBuraco {
             this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
             this->MinimumSize = System::Drawing::Size(570, 540);
             this->Name = L"TelaListaNotificacao";
-            this->Text = L"Notificações";
+            this->Text = L"Notificaï¿½ï¿½es";
             this->Load += gcnew System::EventHandler(this, &TelaListaNotificacao::load);
             this->panel1->ResumeLayout(false);
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->notificationsGrid))->EndInit();

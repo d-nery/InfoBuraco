@@ -16,15 +16,6 @@ namespace InfoBuraco {
         return cidadao;
     }
 
-    std::vector<Cidadao*>* CidadaoController::getAll() {
-        std::vector<Cidadao*>* cidadaos = nullptr;
-        CidadaoDAO cidadaoDAO;
-
-        cidadaos = cidadaoDAO.getAll();
-
-        return cidadaos;
-    }
-
     Cidadao* CidadaoController::criarCidadao(std::map<std::string, std::string> data) {
         Cidadao* cidadao = nullptr;
         CidadaoDAO cidadaoDAO;

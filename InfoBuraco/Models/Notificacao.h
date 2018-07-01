@@ -25,6 +25,8 @@ namespace InfoBuraco {
         std::string get_reclamacao();
         std::string get_resposta();
 
+        Cidadao* getCidadao();
+
     private:
         int id_notificacao;
         boost::posix_time::ptime data_notificacao;

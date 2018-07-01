@@ -23,5 +23,10 @@ namespace InfoBuraco {
         return this->resposta;
     }
 
+    Cidadao* Notificacao::getCidadao() {
+        return this->cidadao;
+    }
+
+
     Notificacao::~Notificacao() {}
 }

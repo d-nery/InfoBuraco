@@ -45,13 +45,13 @@ namespace InfoBuraco {
                 notificacao->buraco = buracoDAO.getBuraco(temp_int);
 
                 temp_str = resultSet->getString("usuario_registro_id").c_str();
-                notificacao->usuario_registro = usuarioDAO.getUser(temp_str, "admin");
+                notificacao->usuario_registro = usuarioDAO.getUser(temp_str);
 
                 temp_str = resultSet->getString("usuario_resposta_id").c_str();
                 if (resultSet->wasNull())
                     notificacao->usuario_resposta = nullptr;
                 else
-                    notificacao->usuario_resposta = usuarioDAO.getUser(temp_str, "admin");
+                    notificacao->usuario_resposta = usuarioDAO.getUser(temp_str);
             }
         } catch (sql::SQLException& e) {
             if (conn != nullptr)
@@ -60,6 +60,64 @@ namespace InfoBuraco {
         }
 
         return notificacao;
+    }
+
+    std::vector<Notificacao*>* NotificacaoDAO::getAll() {
+        std::vector<Notificacao*>* ret = new std::vector<Notificacao*>;
+
+        sql::Connection* conn = nullptr;
+        sql::ResultSet* resultSet;
+        sql::PreparedStatement* pstmt;
+
+        int temp_int;
+        std::string temp_str;
+
+        CidadaoDAO cidadaoDAO;
+        NotificacaoDAO notificacaoDAO;
+        UsuarioDAO usuarioDAO;
+        BuracoDAO buracoDAO;
+
+        try {
+            conn = mySQL.getConnection();
+            pstmt = conn->prepareStatement("SELECT * FROM notificacao LIMIT 100;");
+
+            resultSet = pstmt->executeQuery();
+            while (resultSet->next()) {
+                Notificacao* notificacao = new Notificacao;
+
+                notificacao->id_notificacao = resultSet->getInt("id_notificacao");
+                notificacao->data_notificacao = boost::posix_time::time_from_string(resultSet->getString("data_notificacao").c_str());
+                
+                temp_str = resultSet->getString("data_resposta").c_str();
+                if (!resultSet->wasNull())
+                    notificacao->data_resposta = boost::posix_time::time_from_string(temp_str);
+                
+                notificacao->resposta = resultSet->getString("resposta").c_str();
+
+                temp_str = resultSet->getString("cidadao_id").c_str();
+                notificacao->cidadao = cidadaoDAO.getCitizen(temp_str);
+
+                temp_int = resultSet->getInt("buraco_id");
+                notificacao->buraco = buracoDAO.getBuraco(temp_int);
+
+                temp_str = resultSet->getString("usuario_registro_id").c_str();
+                notificacao->usuario_registro = usuarioDAO.getUser(temp_str);
+
+                temp_str = resultSet->getString("usuario_resposta_id").c_str();
+                if (resultSet->wasNull())
+                    notificacao->usuario_resposta = nullptr;
+                else
+                    notificacao->usuario_resposta = usuarioDAO.getUser(temp_str);
+
+                ret->push_back(notificacao);
+            }
+        } catch (sql::SQLException& e) {
+            if (conn != nullptr)
+                conn->close();
+            System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
+        }
+
+        return ret;
     }
 
     int NotificacaoDAO::insertNotificacao(Notificacao* notificacao) {

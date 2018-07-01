@@ -36,36 +36,6 @@ namespace InfoBuraco {
         return citizen;
     }
 
-    std::vector<Cidadao*>* CidadaoDAO::getAll() {
-        std::vector<Cidadao*>* ret = new std::vector<Cidadao*>;
-
-        sql::Connection* conn = nullptr;
-        sql::ResultSet* resultSet;
-        sql::PreparedStatement* pstmt;
-
-        try {
-            conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT nome, telefone, email, facebook FROM cidadao");
-
-            resultSet = pstmt->executeQuery();
-            while (resultSet->next()) {
-                Cidadao* citizen = new Cidadao;
-                citizen->setNome(resultSet->getString("nome").c_str());
-                citizen->setTelefone(resultSet->getString("telefone").c_str());
-                citizen->setEmail(resultSet->getString("email").c_str());
-                citizen->setFacebook(resultSet->getString("facebook").c_str());
-
-                ret->push_back(citizen);
-            }
-        } catch (sql::SQLException& e) {
-            if (conn != nullptr)
-                conn->close();
-            System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
-        }
-
-        return ret;
-    }
-
     void CidadaoDAO::insertCidadao(Cidadao* cidadao) {
         sql::Connection* conn = nullptr;
         sql::PreparedStatement* pstmt;
