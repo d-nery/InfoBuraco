@@ -12,13 +12,13 @@ namespace InfoBuraco {
 
         mysql_instanced = true;
 
-        //this->url = "tcp://143.107.102.55:3306/db04";
-        //this->user = "grupo04";
-        //this->pass = "grupo04";
+        this->url = "tcp://143.107.102.55:3306/db04";
+        this->user = "grupo04";
+        this->pass = "grupo04";
 
-        this->url = "tcp://labsoft.ccbpqdxlsfij.us-east-2.rds.amazonaws.com:3306/db04";
-        this->user = "dnery";
-        this->pass = "grupo004";
+        //this->url = "tcp://labsoft.ccbpqdxlsfij.us-east-2.rds.amazonaws.com:3306/db04";
+        //this->user = "dnery";
+        //this->pass = "grupo004";
 
         try {
             this->driver = get_driver_instance();

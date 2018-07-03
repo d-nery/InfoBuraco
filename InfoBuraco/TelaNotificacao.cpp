@@ -10,6 +10,7 @@
 #include "UsuarioDAO.h"
 
 #define conv_string(x) (msclr::interop::marshal_as<std::string>(x))
+#define conv_sysstring(x) msclr::interop::marshal_as<System::String^>(x)
 
 namespace InfoBuraco {
     System::Void TelaNotificacao::findCitizenBtn_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -39,18 +40,32 @@ namespace InfoBuraco {
 
     System::Void TelaNotificacao::findHoleBtn_Click(System::Object^  sender, System::EventArgs^  e) {
         buracoLocalizacao_lb->ForeColor = System::Drawing::Color::Black;
+        buracoPosicao_lb->ForeColor = System::Drawing::Color::Black;
 
-        if (this->buracoLocalizacao_txt == String::Empty) {
+        if (this->buracoLocalizacao_txt == String::Empty && this->buracoPosicao_nup->Value == 0) {
+            buracoLocalizacao_lb->ForeColor = System::Drawing::Color::Red;
+            buracoPosicao_lb->ForeColor = System::Drawing::Color::Red;
+            MessageBox::Show("Preencha a Localização e a Posição!");
+            return;
+        }
+
+        else if (this->buracoLocalizacao_txt == String::Empty) {
             buracoLocalizacao_lb->ForeColor = System::Drawing::Color::Red;
             MessageBox::Show("Preencha a Localização!");
             return;
         }
 
+        else if (this->buracoPosicao_nup->Value == 0) {
+            buracoPosicao_lb->ForeColor = System::Drawing::Color::Red;
+            MessageBox::Show("Preencha a Posicao!");
+            return;
+        }
+
         BuracoController holeCtrl;
         std::string localizacao = conv_string(this->buracoLocalizacao_txt);
-        std::string regional = conv_string(this->buracoRegional_txt);
+        int posicao = System::Decimal::ToInt32(buracoPosicao_nup->Value);
 
-        Buraco* buraco = holeCtrl.buscarBuraco(localizacao, regional);
+        Buraco* buraco = holeCtrl.buscarBuraco(localizacao, posicao);
 
         if (buraco == nullptr) {
             MessageBox::Show("Buraco nao encontrado");
@@ -58,7 +73,7 @@ namespace InfoBuraco {
         }
 
         MessageBox::Show("Buraco Encontrado");
-        this->buracoPosicao_nup->Value = buraco->getPosicao();
+        this->buracoRegional_txt = conv_sysstring(buraco->getRegional());
         this->buracoTamanho_nup->Value = buraco->getTamanho();
     }
 
@@ -84,7 +99,6 @@ namespace InfoBuraco {
         }
 
         System::Diagnostics::Debug::Print("Inicializando Controladores");
-
 
         CidadaoController cidCtrl;
         BuracoController holeCtrl;
@@ -112,7 +126,11 @@ namespace InfoBuraco {
         }
 
         // Busca buraco
-        Buraco* buraco = holeCtrl.buscarBuraco(conv_string(buracoLocalizacao_txt), conv_string(buracoRegional_txt));
+
+        int tamanho = System::Decimal::ToInt32(buracoTamanho_nup->Value);
+        int posicao = System::Decimal::ToInt32(buracoPosicao_nup->Value);
+
+        Buraco* buraco = holeCtrl.buscarBuraco(conv_string(buracoLocalizacao_txt), posicao);
 
         if (buraco == nullptr) {
             System::Diagnostics::Debug::Print("Buraco nao encontrado, criando");
@@ -120,15 +138,19 @@ namespace InfoBuraco {
             std::map<std::string, int> int_data;
             data["localizacao"] = conv_string(buracoLocalizacao_txt);
             data["regional"] = conv_string(buracoRegional_txt);
-            int_data["tamanho"] = System::Decimal::ToInt32(buracoTamanho_nup->Value);
-            int_data["posicao"] = System::Decimal::ToInt32(buracoPosicao_nup->Value);
+            int_data["tamanho"] = tamanho;
+            int_data["posicao"] = posicao;
             buraco = holeCtrl.criarBuraco(data, int_data);
             System::Diagnostics::Debug::Print("Criado");
         } else {
             System::Diagnostics::Debug::Print("Buraco encontrado");
-            buraco->increaseNotifications();
-            buraco->setTamanho(System::Decimal::ToInt32(buracoTamanho_nup->Value));
-            buraco->setPosicao(System::Decimal::ToInt32(buracoPosicao_nup->Value));
+            if (buraco->isAberto()) {
+                buraco->increaseNotifications();
+                buraco->setTamanho(tamanho);
+            } else {
+                buraco->increaseReincidencia();
+                buraco->open();
+            }
             holeCtrl.atualizarBuraco(buraco);
         }
 
@@ -140,6 +162,8 @@ namespace InfoBuraco {
             conv_string(notificationReclamacao_txt), criacao, cidadao, buraco, this->usuario_logado);
 
         System::Diagnostics::Debug::Print("Notificação Criada!");
+        System::Windows::Forms::MessageBox::Show("Notificação registrada com sucesso.");
+        this->Close();
 
         // Criar Ordem de Serviço caso o buraco seja novo ou esteja fechado
     }

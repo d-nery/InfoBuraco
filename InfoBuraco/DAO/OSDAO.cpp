@@ -29,7 +29,7 @@ namespace InfoBuraco {
                 os = new OS;
                 os->id_os = resultSet->getInt("id_os");
                 os->prioridade = resultSet->getInt("prioridade");
-                os->status = resultSet->getBoolean("status");
+                os->status = (OS::status_t) resultSet->getInt("status");
                 os->estimativa_pessoal = resultSet->getInt("estimativa_pessoal");
                 os->estimativa_material = resultSet->getInt("estimativa_material");
                 os->estimativa_equipamento = resultSet->getInt("estimativa_equipamento");
@@ -67,7 +67,7 @@ namespace InfoBuraco {
                 OS* os = new OS;
                 os->id_os = resultSet->getInt("id_os");
                 os->prioridade = resultSet->getInt("prioridade");
-                os->status = resultSet->getBoolean("status");
+                os->status = (OS::status_t) resultSet->getInt("status");
                 os->estimativa_pessoal = resultSet->getInt("estimativa_pessoal");
                 os->estimativa_material = resultSet->getInt("estimativa_material");
                 os->estimativa_equipamento = resultSet->getInt("estimativa_equipamento");
@@ -90,25 +90,26 @@ namespace InfoBuraco {
         sql::Connection* conn = nullptr;
         sql::PreparedStatement* pstmt;
 
-        // try {
-        //     conn = mySQL.getConnection();
-        //     pstmt = conn->prepareStatement("INSERT INTO ordemservico VALUES (null, ?, null, ?, null, ?, ?, ?, null);");
-        //     pstmt->setString(1, boost::posix_time::to_iso_extended_string(notificacao->data_notificacao).data());
-        //     pstmt->setString(2, notificacao->reclamacao.data());
-        //     pstmt->setString(3, notificacao->cidadao->getEmail().data());
-        //     pstmt->setInt(4, notificacao->buraco->getId());
-        //     pstmt->setString(5, notificacao->usuario_registro->getLogin().data());
+        try {
+            conn = mySQL.getConnection();
+            pstmt = conn->prepareStatement("INSERT INTO ordemservico VALUES (null, ?, ?, ?, ?, ?, null, ?);");
+            pstmt->setInt(1, os->prioridade);
+            pstmt->setInt(2, os->estimativa_pessoal);
+            pstmt->setInt(3, os->estimativa_equipamento);
+            pstmt->setInt(4, os->estimativa_material);
+            pstmt->setInt(5, os->buraco->getId());
+            pstmt->setInt(6, os->status);
 
-        //     int ret = pstmt->executeUpdate();
-        //     if (ret == 1) {
-        //         return this->getLastId();
-        //     }
-        // } catch (sql::SQLException& e) {
-        //     if (conn != nullptr)
-        //         conn->close();
-        //     System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
-        //     return -1;
-        // }
+            int ret = pstmt->executeUpdate();
+            if (ret == 1) {
+                return this->getLastId();
+            }
+        } catch (sql::SQLException& e) {
+            if (conn != nullptr)
+                conn->close();
+            System::Diagnostics::Debug::Print(msclr::interop::marshal_as<System::String^>(e.what()));
+            return -1;
+        }
 
         return -1;
     }

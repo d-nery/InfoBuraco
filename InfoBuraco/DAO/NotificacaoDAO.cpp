@@ -129,8 +129,8 @@ namespace InfoBuraco {
             pstmt = conn->prepareStatement("INSERT INTO notificacao VALUES (null, ?, null, ?, null, ?, ?, ?, null);");
             pstmt->setString(1, boost::posix_time::to_iso_extended_string(notificacao->data_notificacao).data());
             pstmt->setString(2, notificacao->reclamacao.data());
-            pstmt->setString(3, notificacao->cidadao->getEmail().data());
-            pstmt->setInt(4, notificacao->buraco->getId());
+            pstmt->setInt(3, notificacao->buraco->getId());
+            pstmt->setString(4, notificacao->cidadao->getEmail().data());
             pstmt->setString(5, notificacao->usuario_registro->getLogin().data());
 
             int ret = pstmt->executeUpdate();

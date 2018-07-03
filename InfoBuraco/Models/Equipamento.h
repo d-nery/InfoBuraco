@@ -2,20 +2,28 @@
 
 #include <string>
 
+//#include "Despacho.h"
+
+#include "EquipamentoDAO.h"
+#include "EquipamentoController.h"
+
 namespace InfoBuraco {
     class Equipamento {
+        friend class EquipamentoDAO;
+        friend class EquipamentoController;
+
     public:
         Equipamento();
         virtual ~Equipamento();
 
-        void setNome(std::string nome);
-        void setNumeroPatrimonio(int n);
-
         std::string getNome();
-        int getNumeroPatrimonio();
-    
+        double getCusto();
+  //      Despacho* getDespacho();
+
     private:
         std::string nome;
-        int numeroPatrimonio;
+        double custo_hora;
+
+    //    Despacho* despacho;
     };
 }

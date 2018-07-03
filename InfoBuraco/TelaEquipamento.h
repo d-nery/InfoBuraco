@@ -28,21 +28,23 @@ namespace InfoBuraco {
         }
 
     private:
-        Usuario* usuario_logado;
+        Usuario * usuario_logado;
 
-    private: System::Windows::Forms::Button^  button1;
+    private: System::Windows::Forms::Panel^  panel1;
+    private: System::Windows::Forms::DataGridView^  equipamentosGrid;
 
-    private: System::Windows::Forms::ListView^  listView1;
+    private: System::Windows::Forms::Panel^  panel2;
+    private: System::Windows::Forms::Label^  label1;
+    private: System::Windows::Forms::Button^  addBtn;
+    private: System::Windows::Forms::DataGridViewTextBoxColumn^  colunaNome;
+    private: System::Windows::Forms::DataGridViewTextBoxColumn^  colunaReclamacao;
+    private: System::Windows::Forms::DataGridViewCheckBoxColumn^  colunaAlocado;
+    private: System::Windows::Forms::DataGridViewButtonColumn^  colunaDetailsBtn;
 
 
-    private: System::Windows::Forms::ColumnHeader^  Tipo;
-    private: System::Windows::Forms::ColumnHeader^  Pre�o;
-    private: System::Windows::Forms::ColumnHeader^  Editar;
-    private: System::Windows::Forms::ColumnHeader^  Deletar;
-    private: System::Windows::Forms::ColumnHeader^  Nome;
-    private: System::Windows::Forms::TextBox^  nome_tb;
-    private: System::Windows::Forms::Button^  getId_btn;
-    protected:
+
+
+
 
     private:
         /// <summary>
@@ -55,117 +57,135 @@ namespace InfoBuraco {
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        void InitializeComponent(void)
-        {
-            this->button1 = (gcnew System::Windows::Forms::Button());
-            this->listView1 = (gcnew System::Windows::Forms::ListView());
-            this->Nome = (gcnew System::Windows::Forms::ColumnHeader());
-            this->Tipo = (gcnew System::Windows::Forms::ColumnHeader());
-            this->Pre�o = (gcnew System::Windows::Forms::ColumnHeader());
-            this->Editar = (gcnew System::Windows::Forms::ColumnHeader());
-            this->Deletar = (gcnew System::Windows::Forms::ColumnHeader());
-            this->nome_tb = (gcnew System::Windows::Forms::TextBox());
-            this->getId_btn = (gcnew System::Windows::Forms::Button());
+        void InitializeComponent(void) {
+            System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(TelaEquipamento::typeid));
+            this->panel1 = (gcnew System::Windows::Forms::Panel());
+            this->equipamentosGrid = (gcnew System::Windows::Forms::DataGridView());
+            this->colunaNome = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->colunaReclamacao = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->colunaAlocado = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
+            this->colunaDetailsBtn = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
+            this->panel2 = (gcnew System::Windows::Forms::Panel());
+            this->addBtn = (gcnew System::Windows::Forms::Button());
+            this->label1 = (gcnew System::Windows::Forms::Label());
+            this->panel1->SuspendLayout();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->equipamentosGrid))->BeginInit();
+            this->panel2->SuspendLayout();
             this->SuspendLayout();
             //
-            // button1
+            // panel1
             //
-            this->button1->Location = System::Drawing::Point(44, 22);
-            this->button1->Name = L"button1";
-            this->button1->Size = System::Drawing::Size(75, 23);
-            this->button1->TabIndex = 0;
-            this->button1->Text = L"Cadastrar ";
-            this->button1->UseVisualStyleBackColor = true;
-            this->button1->Click += gcnew System::EventHandler(this, &TelaEquipamento::button1_Click);
+            this->panel1->Controls->Add(this->equipamentosGrid);
+            this->panel1->Controls->Add(this->panel2);
+            this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->panel1->Location = System::Drawing::Point(0, 0);
+            this->panel1->Name = L"panel1";
+            this->panel1->Size = System::Drawing::Size(827, 501);
+            this->panel1->TabIndex = 2;
             //
-            // listView1
+            // equipamentosGrid
             //
-            this->listView1->Alignment = System::Windows::Forms::ListViewAlignment::Default;
-            this->listView1->AllowColumnReorder = true;
-            this->listView1->AllowDrop = true;
-            this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(5) {
-                this->Nome, this->Tipo,
-                    this->Pre�o, this->Editar, this->Deletar
+            this->equipamentosGrid->AllowUserToAddRows = false;
+            this->equipamentosGrid->AllowUserToDeleteRows = false;
+            this->equipamentosGrid->BackgroundColor = System::Drawing::Color::PapayaWhip;
+            this->equipamentosGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+            this->equipamentosGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+                this->colunaNome,
+                    this->colunaReclamacao, this->colunaAlocado, this->colunaDetailsBtn
             });
-            this->listView1->FullRowSelect = true;
-            this->listView1->Location = System::Drawing::Point(44, 69);
-            this->listView1->Name = L"listView1";
-            this->listView1->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-            this->listView1->Size = System::Drawing::Size(599, 171);
-            this->listView1->TabIndex = 2;
-            this->listView1->TileSize = System::Drawing::Size(10, 30);
-            this->listView1->UseCompatibleStateImageBehavior = false;
-            this->listView1->View = System::Windows::Forms::View::Details;
-            this->listView1->SelectedIndexChanged += gcnew System::EventHandler(this, &TelaEquipamento::listView1_SelectedIndexChanged);
+            this->equipamentosGrid->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->equipamentosGrid->Location = System::Drawing::Point(0, 94);
+            this->equipamentosGrid->Name = L"equipamentosGrid";
+            this->equipamentosGrid->ReadOnly = true;
+            this->equipamentosGrid->Size = System::Drawing::Size(827, 407);
+            this->equipamentosGrid->TabIndex = 1;
             //
-            // Nome
+            // colunaNome
             //
-            this->Nome->Text = L"Nome";
-            this->Nome->Width = 267;
+            this->colunaNome->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+            this->colunaNome->HeaderText = L"Patrimonio";
+            this->colunaNome->Name = L"colunaNome";
+            this->colunaNome->ReadOnly = true;
             //
-            // Tipo
+            // colunaReclamacao
             //
-            this->Tipo->Text = L"Tipo";
-            this->Tipo->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
-            this->Tipo->Width = 84;
+            this->colunaReclamacao->HeaderText = L"Custo";
+            this->colunaReclamacao->Name = L"colunaReclamacao";
+            this->colunaReclamacao->ReadOnly = true;
             //
-            // Pre�o
+            // colunaAlocado
             //
-            this->Pre�o->Text = L"Pre�o";
-            this->Pre�o->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
-            this->Pre�o->Width = 82;
+            this->colunaAlocado->HeaderText = L"Alocado";
+            this->colunaAlocado->Name = L"colunaAlocado";
+            this->colunaAlocado->ReadOnly = true;
             //
-            // Editar
+            // colunaDetailsBtn
             //
-            this->Editar->Text = L"Editar";
-            this->Editar->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
-            this->Editar->Width = 77;
+            this->colunaDetailsBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->colunaDetailsBtn->HeaderText = L"Detalhes";
+            this->colunaDetailsBtn->Name = L"colunaDetailsBtn";
+            this->colunaDetailsBtn->ReadOnly = true;
             //
-            // Deletar
+            // panel2
             //
-            this->Deletar->Text = L"Deletar";
-            this->Deletar->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
-            this->Deletar->Width = 369;
+            this->panel2->BackColor = System::Drawing::Color::PapayaWhip;
+            this->panel2->Controls->Add(this->addBtn);
+            this->panel2->Controls->Add(this->label1);
+            this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
+            this->panel2->Location = System::Drawing::Point(0, 0);
+            this->panel2->Name = L"panel2";
+            this->panel2->Size = System::Drawing::Size(827, 94);
+            this->panel2->TabIndex = 4;
             //
-            // nome_tb
+            // addBtn
             //
-            this->nome_tb->Location = System::Drawing::Point(44, 283);
-            this->nome_tb->Name = L"nome_tb";
-            this->nome_tb->Size = System::Drawing::Size(100, 20);
-            this->nome_tb->TabIndex = 3;
-            this->nome_tb->TextChanged += gcnew System::EventHandler(this, &TelaEquipamento::nome_tb_TextChanged);
+            this->addBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+            this->addBtn->BackColor = System::Drawing::Color::Transparent;
+            this->addBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"addBtn.BackgroundImage")));
+            this->addBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+            this->addBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->addBtn->FlatAppearance->BorderSize = 0;
+            this->addBtn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+            this->addBtn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
+            this->addBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->addBtn->Location = System::Drawing::Point(779, 12);
+            this->addBtn->Name = L"addBtn";
+            this->addBtn->Size = System::Drawing::Size(36, 34);
+            this->addBtn->TabIndex = 4;
+            this->addBtn->UseVisualStyleBackColor = false;
+            this->addBtn->Click += gcnew System::EventHandler(this, &TelaEquipamento::addBtn_Click);
             //
-            // getId_btn
+            // label1
             //
-            this->getId_btn->Location = System::Drawing::Point(165, 280);
-            this->getId_btn->Name = L"getId_btn";
-            this->getId_btn->Size = System::Drawing::Size(195, 23);
-            this->getId_btn->TabIndex = 4;
-            this->getId_btn->Text = L"Pegar n patrimonio";
-            this->getId_btn->UseVisualStyleBackColor = true;
-            this->getId_btn->Click += gcnew System::EventHandler(this, &TelaEquipamento::getId_btn_Click);
+            this->label1->Anchor = System::Windows::Forms::AnchorStyles::Top;
+            this->label1->AutoSize = true;
+            this->label1->Font = (gcnew System::Drawing::Font(L"Renner*", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label1->Location = System::Drawing::Point(337, 30);
+            this->label1->Name = L"label1";
+            this->label1->Size = System::Drawing::Size(190, 35);
+            this->label1->TabIndex = 3;
+            this->label1->Text = L"Equipamentos";
             //
             // TelaEquipamento
             //
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-            this->ClientSize = System::Drawing::Size(677, 361);
-            this->Controls->Add(this->getId_btn);
-            this->Controls->Add(this->nome_tb);
-            this->Controls->Add(this->listView1);
-            this->Controls->Add(this->button1);
-            this->MinimumSize = System::Drawing::Size(600, 400);
+            this->ClientSize = System::Drawing::Size(827, 501);
+            this->Controls->Add(this->panel1);
+            this->MinimumSize = System::Drawing::Size(570, 540);
             this->Name = L"TelaEquipamento";
-            this->Text = L"Equipamento";
+            this->Text = L"Equipamentos";
+            this->Load += gcnew System::EventHandler(this, &TelaEquipamento::load);
+            this->panel1->ResumeLayout(false);
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->equipamentosGrid))->EndInit();
+            this->panel2->ResumeLayout(false);
+            this->panel2->PerformLayout();
             this->ResumeLayout(false);
-            this->PerformLayout();
 
         }
 #pragma endregion
-    private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
-    private: System::Void listBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e);
-    private: System::Void listView1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e);
-    private: System::Void getId_btn_Click(System::Object^  sender, System::EventArgs^  e);
-    private: System::Void nome_tb_TextChanged(System::Object^  sender, System::EventArgs^  e);
+        private: System::Void addBtn_Click(System::Object^ sender, System::EventArgs^  e);
+        private: System::Void load(System::Object^ sender, System::EventArgs^  e);
 };
 }

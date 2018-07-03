@@ -11,7 +11,7 @@ namespace InfoBuraco {
         virtual ~BuracoDAO();
 
         Buraco* getBuraco(int id);
-        Buraco* getBuraco(std::string localizcao, std::string regional);
+        Buraco* getBuraco(std::string localizcao, int posicao);
         int insertBuraco(Buraco* buraco);
         void updateBuraco(Buraco* buraco);
 

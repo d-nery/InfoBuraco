@@ -3,40 +3,29 @@
 
 #include "TelaEquipamento.h"
 #include "Equipamento.h"
-#include "EquipamentoDAO.h"
+#include "EquipamentoController.h"
+
+#define conv_sysstring(x) msclr::interop::marshal_as<System::String^>(x)
 
 namespace InfoBuraco {
-    System::Void TelaEquipamento::getId_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-        Equipamento* equip = nullptr;
-        EquipamentoDAO equipDAO;
+    System::Void TelaEquipamento::load(System::Object^ sender, System::EventArgs^  e) {
+        System::Diagnostics::Debug::Print("TelaEquipamento Load");
 
-        std::string name = msclr::interop::marshal_as<std::string>(this->nome_tb->Text);
+        EquipamentoController equipamentoCtrl;
 
-        equip = equipDAO.getEquipment(name);
+        std::vector<Equipamento*>* equips = equipamentoCtrl.getAll();
 
-        if (equip == nullptr) {
-            MessageBox::Show("Equipamento nao encontrado");
-        } else {
-            std::stringstream npat;
-            npat << "Numero do patrimonio: " << equip->getNumeroPatrimonio();
-            MessageBox::Show(msclr::interop::marshal_as<System::String^>(npat.str()));
+        for (auto equip : *equips) {
+            System::Diagnostics::Debug::Print("Adicionando Equipamento");
+            String^ patrimonio = conv_sysstring(equip->getNome());
+            String^ custo = conv_sysstring(std::to_string(equip->getCusto()));
+            //bool alocado = (buraco->getDespacho() != nullptr);
+            this->equipamentosGrid->Rows->Add(gcnew array<System::String^> { patrimonio, custo });
         }
     }
 
-	System::Void TelaEquipamento::button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		this->nome_tb->Text = "Teste";
-
-	}
-
-	System::Void TelaEquipamento::listBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-
-	}
-
-	System::Void TelaEquipamento::listView1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-
-	}
-
-	System::Void TelaEquipamento::nome_tb_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-
-	}
+    System::Void TelaEquipamento::addBtn_Click(System::Object^ sender, System::EventArgs^  e) {
+        //TelaNotificacao^ telaNotificacao = gcnew TelaNotificacao(this->usuario_logado);
+        //telaNotificacao->ShowDialog();
+    }
 }

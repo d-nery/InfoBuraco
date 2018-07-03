@@ -38,7 +38,7 @@ namespace InfoBuraco {
         return buraco;
     }
 
-    Buraco* BuracoDAO::getBuraco(std::string localizacao, std::string regional) {
+    Buraco* BuracoDAO::getBuraco(std::string localizacao, int posicao) {
         Buraco* buraco = nullptr;
 
         sql::Connection* conn = nullptr;
@@ -47,9 +47,9 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT * FROM buraco where localizacao = ? and regional = ?;");
+            pstmt = conn->prepareStatement("SELECT * FROM buraco where localizacao = ? and posicao = ?;");
             pstmt->setString(1, localizacao.data());
-            pstmt->setString(2, regional.data());
+            pstmt->setInt(2, posicao);
 
             resultSet = pstmt->executeQuery();
             if (resultSet->next()) {
@@ -78,13 +78,15 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("INSERT INTO buraco VALUES ( null , ? , ? , ? , ? , ? );");
+            pstmt = conn->prepareStatement("INSERT INTO buraco VALUES ( null , ? , ? , ? , ? , ? , ? , ? );");
 
             pstmt->setString(1, buraco->localizacao.data());
             pstmt->setInt(2, buraco->tamanho);
             pstmt->setString(3, buraco->regional.data());
-            pstmt->setInt(4, buraco->tamanho);
+            pstmt->setInt(4, buraco->posicao);
             pstmt->setInt(5, buraco->n_reclamacoes);
+            pstmt->setInt(6, buraco->reincidente);
+            pstmt->setBoolean(7, buraco->aberto);
 
             int ret = pstmt->executeUpdate();
             if (ret == 1) {

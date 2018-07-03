@@ -71,14 +71,14 @@ namespace InfoBuraco {
             System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(TelaListaNotificacao::typeid));
             this->panel1 = (gcnew System::Windows::Forms::Panel());
             this->notificationsGrid = (gcnew System::Windows::Forms::DataGridView());
-            this->panel2 = (gcnew System::Windows::Forms::Panel());
-            this->addBtn = (gcnew System::Windows::Forms::Button());
-            this->label1 = (gcnew System::Windows::Forms::Label());
             this->colunaData = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->colunaCidadao = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->colunaReclamacao = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->colunaRespondida = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->colunaDetailsBtn = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
+            this->panel2 = (gcnew System::Windows::Forms::Panel());
+            this->addBtn = (gcnew System::Windows::Forms::Button());
+            this->label1 = (gcnew System::Windows::Forms::Label());
             this->panel1->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->notificationsGrid))->BeginInit();
             this->panel2->SuspendLayout();
@@ -111,6 +111,38 @@ namespace InfoBuraco {
             this->notificationsGrid->Size = System::Drawing::Size(827, 407);
             this->notificationsGrid->TabIndex = 1;
             this->notificationsGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &TelaListaNotificacao::notificationsGrid_CellContentClick);
+            // 
+            // colunaData
+            // 
+            this->colunaData->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+            this->colunaData->HeaderText = L"Data";
+            this->colunaData->Name = L"colunaData";
+            this->colunaData->ReadOnly = true;
+            // 
+            // colunaCidadao
+            // 
+            this->colunaCidadao->HeaderText = L"Cidadao";
+            this->colunaCidadao->Name = L"colunaCidadao";
+            this->colunaCidadao->ReadOnly = true;
+            // 
+            // colunaReclamacao
+            // 
+            this->colunaReclamacao->HeaderText = L"Reclamação";
+            this->colunaReclamacao->Name = L"colunaReclamacao";
+            this->colunaReclamacao->ReadOnly = true;
+            // 
+            // colunaRespondida
+            // 
+            this->colunaRespondida->HeaderText = L"Respondida";
+            this->colunaRespondida->Name = L"colunaRespondida";
+            this->colunaRespondida->ReadOnly = true;
+            // 
+            // colunaDetailsBtn
+            // 
+            this->colunaDetailsBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->colunaDetailsBtn->HeaderText = L"Detalhes";
+            this->colunaDetailsBtn->Name = L"colunaDetailsBtn";
+            this->colunaDetailsBtn->ReadOnly = true;
             // 
             // panel2
             // 
@@ -149,41 +181,9 @@ namespace InfoBuraco {
                 static_cast<System::Byte>(0)));
             this->label1->Location = System::Drawing::Point(337, 30);
             this->label1->Name = L"label1";
-            this->label1->Size = System::Drawing::Size(175, 35);
+            this->label1->Size = System::Drawing::Size(169, 35);
             this->label1->TabIndex = 3;
-            this->label1->Text = L"Notifica��es";
-            // 
-            // colunaData
-            // 
-            this->colunaData->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-            this->colunaData->HeaderText = L"Data";
-            this->colunaData->Name = L"colunaData";
-            this->colunaData->ReadOnly = true;
-            // 
-            // colunaCidadao
-            // 
-            this->colunaCidadao->HeaderText = L"Cidadao";
-            this->colunaCidadao->Name = L"colunaCidadao";
-            this->colunaCidadao->ReadOnly = true;
-            // 
-            // colunaReclamacao
-            // 
-            this->colunaReclamacao->HeaderText = L"Reclamação";
-            this->colunaReclamacao->Name = L"colunaReclamacao";
-            this->colunaReclamacao->ReadOnly = true;
-            // 
-            // colunaRespondida
-            // 
-            this->colunaRespondida->HeaderText = L"Respondida";
-            this->colunaRespondida->Name = L"colunaRespondida";
-            this->colunaRespondida->ReadOnly = true;
-            // 
-            // colunaDetailsBtn
-            // 
-            this->colunaDetailsBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->colunaDetailsBtn->HeaderText = L"Detalhes";
-            this->colunaDetailsBtn->Name = L"colunaDetailsBtn";
-            this->colunaDetailsBtn->ReadOnly = true;
+            this->label1->Text = L"Notificações";
             // 
             // TelaListaNotificacao
             // 

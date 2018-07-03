@@ -26,6 +26,9 @@ namespace InfoBuraco {
         void setTamanho(int t);
         void setPosicao(int p);
         void increaseNotifications();
+        void increaseReincidencia();
+        void open();
+        void close();
 
     private:
         int id_buraco;

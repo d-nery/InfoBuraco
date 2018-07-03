@@ -47,6 +47,17 @@ namespace InfoBuraco {
         this->n_reclamacoes++;
     }
 
+    void Buraco::increaseReincidencia() {
+        this->reincidente++;
+    }
+
+    void Buraco::open() {
+        this->aberto = true;
+    }
+
+    void Buraco::close() {
+        this->aberto = false;
+    }
 
     Buraco::~Buraco() {}
 }

@@ -7,11 +7,11 @@
 namespace InfoBuraco {
     BuracoController::BuracoController() {}
 
-    Buraco* BuracoController::buscarBuraco(std::string localizacao, std::string regional) {
+    Buraco* BuracoController::buscarBuraco(std::string localizacao, int posicao) {
         Buraco* buraco = nullptr;
         BuracoDAO buracoDAO;
 
-        buraco = buracoDAO.getBuraco(localizacao, regional);
+        buraco = buracoDAO.getBuraco(localizacao, posicao);
 
         return buraco;
     }
@@ -20,7 +20,7 @@ namespace InfoBuraco {
         Buraco* buraco = nullptr;
         BuracoDAO buracoDAO;
 
-        buraco = buracoDAO.getBuraco(data["localizacao"], data["regional"]);
+        buraco = buracoDAO.getBuraco(data["localizacao"], int_data["posicao"]);
 
         // Ja existe
         if (buraco != nullptr) {
@@ -36,6 +36,8 @@ namespace InfoBuraco {
         buraco->tamanho = int_data["tamanho"];
         buraco->posicao = int_data["posicao"];
         buraco->n_reclamacoes = 1;
+        buraco->reincidente = 0;
+        buraco->aberto = true;
 
         buraco->id_buraco = buracoDAO.insertBuraco(buraco);
 
