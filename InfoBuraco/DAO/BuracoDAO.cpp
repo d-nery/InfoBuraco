@@ -60,6 +60,8 @@ namespace InfoBuraco {
                 buraco->tamanho = resultSet->getInt("tamanho");
                 buraco->posicao = resultSet->getInt("posicao");
                 buraco->n_reclamacoes = resultSet->getInt("n_reclamacoes");
+                buraco->aberto = resultSet->getBoolean("aberto");
+                buraco->reincidente = resultSet->getInt("reincidente");
             }
         } catch (sql::SQLException& e) {
             if (conn != nullptr)

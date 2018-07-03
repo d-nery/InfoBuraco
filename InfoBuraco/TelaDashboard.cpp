@@ -1,21 +1,42 @@
 #include "TelaDashboard.h"
+
 #include "TelaEquipamento.h"
-#include "TelaNotificacao.h"
 #include "TelaListaNotificacao.h"
 
 namespace InfoBuraco {
+
+    TelaDashboard::TelaDashboard(Usuario* user, Login^ org_login) {
+        InitializeComponent();
+
+        this->usuario_logado = user;
+
+        this->user_name->Text = msclr::interop::marshal_as<System::String^>(this->usuario_logado->getName());
+        this->user_cargo->Text = msclr::interop::marshal_as<System::String^>(this->usuario_logado->getCargo()->getName());
+
+        this->original_login = org_login;
+        this->telaEquipamento = gcnew TelaEquipamento(this->usuario_logado);
+        this->telaListaNotificacao = gcnew TelaListaNotificacao(this->usuario_logado);
+    }
+
     System::Void TelaDashboard::button1_Click(System::Object^ sender, System::EventArgs^  e) {
         this->original_login->Visible = true;
         delete this;
     }
 
     System::Void TelaDashboard::equipamentosBtn_click(System::Object^ sender, System::EventArgs^  e) {
-        TelaEquipamento^ telaEquipamento = gcnew TelaEquipamento;
-        telaEquipamento->Visible = true;
+        this->telaEquipamento->Visible = true;
     }
 
     System::Void TelaDashboard::notificacoesBtn_Click(System::Object^  sender, System::EventArgs^  e) {
-        TelaListaNotificacao^ telaListaNotificacao = gcnew TelaListaNotificacao;
-        telaListaNotificacao->Visible = true;
+        this->telaListaNotificacao->Visible = true;
+    }
+
+    TelaDashboard::~TelaDashboard() {
+        if (this->components) {
+            delete this->components;
+        }
+
+        delete this->telaEquipamento;
+        delete this->telaListaNotificacao;
     }
 }

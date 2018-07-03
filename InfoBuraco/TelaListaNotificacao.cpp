@@ -26,7 +26,7 @@ namespace InfoBuraco {
     }
 
     System::Void TelaListaNotificacao::addBtn_Click(System::Object^ sender, System::EventArgs^  e) {
-        TelaNotificacao^ telaNotificacao = gcnew TelaNotificacao();
+        TelaNotificacao^ telaNotificacao = gcnew TelaNotificacao(this->usuario_logado);
         telaNotificacao->ShowDialog();
     }
 

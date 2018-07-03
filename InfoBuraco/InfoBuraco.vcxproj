@@ -146,15 +146,17 @@
     <ClCompile Include="DAO\CidadaoDAO.cpp" />
     <ClCompile Include="DAO\EquipamentoDAO.cpp" />
     <ClCompile Include="DAO\NotificacaoDAO.cpp" />
+    <ClCompile Include="DAO\OSDAO.cpp" />
     <ClCompile Include="DAO\UsuarioDAO.cpp" />
     <ClCompile Include="Models\Buraco.cpp" />
     <ClCompile Include="Models\Cargo.cpp" />
     <ClCompile Include="Models\Cidadao.cpp" />
+    <ClCompile Include="Models\Equipamento.cpp" />
     <ClCompile Include="Models\Notificacao.cpp" />
+    <ClCompile Include="Models\OS.cpp" />
     <ClCompile Include="Models\Usuario.cpp" />
     <ClCompile Include="TelaDashboard.cpp" />
     <ClCompile Include="DetalheOS.cpp" />
-    <ClCompile Include="Equipamento.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TelaEquipamento.cpp" />
@@ -174,11 +176,14 @@
     <ClInclude Include="DAO\CidadaoDAO.h" />
     <ClInclude Include="DAO\EquipamentoDAO.h" />
     <ClInclude Include="DAO\NotificacaoDAO.h" />
+    <ClInclude Include="DAO\OSDAO.h" />
     <ClInclude Include="DAO\UsuarioDAO.h" />
     <ClInclude Include="Models\Buraco.h" />
     <ClInclude Include="Models\Cargo.h" />
     <ClInclude Include="Models\Cidadao.h" />
+    <ClInclude Include="Models\Equipamento.h" />
     <ClInclude Include="Models\Notificacao.h" />
+    <ClInclude Include="Models\OS.h" />
     <ClInclude Include="Models\Usuario.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="TelaDashboard.h">
@@ -187,7 +192,6 @@
     <ClInclude Include="DetalheOS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Equipamento.h" />
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>

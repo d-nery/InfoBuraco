@@ -20,7 +20,9 @@ namespace InfoBuraco {
         int getTamanho();
         int getPosicao();
         int getNumeroReclamacoes();
-        
+        int getReincidencia();
+        bool isAberto();
+
         void setTamanho(int t);
         void setPosicao(int p);
         void increaseNotifications();
@@ -32,5 +34,7 @@ namespace InfoBuraco {
         int tamanho;
         int posicao;
         int n_reclamacoes;
+        int reincidente;
+        bool aberto;
     };
 }

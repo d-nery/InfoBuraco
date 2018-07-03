@@ -27,6 +27,14 @@ namespace InfoBuraco {
         return this->n_reclamacoes;
     }
 
+    int Buraco::getReincidencia() {
+        return this->reincidente;
+    }
+
+    bool Buraco::isAberto() {
+        return this->aberto;
+    }
+
     void Buraco::setTamanho(int t) {
         this->tamanho = t;
     }

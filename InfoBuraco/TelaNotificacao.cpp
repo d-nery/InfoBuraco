@@ -64,7 +64,7 @@ namespace InfoBuraco {
 
     System::Void TelaNotificacao::createNotificationBtn_Click(System::Object^  sender, System::EventArgs^  e) {
         System::Diagnostics::Debug::Print("Criar Notificacao Criado");
-        
+
         ctzName_lb->ForeColor  = ctzName_txt  == String::Empty ? System::Drawing::Color::Red : System::Drawing::Color::Black;
         ctzPhone_lb->ForeColor = ctzPhone_txt == String::Empty ? System::Drawing::Color::Red : System::Drawing::Color::Black;
         ctzEmail_lb->ForeColor = ctzEmail_txt == String::Empty ? System::Drawing::Color::Red : System::Drawing::Color::Black;
@@ -132,14 +132,15 @@ namespace InfoBuraco {
             holeCtrl.atualizarBuraco(buraco);
         }
 
-        // TODO pegar o atual
-        UsuarioDAO usuarioDAO;
-        Usuario* usuario = usuarioDAO.getUser("admin", "admin");
-
         // Criar notificacao
-        boost::posix_time::ptime criacao = boost::posix_time::time_from_string(conv_string(notificationDateTime_dtp->Value.ToString("yyyy-MM-dd HH:mm")));
+        boost::posix_time::ptime criacao =
+            boost::posix_time::time_from_string(conv_string(notificationDateTime_dtp->Value.ToString("yyyy-MM-dd HH:mm")));
 
-        Notificacao* notificacao = notCtrl.criarNotificacao(conv_string(notificationReclamacao_txt), criacao, cidadao, buraco, usuario);
+        Notificacao* notificacao = notCtrl.criarNotificacao(
+            conv_string(notificationReclamacao_txt), criacao, cidadao, buraco, this->usuario_logado);
+
         System::Diagnostics::Debug::Print("Notificação Criada!");
+
+        // Criar Ordem de Serviço caso o buraco seja novo ou esteja fechado
     }
 }

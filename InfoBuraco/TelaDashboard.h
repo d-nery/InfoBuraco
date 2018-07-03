@@ -4,6 +4,8 @@
 
 #include "Login.h"
 #include "Usuario.h"
+#include "TelaEquipamento.h"
+#include "TelaListaNotificacao.h"
 
 namespace InfoBuraco {
 
@@ -20,31 +22,20 @@ namespace InfoBuraco {
     public ref class TelaDashboard : public System::Windows::Forms::Form
     {
     public:
-        TelaDashboard(Usuario* user, Login^ org_login)
-        {
-            InitializeComponent();
-            //
-            //TODO: Adicione o c�digo do construtor aqui
-            //
-
-            this->user_name->Text = msclr::interop::marshal_as<System::String^>(user->getName());
-            this->user_cargo->Text = msclr::interop::marshal_as<System::String^>(user->getCargo()->getName());
-            this->original_login = org_login;
-        }
+        TelaDashboard(Usuario* user, Login^ org_login);
 
     protected:
         /// <summary>
         /// Limpar os recursos que est�o sendo usados.
         /// </summary>
-        ~TelaDashboard()
-        {
-            if (components)
-            {
-                delete components;
-            }
-        }
+        ~TelaDashboard();
 
-    private: Login^ original_login;
+
+    private:
+        Login^ original_login;
+        TelaEquipamento^ telaEquipamento;
+        TelaListaNotificacao^ telaListaNotificacao;
+        Usuario* usuario_logado;
 
     private: System::Windows::Forms::Panel^  lateral_menu;
     private: System::Windows::Forms::PictureBox^  pictureBox1;
@@ -112,9 +103,9 @@ namespace InfoBuraco {
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
             this->panel5->SuspendLayout();
             this->SuspendLayout();
-            // 
+            //
             // lateral_menu
-            // 
+            //
             this->lateral_menu->BackColor = System::Drawing::Color::DarkGoldenrod;
             this->lateral_menu->Controls->Add(this->pictureBox10);
             this->lateral_menu->Controls->Add(this->panel3);
@@ -124,9 +115,9 @@ namespace InfoBuraco {
             this->lateral_menu->Size = System::Drawing::Size(784, 38);
             this->lateral_menu->TabIndex = 0;
             this->lateral_menu->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &TelaDashboard::panel1_Paint);
-            // 
+            //
             // pictureBox10
-            // 
+            //
             this->pictureBox10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox10.Image")));
             this->pictureBox10->Location = System::Drawing::Point(3, 3);
             this->pictureBox10->Name = L"pictureBox10";
@@ -134,9 +125,9 @@ namespace InfoBuraco {
             this->pictureBox10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
             this->pictureBox10->TabIndex = 24;
             this->pictureBox10->TabStop = false;
-            // 
+            //
             // panel3
-            // 
+            //
             this->panel3->Controls->Add(this->logout_btn);
             this->panel3->Controls->Add(this->user_name);
             this->panel3->Controls->Add(this->user_cargo);
@@ -146,9 +137,9 @@ namespace InfoBuraco {
             this->panel3->Name = L"panel3";
             this->panel3->Size = System::Drawing::Size(336, 38);
             this->panel3->TabIndex = 23;
-            // 
+            //
             // logout_btn
-            // 
+            //
             this->logout_btn->BackColor = System::Drawing::Color::DarkGoldenrod;
             this->logout_btn->Cursor = System::Windows::Forms::Cursors::Hand;
             this->logout_btn->Dock = System::Windows::Forms::DockStyle::Right;
@@ -163,9 +154,9 @@ namespace InfoBuraco {
             this->logout_btn->Text = L"Sair";
             this->logout_btn->UseVisualStyleBackColor = false;
             this->logout_btn->Click += gcnew System::EventHandler(this, &TelaDashboard::button1_Click);
-            // 
+            //
             // user_name
-            // 
+            //
             this->user_name->AutoSize = true;
             this->user_name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
@@ -174,27 +165,27 @@ namespace InfoBuraco {
             this->user_name->Size = System::Drawing::Size(98, 20);
             this->user_name->TabIndex = 3;
             this->user_name->Text = L"user_name";
-            // 
+            //
             // user_cargo
-            // 
+            //
             this->user_cargo->AutoSize = true;
             this->user_cargo->Location = System::Drawing::Point(161, 13);
             this->user_cargo->Name = L"user_cargo";
             this->user_cargo->Size = System::Drawing::Size(60, 13);
             this->user_cargo->TabIndex = 4;
             this->user_cargo->Text = L"user_cargo";
-            // 
+            //
             // user_image
-            // 
+            //
             this->user_image->Dock = System::Windows::Forms::DockStyle::Left;
             this->user_image->Location = System::Drawing::Point(0, 0);
             this->user_image->Name = L"user_image";
             this->user_image->Size = System::Drawing::Size(39, 38);
             this->user_image->TabIndex = 7;
             this->user_image->TabStop = false;
-            // 
+            //
             // pictureBox1
-            // 
+            //
             this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Fill;
             this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
             this->pictureBox1->ImageLocation = L"";
@@ -205,9 +196,9 @@ namespace InfoBuraco {
             this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
             this->pictureBox1->TabIndex = 0;
             this->pictureBox1->TabStop = false;
-            // 
+            //
             // panel4
-            // 
+            //
             this->panel4->Anchor = System::Windows::Forms::AnchorStyles::None;
             this->panel4->Controls->Add(this->notificacoesBtn);
             this->panel4->Controls->Add(this->equipesBtn);
@@ -221,9 +212,9 @@ namespace InfoBuraco {
             this->panel4->Name = L"panel4";
             this->panel4->Size = System::Drawing::Size(585, 260);
             this->panel4->TabIndex = 23;
-            // 
+            //
             // notificacoesBtn
-            // 
+            //
             this->notificacoesBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(132)), static_cast<System::Int32>(static_cast<System::Byte>(2)),
                 static_cast<System::Int32>(static_cast<System::Byte>(2)));
             this->notificacoesBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"notificacoesBtn.BackgroundImage")));
@@ -247,9 +238,9 @@ namespace InfoBuraco {
             this->notificacoesBtn->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
             this->notificacoesBtn->UseVisualStyleBackColor = false;
             this->notificacoesBtn->Click += gcnew System::EventHandler(this, &TelaDashboard::notificacoesBtn_Click);
-            // 
+            //
             // equipesBtn
-            // 
+            //
             this->equipesBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(116)), static_cast<System::Int32>(static_cast<System::Byte>(131)),
                 static_cast<System::Int32>(static_cast<System::Byte>(191)));
             this->equipesBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"equipesBtn.BackgroundImage")));
@@ -272,9 +263,9 @@ namespace InfoBuraco {
             this->equipesBtn->Text = L"Equipes";
             this->equipesBtn->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
             this->equipesBtn->UseVisualStyleBackColor = false;
-            // 
+            //
             // funcionariosBtn
-            // 
+            //
             this->funcionariosBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(54)), static_cast<System::Int32>(static_cast<System::Byte>(73)),
                 static_cast<System::Int32>(static_cast<System::Byte>(118)));
             this->funcionariosBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"funcionariosBtn.BackgroundImage")));
@@ -297,9 +288,9 @@ namespace InfoBuraco {
             this->funcionariosBtn->Text = L"Funcionarios";
             this->funcionariosBtn->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
             this->funcionariosBtn->UseVisualStyleBackColor = false;
-            // 
+            //
             // ordensBtn
-            // 
+            //
             this->ordensBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(218)), static_cast<System::Int32>(static_cast<System::Byte>(103)),
                 static_cast<System::Int32>(static_cast<System::Byte>(43)));
             this->ordensBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ordensBtn.BackgroundImage")));
@@ -322,9 +313,9 @@ namespace InfoBuraco {
             this->ordensBtn->Text = L"Ordens";
             this->ordensBtn->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
             this->ordensBtn->UseVisualStyleBackColor = false;
-            // 
+            //
             // equipamentosBtn
-            // 
+            //
             this->equipamentosBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(180)), static_cast<System::Int32>(static_cast<System::Byte>(129)),
                 static_cast<System::Int32>(static_cast<System::Byte>(44)));
             this->equipamentosBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"equipamentosBtn.BackgroundImage")));
@@ -348,9 +339,9 @@ namespace InfoBuraco {
             this->equipamentosBtn->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
             this->equipamentosBtn->UseVisualStyleBackColor = false;
             this->equipamentosBtn->Click += gcnew System::EventHandler(this, &TelaDashboard::equipamentosBtn_click);
-            // 
+            //
             // pictureBox9
-            // 
+            //
             this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
             this->pictureBox9->Location = System::Drawing::Point(459, 137);
             this->pictureBox9->Name = L"pictureBox9";
@@ -358,9 +349,9 @@ namespace InfoBuraco {
             this->pictureBox9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
             this->pictureBox9->TabIndex = 10;
             this->pictureBox9->TabStop = false;
-            // 
+            //
             // pictureBox8
-            // 
+            //
             this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
             this->pictureBox8->Location = System::Drawing::Point(303, 137);
             this->pictureBox8->Name = L"pictureBox8";
@@ -368,9 +359,9 @@ namespace InfoBuraco {
             this->pictureBox8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
             this->pictureBox8->TabIndex = 9;
             this->pictureBox8->TabStop = false;
-            // 
+            //
             // pictureBox7
-            // 
+            //
             this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
             this->pictureBox7->Location = System::Drawing::Point(153, 137);
             this->pictureBox7->Name = L"pictureBox7";
@@ -378,26 +369,26 @@ namespace InfoBuraco {
             this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
             this->pictureBox7->TabIndex = 8;
             this->pictureBox7->TabStop = false;
-            // 
+            //
             // panel5
-            // 
+            //
             this->panel5->Controls->Add(this->pictureBox1);
             this->panel5->Dock = System::Windows::Forms::DockStyle::Bottom;
             this->panel5->Location = System::Drawing::Point(0, 475);
             this->panel5->Name = L"panel5";
             this->panel5->Size = System::Drawing::Size(784, 87);
             this->panel5->TabIndex = 27;
-            // 
+            //
             // panel1
-            // 
+            //
             this->panel1->Dock = System::Windows::Forms::DockStyle::Bottom;
             this->panel1->Location = System::Drawing::Point(0, 562);
             this->panel1->Name = L"panel1";
             this->panel1->Size = System::Drawing::Size(784, 22);
             this->panel1->TabIndex = 26;
-            // 
+            //
             // TelaDashboard
-            // 
+            //
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::Color::Linen;

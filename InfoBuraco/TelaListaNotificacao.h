@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Usuario.h"
+
 namespace InfoBuraco {
 
 	using namespace System;
@@ -15,12 +17,11 @@ namespace InfoBuraco {
 	public ref class TelaListaNotificacao : public System::Windows::Forms::Form
 	{
 	public:
-		TelaListaNotificacao(void)
+		TelaListaNotificacao(Usuario* usuario_logado)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+
+            this->usuario_logado = usuario_logado;
 		}
 
 	protected:
@@ -34,6 +35,10 @@ namespace InfoBuraco {
 				delete components;
 			}
 		}
+
+    private:
+        Usuario* usuario_logado;
+
     private: System::Windows::Forms::Panel^  panel1;
     protected:
     private: System::Windows::Forms::DataGridView^  notificationsGrid;
