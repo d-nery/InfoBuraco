@@ -9,15 +9,15 @@
 #include "Usuario.h"
 
 namespace InfoBuraco {
-	class Material;
+    class Material;
 
-	class MaterialController {
-	public:
-		MaterialController();
-		virtual ~MaterialController();
+    class MaterialController {
+    public:
+        MaterialController();
+        virtual ~MaterialController();
 
-		Material* buscarMaterial(std::string nome);
-		std::vector<Material*>* getAll();
-		Material* criarMaterial(std::string nome, std::string unidade, double custo, int quantidade);
-	};
+        Material* buscarMaterial(std::string nome);
+        std::vector<Material*>* getAll();
+        Material* criarMaterial(std::string nome, std::string unidade, double custo, int quantidade);
+    };
 }

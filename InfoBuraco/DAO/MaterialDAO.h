@@ -6,15 +6,15 @@
 #include "Material.h"
 
 namespace InfoBuraco {
-	class Material;
+    class Material;
 
-	class MaterialDAO {
-	public:
-		MaterialDAO();
-		virtual ~MaterialDAO();
+    class MaterialDAO {
+    public:
+        MaterialDAO();
+        virtual ~MaterialDAO();
 
-		Material* getMaterial(std::string name);
-		std::vector<Material*>* getAll();
-		void insertMaterial(Material* Material);
-	};
+        Material* getMaterial(std::string name);
+        std::vector<Material*>* getAll();
+        void insertMaterial(Material* material);
+    };
 }

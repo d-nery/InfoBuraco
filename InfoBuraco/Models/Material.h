@@ -7,24 +7,24 @@
 #include "MaterialController.h"
 
 namespace InfoBuraco {
-	class Material {
-		friend class MaterialDAO;
-		friend class MaterialController;
+    class Material {
+        friend class MaterialDAO;
+        friend class MaterialController;
 
-	public:
-		Material();
-		virtual ~Material();
+    public:
+        Material();
+        virtual ~Material();
 
-		std::string getNome();
-		std::string getUnidade();
-		double getCusto();
-		int getQuantidade();
+        std::string getNome();
+        std::string getUnidade();
+        double getCusto();
+        int getQuantidade();
 
-	private:
-		std::string nome;
-		std::string unidade;
-		double custo;
-		int quantidade;
+    private:
+        std::string nome;
+        std::string unidade;
+        double custo;
+        int quantidade;
 
-	};
+    };
 }
