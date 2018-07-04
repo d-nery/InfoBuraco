@@ -6,11 +6,11 @@ namespace InfoBuraco {
 
 	UsuarioController::~UsuarioController() {}
 
-	Usuario* UsuarioController::buscarUsuario(std::string login, std::string password = "") {
+	Usuario* UsuarioController::buscarUsuario(std::string login) {
 		Usuario* usuario = nullptr;
 		UsuarioDAO usuarioDAO;
 
-		usuario = usuarioDAO.getUser(login, password);
+		usuario = usuarioDAO.getUser(login);
 
 		return usuario;
 	}
@@ -24,12 +24,12 @@ namespace InfoBuraco {
 		return usuarios;
 	}
 
-	Usuario* UsuarioController::criarUsuario(std::string nome, std::string login, std::string password = "") {
+	Usuario* UsuarioController::criarUsuario(std::string nome, std::string login, std::string password) {
 		Usuario* usuario = nullptr;
 		UsuarioDAO usuarioDAO;
 
 		// Cria
-		usuario = usuarioDAO.getUser(nome);
+		usuario = usuarioDAO.getUser(login);
 
 		if (usuario != nullptr) {
 			System::Diagnostics::Debug::Print("Tentando criar usuario ja existente!");
@@ -38,12 +38,10 @@ namespace InfoBuraco {
 
 		usuario = new Usuario();
 
-		usuario->setName = nome;
-		usuario->setLogin = login;
-		usuario->setPassword = password;
-		//usuario->despacho = nullptr;
+		usuario->name = nome;
+		usuario->login = login;
 
-		usuarioDAO.insertUsuario(usuario);
+		usuarioDAO.insertUsuario(usuario, password);
 
 		return usuario;
 	}

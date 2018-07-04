@@ -5,6 +5,7 @@
 #include "Login.h"
 #include "Usuario.h"
 #include "TelaEquipamento.h"
+#include "TelaFuncionarios.h"
 #include "TelaListaNotificacao.h"
 #include "TelaListaMateriais.h"
 
@@ -37,6 +38,7 @@ namespace InfoBuraco {
         TelaEquipamento^ telaEquipamento;
         TelaListaNotificacao^ telaListaNotificacao;
         TelaListaMateriais^ telaListaMateriais;
+        TelaFuncionarios^ telaFuncionarios;
         Usuario* usuario_logado;
 
     private: System::Windows::Forms::Panel^  lateral_menu;
@@ -207,7 +209,7 @@ namespace InfoBuraco {
             this->panel4->Controls->Add(this->funcionariosBtn);
             this->panel4->Controls->Add(this->ordensBtn);
             this->panel4->Controls->Add(this->equipamentosBtn);
-            this->panel4->Location = System::Drawing::Point(105, 65);
+            this->panel4->Location = System::Drawing::Point(105, 98);
             this->panel4->Name = L"panel4";
             this->panel4->Size = System::Drawing::Size(585, 260);
             this->panel4->TabIndex = 23;
@@ -338,6 +340,7 @@ namespace InfoBuraco {
             this->funcionariosBtn->Text = L"Funcionarios";
             this->funcionariosBtn->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
             this->funcionariosBtn->UseVisualStyleBackColor = false;
+            this->funcionariosBtn->Click += gcnew System::EventHandler(this, &TelaDashboard::funcionariosBtn_Click);
             // 
             // ordensBtn
             // 
@@ -394,7 +397,7 @@ namespace InfoBuraco {
             // 
             this->panel5->Controls->Add(this->pictureBox1);
             this->panel5->Dock = System::Windows::Forms::DockStyle::Bottom;
-            this->panel5->Location = System::Drawing::Point(0, 452);
+            this->panel5->Location = System::Drawing::Point(0, 475);
             this->panel5->Name = L"panel5";
             this->panel5->Size = System::Drawing::Size(784, 87);
             this->panel5->TabIndex = 27;
@@ -402,7 +405,7 @@ namespace InfoBuraco {
             // panel1
             // 
             this->panel1->Dock = System::Windows::Forms::DockStyle::Bottom;
-            this->panel1->Location = System::Drawing::Point(0, 539);
+            this->panel1->Location = System::Drawing::Point(0, 562);
             this->panel1->Name = L"panel1";
             this->panel1->Size = System::Drawing::Size(784, 22);
             this->panel1->TabIndex = 26;
@@ -413,7 +416,7 @@ namespace InfoBuraco {
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::Color::Linen;
             this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-            this->ClientSize = System::Drawing::Size(784, 561);
+            this->ClientSize = System::Drawing::Size(784, 584);
             this->ControlBox = false;
             this->Controls->Add(this->panel5);
             this->Controls->Add(this->panel1);
@@ -447,5 +450,6 @@ namespace InfoBuraco {
     private: System::Void equipamentosBtn_click(System::Object^ sender, System::EventArgs^ e);
     private: System::Void notificacoesBtn_Click(System::Object^  sender, System::EventArgs^  e);
     private: System::Void materiaisBtn_Click(System::Object^  sender, System::EventArgs^  e);
+    private: System::Void funcionariosBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

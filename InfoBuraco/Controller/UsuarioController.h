@@ -16,8 +16,8 @@ namespace InfoBuraco {
 		UsuarioController();
 		virtual ~UsuarioController();
 
-		Usuario* buscarUsuario(std::string login, std::string password = "");
+		Usuario* buscarUsuario(std::string login);
 		std::vector<Usuario*>* getAll();
-		Usuario* criarUsuario(std::string nome, std::string login, std::string password = "");
+		Usuario* criarUsuario(std::string nome, std::string login, std::string password);
 	};
 }
