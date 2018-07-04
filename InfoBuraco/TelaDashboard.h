@@ -8,6 +8,7 @@
 #include "TelaFuncionarios.h"
 #include "TelaListaNotificacao.h"
 #include "TelaListaMateriais.h"
+#include "TelaListaOS.h"
 
 namespace InfoBuraco {
 
@@ -39,6 +40,7 @@ namespace InfoBuraco {
         TelaListaNotificacao^ telaListaNotificacao;
         TelaListaMateriais^ telaListaMateriais;
         TelaFuncionarios^ telaFuncionarios;
+        TelaListaOS^ telaListaOS;
         Usuario* usuario_logado;
 
     private: System::Windows::Forms::Panel^  lateral_menu;
@@ -78,7 +80,6 @@ namespace InfoBuraco {
         /// </summary>
         void InitializeComponent(void)
         {
-
             System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(TelaDashboard::typeid));
             this->lateral_menu = (gcnew System::Windows::Forms::Panel());
             this->pictureBox10 = (gcnew System::Windows::Forms::PictureBox());
@@ -367,6 +368,7 @@ namespace InfoBuraco {
             this->ordensBtn->Text = L"Ordens";
             this->ordensBtn->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
             this->ordensBtn->UseVisualStyleBackColor = false;
+            this->ordensBtn->Click += gcnew System::EventHandler(this, &TelaDashboard::ordensBtn_Click);
             // 
             // equipamentosBtn
             // 
@@ -439,7 +441,7 @@ namespace InfoBuraco {
             this->panel5->ResumeLayout(false);
             this->ResumeLayout(false);
 
-		}
+        }
 #pragma endregion
     private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 
@@ -452,5 +454,6 @@ namespace InfoBuraco {
     private: System::Void notificacoesBtn_Click(System::Object^  sender, System::EventArgs^  e);
     private: System::Void materiaisBtn_Click(System::Object^  sender, System::EventArgs^  e);
     private: System::Void funcionariosBtn_Click(System::Object^  sender, System::EventArgs^  e);
+    private: System::Void ordensBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

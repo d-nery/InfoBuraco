@@ -77,9 +77,9 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("INSERT INTO material VALUES (?, ?, ?, ?, null);");
-            pstmt->setString(1, material->nome);
-            pstmt->setString(2, material->unidade);
+            pstmt = conn->prepareStatement("INSERT INTO material VALUES (?, ?, ?, ?);");
+            pstmt->setString(1, material->nome.c_str());
+            pstmt->setString(2, material->unidade.c_str());
             pstmt->setDouble(3, material->custo);
             pstmt->setInt(4, material->quantidade);
 

@@ -18,6 +18,7 @@ namespace InfoBuraco {
         this->telaListaNotificacao = gcnew TelaListaNotificacao(this->usuario_logado);
         this->telaListaMateriais = gcnew TelaListaMateriais(this->usuario_logado);
         this->telaFuncionarios = gcnew TelaFuncionarios(this->usuario_logado);
+        this->telaListaOS = gcnew TelaListaOS(this->usuario_logado);
     }
 
     System::Void TelaDashboard::button1_Click(System::Object^ sender, System::EventArgs^  e) {
@@ -41,6 +42,10 @@ namespace InfoBuraco {
         this->telaFuncionarios->Visible = true;
     }
 
+    System::Void TelaDashboard::ordensBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+        this->telaListaOS->Visible = true;
+    }
+
 
     TelaDashboard::~TelaDashboard() {
         if (this->components) {
@@ -49,5 +54,7 @@ namespace InfoBuraco {
 
         delete this->telaEquipamento;
         delete this->telaListaNotificacao;
+        delete this->telaListaMateriais;
+        delete this->telaFuncionarios;
     }
 }

@@ -132,6 +132,9 @@
     <ClCompile Include="TelaNovoDespacho.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="TelaListaOS.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
@@ -251,6 +254,9 @@
     <ClInclude Include="TelaNovoDespacho.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="TelaListaOS.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -307,6 +313,9 @@
       <Filter>Arquivos de Recurso</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaNovoMaterial.resx">
+      <Filter>Arquivos de Recurso</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNovoDespacho.resx">
       <Filter>Arquivos de Recurso</Filter>
     </EmbeddedResource>
   </ItemGroup>

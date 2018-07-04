@@ -18,6 +18,7 @@ namespace InfoBuraco {
         OS();
         virtual ~OS();
 
+        int getId();
         int getPrioridade();
         bool getStatus();
         int getEstimativaPessoal();
@@ -35,6 +36,6 @@ namespace InfoBuraco {
         int estimativa_material;
 
         Buraco* buraco;
-        // Despacho* despacho;
+        Despacho* despacho;
     };
 }

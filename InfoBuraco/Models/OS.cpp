@@ -5,6 +5,10 @@ namespace InfoBuraco {
 
     OS::~OS() {}
 
+    int OS::getId() {
+        return this->id_os;
+    }
+
     int OS::getPrioridade() {
         return this->prioridade;
     }

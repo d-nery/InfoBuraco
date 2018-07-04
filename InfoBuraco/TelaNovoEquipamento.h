@@ -20,23 +20,23 @@ namespace InfoBuraco {
             this->usuario_logado = usuario_logado;
         }
 
-		property String^ patrimonio_txt {
-			String^ get() {
-				return patrimonio_tb->Text;
-			}
-			void set(String^ txt) {
-				patrimonio_tb->Text = txt;
-			}
-		}
+        property String^ patrimonio_txt {
+            String^ get() {
+                return patrimonio_tb->Text;
+            }
+            void set(String^ txt) {
+                patrimonio_tb->Text = txt;
+            }
+        }
 
-		property String^ custo_txt {
-			String^ get() {
-				return custo_tb->Text;
-			}
-			void set(String^ txt) {
-				custo_tb->Text = txt;
-			}
-		}
+        property String^ custo_txt {
+            String^ get() {
+                return custo_tb->Text;
+            }
+            void set(String^ txt) {
+                custo_tb->Text = txt;
+            }
+        }
 
     protected:
         ~TelaNovoEquipamento() {
@@ -73,41 +73,41 @@ namespace InfoBuraco {
             this->ok_btn = (gcnew System::Windows::Forms::Button());
             this->cancel_btn = (gcnew System::Windows::Forms::Button());
             this->SuspendLayout();
-            // 
+            //
             // patrimonio_tb
-            // 
+            //
             this->patrimonio_tb->Location = System::Drawing::Point(92, 99);
             this->patrimonio_tb->Name = L"patrimonio_tb";
             this->patrimonio_tb->Size = System::Drawing::Size(169, 20);
             this->patrimonio_tb->TabIndex = 0;
-            // 
+            //
             // custo_tb
-            // 
+            //
             this->custo_tb->Location = System::Drawing::Point(92, 138);
             this->custo_tb->Name = L"custo_tb";
             this->custo_tb->Size = System::Drawing::Size(169, 20);
             this->custo_tb->TabIndex = 1;
-            // 
+            //
             // patrimonio_lb
-            // 
+            //
             this->patrimonio_lb->AutoSize = true;
             this->patrimonio_lb->Location = System::Drawing::Point(92, 80);
             this->patrimonio_lb->Name = L"patrimonio_lb";
             this->patrimonio_lb->Size = System::Drawing::Size(56, 13);
             this->patrimonio_lb->TabIndex = 2;
-            this->patrimonio_lb->Text = L"Patrimônio";
-            // 
+            this->patrimonio_lb->Text = L"Patrimï¿½nio";
+            //
             // custo_lb
-            // 
+            //
             this->custo_lb->AutoSize = true;
             this->custo_lb->Location = System::Drawing::Point(92, 122);
             this->custo_lb->Name = L"custo_lb";
             this->custo_lb->Size = System::Drawing::Size(83, 13);
             this->custo_lb->TabIndex = 3;
             this->custo_lb->Text = L"Custo (R$/hora)";
-            // 
+            //
             // title_lb
-            // 
+            //
             this->title_lb->AutoSize = true;
             this->title_lb->Font = (gcnew System::Drawing::Font(L"Renner*", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
@@ -117,29 +117,29 @@ namespace InfoBuraco {
             this->title_lb->Size = System::Drawing::Size(251, 32);
             this->title_lb->TabIndex = 9;
             this->title_lb->Text = L"Novo Equipamento";
-            // 
+            //
             // ok_btn
-            // 
+            //
             this->ok_btn->Location = System::Drawing::Point(92, 171);
             this->ok_btn->Name = L"ok_btn";
             this->ok_btn->Size = System::Drawing::Size(75, 23);
             this->ok_btn->TabIndex = 10;
             this->ok_btn->Text = L"Cadastrar";
             this->ok_btn->UseVisualStyleBackColor = true;
-			this->ok_btn->Click += gcnew System::EventHandler(this, &TelaNovoEquipamento::okBtn_Click);
-            // 
+            this->ok_btn->Click += gcnew System::EventHandler(this, &TelaNovoEquipamento::okBtn_Click);
+            //
             // cancel_btn
-            // 
+            //
             this->cancel_btn->Location = System::Drawing::Point(186, 171);
             this->cancel_btn->Name = L"cancel_btn";
             this->cancel_btn->Size = System::Drawing::Size(75, 23);
             this->cancel_btn->TabIndex = 11;
             this->cancel_btn->Text = L"Cancelar";
             this->cancel_btn->UseVisualStyleBackColor = true;
-			this->cancel_btn->Click += gcnew System::EventHandler(this, &TelaNovoEquipamento::cancelBtn_Click);
-            // 
+            this->cancel_btn->Click += gcnew System::EventHandler(this, &TelaNovoEquipamento::cancelBtn_Click);
+            //
             // TelaNovoEquipamento
-            // 
+            //
             this->BackColor = System::Drawing::Color::SeaShell;
             this->ClientSize = System::Drawing::Size(354, 241);
             this->Controls->Add(this->cancel_btn);
@@ -160,11 +160,10 @@ namespace InfoBuraco {
 
         }
 #pragma endregion
-		private: System::Void okBtn_Click(System::Object^ sender, System::EventArgs^  e);
-		private: System::Void cancelBtn_Click(System::Object^ sender, System::EventArgs^  e);
-		private: System::Void TelaNovoEquipamento_Load(System::Object^  sender, System::EventArgs^  e) {}
-        
+        private: System::Void okBtn_Click(System::Object^ sender, System::EventArgs^  e);
+        private: System::Void cancelBtn_Click(System::Object^ sender, System::EventArgs^  e);
+        private: System::Void TelaNovoEquipamento_Load(System::Object^  sender, System::EventArgs^  e) {}
+
     };
 
 }
-
