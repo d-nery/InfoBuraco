@@ -92,13 +92,14 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("INSERT INTO ordemservico VALUES (null, ?, ?, ?, ?, ?, null, ?);");
+            pstmt = conn->prepareStatement("INSERT INTO ordemservico VALUES (null, ?, ?, ?, ?, ?, ?, null);");
             pstmt->setInt(1, os->prioridade);
-            pstmt->setInt(2, os->estimativa_pessoal);
-            pstmt->setInt(3, os->estimativa_equipamento);
-            pstmt->setInt(4, os->estimativa_material);
-            pstmt->setInt(5, os->buraco->getId());
-            pstmt->setInt(6, os->status);
+            pstmt->setInt(2, os->status);
+            pstmt->setInt(3, os->estimativa_pessoal);
+            pstmt->setInt(4, os->estimativa_equipamento);
+            pstmt->setInt(5, os->estimativa_material);
+            pstmt->setInt(6, os->buraco->getId());
+            
 
             int ret = pstmt->executeUpdate();
             if (ret == 1) {

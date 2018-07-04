@@ -7,7 +7,7 @@
 #include "CidadaoController.h"
 #include "BuracoController.h"
 #include "NotificacaoController.h"
-#include "UsuarioDAO.h"
+#include "OSController.h"
 
 #define conv_string(x) (msclr::interop::marshal_as<std::string>(x))
 #define conv_sysstring(x) msclr::interop::marshal_as<System::String^>(x)
@@ -172,6 +172,6 @@ namespace InfoBuraco {
     System::Void TelaNotificacao::createOS(Buraco* buraco) {
         OSController osController;
 
-        OSController.criarOS(buraco);
+        osController.criarOS(buraco);
     }
 }
