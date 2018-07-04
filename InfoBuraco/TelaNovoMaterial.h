@@ -15,12 +15,10 @@ namespace InfoBuraco {
 	public ref class TelaNovoMaterial : public System::Windows::Forms::Form
 	{
 	public:
-		TelaNovoMaterial(void)
+		TelaNovoMaterial(Usuario* usuario_logado)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			this->usuario_logado = usuario_logado;
 		}
 
 	protected:
