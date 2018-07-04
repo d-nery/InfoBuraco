@@ -168,11 +168,14 @@
     <ClCompile Include="TelaEquipamento.cpp" />
     <ClCompile Include="MySQL.cpp" />
     <ClCompile Include="TelaFuncionarios.cpp" />
+    <ClCompile Include="TelaListaDespachos.cpp" />
     <ClCompile Include="TelaListaMateriais.cpp" />
     <ClCompile Include="TelaListaNotificacao.cpp" />
     <ClCompile Include="TelaMaterial.cpp" />
     <ClCompile Include="TelaNotificacao.cpp" />
+    <ClCompile Include="TelaNovoDespacho.cpp" />
     <ClCompile Include="TelaNovoEquipamento.cpp" />
+    <ClCompile Include="TelaNovoFuncionario.cpp" />
     <ClCompile Include="TelaNovoMaterial.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -214,7 +217,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MySQL.h" />
-    <ClInclude Include="TelaFuncionarios.h" />
+    <ClInclude Include="TelaFuncionarios.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="TelaListaDespachos.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="TelaListaMateriais.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -227,7 +235,13 @@
     <ClInclude Include="TelaNotificacao.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="TelaNovoDespacho.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="TelaNovoEquipamento.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="TelaNovoFuncionario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TelaNovoMaterial.h">
@@ -253,6 +267,12 @@
     <EmbeddedResource Include="TelaEquipamento.resx">
       <DependentUpon>TelaEquipamento.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TelaFuncionarios.resx">
+      <DependentUpon>TelaFuncionarios.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaListaMateriais.resx">
+      <DependentUpon>TelaListaMateriais.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaListaNotificacao.resx">
       <DependentUpon>TelaListaNotificacao.h</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +281,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaNovoEquipamento.resx">
       <DependentUpon>TelaNovoEquipamento.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNovoFuncionario.resx">
+      <DependentUpon>TelaNovoFuncionario.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNovoMaterial.resx">
+      <DependentUpon>TelaNovoMaterial.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
