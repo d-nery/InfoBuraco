@@ -46,7 +46,7 @@ namespace InfoBuraco {
             // 
             // TelaNovoDespacho
             // 
-            this->ClientSize = System::Drawing::Size(774, 522);
+            this->ClientSize = System::Drawing::Size(1106, 566);
             this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
             this->Name = L"TelaNovoDespacho";
             this->Text = L"Novo Despacho";

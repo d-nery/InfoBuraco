@@ -13,6 +13,7 @@ namespace InfoBuraco {
         Cargo();
         virtual ~Cargo();
 
+        int getId();
         std::string getName();
         uint16_t getPermissionMask();
 

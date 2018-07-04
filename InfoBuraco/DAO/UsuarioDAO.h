@@ -15,6 +15,6 @@ namespace InfoBuraco {
 
         Usuario* getUser(std::string login, std::string password="");
         std::vector<Usuario*>* getAll();
-        void insertUsuario(Usuario* usuario);
+        void insertUsuario(Usuario* usuario, std::string password);
     };
 }

@@ -78,18 +78,19 @@ namespace InfoBuraco {
         return ret;
     }
 
-    void UsuarioDAO::insertUsuario(Usuario* usuario) {
+    void UsuarioDAO::insertUsuario(Usuario* usuario, std::string password) {
 		CargoDAO cargoDAO;
         sql::Connection* conn = nullptr;
         sql::PreparedStatement* pstmt;
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("INSERT INTO usuario VALUES (?, ?, null);");
+            pstmt = conn->prepareStatement("INSERT INTO usuario VALUES (?, UNHEX(SHA2(?)), ?, ?);");
 
 			pstmt->setString(1, usuario->login);
-			pstmt->setString(2, usuario->name);
-            /*pstmt->setInt(3, usuario->);*/
+            pstmt->setString(2, password);
+            pstmt->setString(3, usuario->name);
+            pstmt->setInt(3, usuario->cargo->getId());
 
             pstmt->executeUpdate();
         } catch (sql::SQLException& e) {
