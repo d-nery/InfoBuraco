@@ -45,9 +45,6 @@
     <ClCompile Include="DAO\CidadaoDAO.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="TelaMaterial.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
     <ClCompile Include="TelaNovoMaterial.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
@@ -165,9 +162,6 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="DAO\CidadaoDAO.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="TelaMaterial.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="TelaNovoMaterial.h">
@@ -307,6 +301,12 @@
       <Filter>Arquivos de Recurso</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaListaMateriais.resx">
+      <Filter>Arquivos de Recurso</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNovoFuncionario.resx">
+      <Filter>Arquivos de Recurso</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNovoMaterial.resx">
       <Filter>Arquivos de Recurso</Filter>
     </EmbeddedResource>
   </ItemGroup>

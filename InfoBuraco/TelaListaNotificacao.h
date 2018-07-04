@@ -203,7 +203,7 @@ namespace InfoBuraco {
             this->label1->Name = L"label1";
             this->label1->Size = System::Drawing::Size(169, 35);
             this->label1->TabIndex = 3;
-            this->label1->Text = L"Notificações";
+            this->label1->Text = L"Notificacoes";
             // 
             // TelaListaNotificacao
             // 
@@ -215,7 +215,7 @@ namespace InfoBuraco {
             this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
             this->MinimumSize = System::Drawing::Size(570, 540);
             this->Name = L"TelaListaNotificacao";
-            this->Text = L"Notificações";
+            this->Text = L"Notificacoes";
             this->Load += gcnew System::EventHandler(this, &TelaListaNotificacao::load);
             this->panel1->ResumeLayout(false);
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->notificationsGrid))->EndInit();

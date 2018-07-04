@@ -2,6 +2,7 @@
 
 #include "TelaEquipamento.h"
 #include "TelaListaNotificacao.h"
+#include "TelaListaMateriais.h"
 
 namespace InfoBuraco {
     TelaDashboard::TelaDashboard(Usuario* user, Login^ org_login) {
@@ -15,6 +16,7 @@ namespace InfoBuraco {
         this->original_login = org_login;
         this->telaEquipamento = gcnew TelaEquipamento(this->usuario_logado);
         this->telaListaNotificacao = gcnew TelaListaNotificacao(this->usuario_logado);
+        this->telaListaMateriais = gcnew TelaListaMateriais(this->usuario_logado);
     }
 
     System::Void TelaDashboard::button1_Click(System::Object^ sender, System::EventArgs^  e) {
@@ -31,7 +33,7 @@ namespace InfoBuraco {
     }
 
     System::Void TelaDashboard::materiaisBtn_Click(System::Object^  sender, System::EventArgs^  e) {
-
+        this->telaListaMateriais->Visible = false;
     }
 
     TelaDashboard::~TelaDashboard() {

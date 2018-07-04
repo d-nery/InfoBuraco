@@ -41,6 +41,16 @@ namespace InfoBuraco {
         /// the contents of this method with the code editor.
         /// </summary>
         void InitializeComponent(void) {
+            System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(TelaNovoDespacho::typeid));
+            this->SuspendLayout();
+            // 
+            // TelaNovoDespacho
+            // 
+            this->ClientSize = System::Drawing::Size(774, 522);
+            this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+            this->Name = L"TelaNovoDespacho";
+            this->Text = L"Novo Despacho";
+            this->ResumeLayout(false);
 
         }
 #pragma endregion

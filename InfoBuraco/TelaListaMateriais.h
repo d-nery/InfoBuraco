@@ -30,9 +30,6 @@ namespace InfoBuraco {
         Usuario * usuario_logado;
 
     private: System::Windows::Forms::Panel^  panel1;
-    private: System::Windows::Forms::DataGridView^  materiaisGrid;
-
-
     private: System::Windows::Forms::Panel^  panel2;
     private: System::Windows::Forms::Label^  label1;
     private: System::Windows::Forms::Button^  addBtn;
@@ -42,11 +39,6 @@ namespace InfoBuraco {
     private: System::Windows::Forms::DataGridViewButtonColumn^  colunaDetailsBtn;
     private: System::Windows::Forms::Button^  closeBtn;
 	private: System::Windows::Forms::DataGridView^  materiaisGrid;
-
-
-
-
-
 
     private:
         /// <summary>

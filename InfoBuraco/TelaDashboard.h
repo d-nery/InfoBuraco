@@ -6,6 +6,7 @@
 #include "Usuario.h"
 #include "TelaEquipamento.h"
 #include "TelaListaNotificacao.h"
+#include "TelaListaMateriais.h"
 
 namespace InfoBuraco {
 
@@ -35,6 +36,7 @@ namespace InfoBuraco {
         Login^ original_login;
         TelaEquipamento^ telaEquipamento;
         TelaListaNotificacao^ telaListaNotificacao;
+        TelaListaMateriais^ telaListaMateriais;
         Usuario* usuario_logado;
 
     private: System::Windows::Forms::Panel^  lateral_menu;
@@ -46,7 +48,7 @@ namespace InfoBuraco {
 
     private: System::Windows::Forms::Panel^  panel3;
     private: System::Windows::Forms::Panel^  panel4;
-    private: System::Windows::Forms::PictureBox^  pictureBox9;
+
 
 
 
@@ -84,23 +86,21 @@ namespace InfoBuraco {
             this->user_image = (gcnew System::Windows::Forms::PictureBox());
             this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
             this->panel4 = (gcnew System::Windows::Forms::Panel());
+            this->button1 = (gcnew System::Windows::Forms::Button());
             this->materiaisBtn = (gcnew System::Windows::Forms::Button());
             this->notificacoesBtn = (gcnew System::Windows::Forms::Button());
             this->equipesBtn = (gcnew System::Windows::Forms::Button());
             this->funcionariosBtn = (gcnew System::Windows::Forms::Button());
             this->ordensBtn = (gcnew System::Windows::Forms::Button());
             this->equipamentosBtn = (gcnew System::Windows::Forms::Button());
-            this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
             this->panel5 = (gcnew System::Windows::Forms::Panel());
             this->panel1 = (gcnew System::Windows::Forms::Panel());
-            this->button1 = (gcnew System::Windows::Forms::Button());
             this->lateral_menu->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox10))->BeginInit();
             this->panel3->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->user_image))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
             this->panel4->SuspendLayout();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
             this->panel5->SuspendLayout();
             this->SuspendLayout();
             // 
@@ -207,11 +207,35 @@ namespace InfoBuraco {
             this->panel4->Controls->Add(this->funcionariosBtn);
             this->panel4->Controls->Add(this->ordensBtn);
             this->panel4->Controls->Add(this->equipamentosBtn);
-            this->panel4->Controls->Add(this->pictureBox9);
-            this->panel4->Location = System::Drawing::Point(105, 77);
+            this->panel4->Location = System::Drawing::Point(105, 65);
             this->panel4->Name = L"panel4";
             this->panel4->Size = System::Drawing::Size(585, 260);
             this->panel4->TabIndex = 23;
+            // 
+            // button1
+            // 
+            this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(209)), static_cast<System::Int32>(static_cast<System::Byte>(209)),
+                static_cast<System::Int32>(static_cast<System::Byte>(209)));
+            this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
+            this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+            this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->button1->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(209)),
+                static_cast<System::Int32>(static_cast<System::Byte>(209)), static_cast<System::Int32>(static_cast<System::Byte>(209)));
+            this->button1->FlatAppearance->BorderSize = 0;
+            this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(240)),
+                static_cast<System::Int32>(static_cast<System::Byte>(240)), static_cast<System::Int32>(static_cast<System::Byte>(240)));
+            this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(223)),
+                static_cast<System::Int32>(static_cast<System::Byte>(223)), static_cast<System::Int32>(static_cast<System::Byte>(223)));
+            this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->button1->Font = (gcnew System::Drawing::Font(L"Noto Sans", 10, System::Drawing::FontStyle::Bold));
+            this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+            this->button1->Location = System::Drawing::Point(303, 133);
+            this->button1->Name = L"button1";
+            this->button1->Size = System::Drawing::Size(125, 124);
+            this->button1->TabIndex = 30;
+            this->button1->Text = L"Despachos";
+            this->button1->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+            this->button1->UseVisualStyleBackColor = false;
             // 
             // materiaisBtn
             // 
@@ -366,16 +390,6 @@ namespace InfoBuraco {
             this->equipamentosBtn->UseVisualStyleBackColor = false;
             this->equipamentosBtn->Click += gcnew System::EventHandler(this, &TelaDashboard::equipamentosBtn_click);
             // 
-            // pictureBox9
-            // 
-            this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
-            this->pictureBox9->Location = System::Drawing::Point(459, 137);
-            this->pictureBox9->Name = L"pictureBox9";
-            this->pictureBox9->Size = System::Drawing::Size(125, 121);
-            this->pictureBox9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-            this->pictureBox9->TabIndex = 10;
-            this->pictureBox9->TabStop = false;
-            // 
             // panel5
             // 
             this->panel5->Controls->Add(this->pictureBox1);
@@ -392,31 +406,6 @@ namespace InfoBuraco {
             this->panel1->Name = L"panel1";
             this->panel1->Size = System::Drawing::Size(784, 22);
             this->panel1->TabIndex = 26;
-            // 
-            // button1
-            // 
-            this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(209)), static_cast<System::Int32>(static_cast<System::Byte>(209)),
-                static_cast<System::Int32>(static_cast<System::Byte>(209)));
-            this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
-            this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-            this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->button1->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(209)),
-                static_cast<System::Int32>(static_cast<System::Byte>(209)), static_cast<System::Int32>(static_cast<System::Byte>(209)));
-            this->button1->FlatAppearance->BorderSize = 0;
-            this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(240)),
-                static_cast<System::Int32>(static_cast<System::Byte>(240)), static_cast<System::Int32>(static_cast<System::Byte>(240)));
-            this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(223)),
-                static_cast<System::Int32>(static_cast<System::Byte>(223)), static_cast<System::Int32>(static_cast<System::Byte>(223)));
-            this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button1->Font = (gcnew System::Drawing::Font(L"Noto Sans", 10, System::Drawing::FontStyle::Bold));
-            this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-            this->button1->Location = System::Drawing::Point(303, 133);
-            this->button1->Name = L"button1";
-            this->button1->Size = System::Drawing::Size(125, 124);
-            this->button1->TabIndex = 30;
-            this->button1->Text = L"Despachos";
-            this->button1->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-            this->button1->UseVisualStyleBackColor = false;
             // 
             // TelaDashboard
             // 
@@ -443,7 +432,6 @@ namespace InfoBuraco {
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->user_image))->EndInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
             this->panel4->ResumeLayout(false);
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
             this->panel5->ResumeLayout(false);
             this->ResumeLayout(false);
 

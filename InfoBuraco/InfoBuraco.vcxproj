@@ -171,7 +171,6 @@
     <ClCompile Include="TelaListaDespachos.cpp" />
     <ClCompile Include="TelaListaMateriais.cpp" />
     <ClCompile Include="TelaListaNotificacao.cpp" />
-    <ClCompile Include="TelaMaterial.cpp" />
     <ClCompile Include="TelaNotificacao.cpp" />
     <ClCompile Include="TelaNovoDespacho.cpp" />
     <ClCompile Include="TelaNovoEquipamento.cpp" />
@@ -229,9 +228,6 @@
     <ClInclude Include="TelaListaNotificacao.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="TelaMaterial.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="TelaNotificacao.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -278,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaNotificacao.resx">
       <DependentUpon>TelaNotificacao.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNovoDespacho.resx">
+      <DependentUpon>TelaNovoDespacho.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaNovoEquipamento.resx">
       <DependentUpon>TelaNovoEquipamento.h</DependentUpon>
