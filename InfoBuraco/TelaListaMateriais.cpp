@@ -16,11 +16,10 @@ namespace InfoBuraco {
 
         std::vector<Material*>* materiais = materialCtrl.getAll();
 
-        for (auto mateirial : *materiais) {
+        for (auto material : *materiais) {
             System::Diagnostics::Debug::Print("Adicionando Material");
-            String^ patrimonio = conv_sysstring(equip->getNome());
-            String^ custo = conv_sysstring(std::to_string(equip->getCusto()));
-            //bool alocado = (buraco->getDespacho() != nullptr);
+            String^ patrimonio = conv_sysstring(material->getNome());
+            String^ custo = conv_sysstring(std::to_string(material->getCusto()));
             this->materiaisGrid->Rows->Add(gcnew array<System::String^> { patrimonio, custo });
         }
     }

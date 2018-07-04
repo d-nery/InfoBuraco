@@ -142,6 +142,8 @@ namespace InfoBuraco {
             int_data["posicao"] = posicao;
             buraco = holeCtrl.criarBuraco(data, int_data);
             System::Diagnostics::Debug::Print("Criado");
+
+            this->createOS(buraco);
         } else {
             System::Diagnostics::Debug::Print("Buraco encontrado");
             if (buraco->isAberto()) {
@@ -149,6 +151,7 @@ namespace InfoBuraco {
                 buraco->setTamanho(tamanho);
             } else {
                 buraco->increaseReincidencia();
+                this->createOS(buraco);
                 buraco->open();
             }
             holeCtrl.atualizarBuraco(buraco);
@@ -164,7 +167,11 @@ namespace InfoBuraco {
         System::Diagnostics::Debug::Print("Notificação Criada!");
         System::Windows::Forms::MessageBox::Show("Notificação registrada com sucesso.");
         this->Close();
+    }
 
-        // Criar Ordem de Serviço caso o buraco seja novo ou esteja fechado
+    System::Void TelaNotificacao::createOS(Buraco* buraco) {
+        OSController osController;
+
+        OSController.criarOS(buraco);
     }
 }

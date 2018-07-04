@@ -11,17 +11,17 @@ namespace InfoBuraco {
     using namespace System::Data;
     using namespace System::Drawing;
 
-    public ref class TelaNovoMaterial : public System::Windows::Forms::Form {
+    public ref class TelaNovoFuncionario : public System::Windows::Forms::Form {
     public:
     public:
-        TelaNovoMaterial(Usuario* usuario_logado) {
+        TelaNovoFuncionario(Usuario* usuario_logado) {
             InitializeComponent();
 
             this->usuario_logado = usuario_logado;
         }
 
     protected:
-        ~TelaNovoMaterial() {
+        ~TelaNovoFuncionario() {
             if (components) {
                 delete components;
             }
@@ -46,7 +46,7 @@ namespace InfoBuraco {
 
 #pragma region Windows Form Designer generated code
         void InitializeComponent(void) {
-            System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(TelaNovoMaterial::typeid));
+            System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(TelaNovoFuncionario::typeid));
             this->patrimonio_tb = (gcnew System::Windows::Forms::TextBox());
             this->custo_tb = (gcnew System::Windows::Forms::TextBox());
             this->patrimonio_lb = (gcnew System::Windows::Forms::Label());
@@ -94,11 +94,11 @@ namespace InfoBuraco {
             this->title_lb->Font = (gcnew System::Drawing::Font(L"Renner*", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->title_lb->ForeColor = System::Drawing::Color::Black;
-            this->title_lb->Location = System::Drawing::Point(86, 24);
+            this->title_lb->Location = System::Drawing::Point(64, 22);
             this->title_lb->Name = L"title_lb";
-            this->title_lb->Size = System::Drawing::Size(189, 32);
+            this->title_lb->Size = System::Drawing::Size(236, 32);
             this->title_lb->TabIndex = 9;
-            this->title_lb->Text = L"Novo Material";
+            this->title_lb->Text = L"Novo Funcionario";
             // 
             // ok_btn
             // 
@@ -118,7 +118,7 @@ namespace InfoBuraco {
             this->cancel_btn->Text = L"Cancelar";
             this->cancel_btn->UseVisualStyleBackColor = true;
             // 
-            // TelaNovoMaterial
+            // TelaNovoFuncionario
             // 
             this->BackColor = System::Drawing::Color::SeaShell;
             this->ClientSize = System::Drawing::Size(354, 241);
@@ -132,9 +132,9 @@ namespace InfoBuraco {
             this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
             this->MaximumSize = System::Drawing::Size(370, 280);
             this->MinimumSize = System::Drawing::Size(370, 280);
-            this->Name = L"TelaNovoMaterial";
+            this->Name = L"TelaNovoFuncionario";
             this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-            this->Text = L"Cadastrar Material";
+            this->Text = L"Cadastrar Funcionario";
             this->ResumeLayout(false);
             this->PerformLayout();
 

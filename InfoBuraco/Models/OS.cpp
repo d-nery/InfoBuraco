@@ -32,5 +32,4 @@ namespace InfoBuraco {
     Buraco* OS::getBuraco() {
         return this->buraco;
     }
-
 }
