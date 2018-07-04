@@ -1,0 +1,50 @@
+InfoBuraco
+------------------------------
+Turma 1 - Grupo 4:
+* Beatriz de Oliveira Silva
+* Bruno Henrique Vasconcelos Lemos
+* Daniel Nery Silva de Oliveira
+* João Morales
+------------------------------
+
+Para compilar e executar o programa, é necessário utilizar o Visual Studio
+e ter a biblioteca do MySQL e a do boost instaladas como descrito nas instruções
+da disciplina, além disso, é necessário compilar o boost e alterar os caminhos
+nas configurações de Include e Link do projeto para refletir os caminhos na má-
+quina onde o programa será compilado.
+
+------------------------------
+
+Ao iniciar, será apresentada a tela de login, para entrar, basta digitar o usuário
+e a senha, há um usuário "admin" com senha "admin" que tem acesso a todas as funcionalidades
+do programa.
+
+Ao realizar o login, um menu será apresentação, dele é possível abrir as diversas
+telas do programa.
+
+
+Possíveis fluxos de teste
+------------------------------
+Um fluxo interessante para ser testado é o de quando o Assessor de Comunicação recebe uma
+notificação, basta clicar no menu "Notificação" e no "+" verde no canto superior direito
+para registrar uma nova notificação. A partir daí, um formulário com uma série de campos
+será apresentado, a primeira seção corresponde aos dados do cidadão que fez a reclamação,
+é recomendável preencher primeiro o campo do e-mail e clicar na lupa, para pesquisar cidadãos
+existentes, caso exista, um aviso será mostrado e os demais campos preenchidos. A segunda seção
+corresponde à reclamação em si, basta preencher o campo com a reclamação do cidadão, o campo
+de data já é automaticamente preenchido com a data e hora atuais e normalmente não é necessário
+modificá-lo. A última seção corresponde aos dados do buraco, é recomendável preencher a
+localização e a posição e clicar na lupa, assim, um buraco existente será procurado e seus
+dados preenchidos, caso encontrado.
+
+Após preencher todos os dados, basta clicar no botão "Cadastrar", a partir disso, o programa
+verá se o cidadão já consta no banco de dados, a partir do e-mail e o atualizará caso sim,
+caso não, criará um novo cidadão. O mesmo ocorre para o buraco. O Cidadão e o Buraco são
+então associados numa nova notificação e, caso o buraco já estivesse fechado ou seja novo,
+uma nova Ordem de Serviço também é criada.
+
+
+Além da lista de notificações, é possível ver a lista de materiais e equipamentos, além de
+adicionar novos dessa mesma maneira, clicando em seus respectivos botões na tela inicial.
+É possível ver a lista de Ordem de Serviços, mas não criar novas, já que isso é feito
+automaticamente a partir das notificações.

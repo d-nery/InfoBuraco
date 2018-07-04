@@ -139,6 +139,7 @@
   <ItemGroup>
     <ClCompile Include="Controller\BuracoController.cpp" />
     <ClCompile Include="Controller\CidadaoController.cpp" />
+    <ClCompile Include="Controller\DespachoController.cpp" />
     <ClCompile Include="Controller\EquipamentoController.cpp" />
     <ClCompile Include="Controller\MaterialController.cpp" />
     <ClCompile Include="Controller\NotificacaoController.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="DAO\BuracoDAO.cpp" />
     <ClCompile Include="DAO\CargoDAO.cpp" />
     <ClCompile Include="DAO\CidadaoDAO.cpp" />
+    <ClCompile Include="DAO\DespachoDAO.cpp" />
     <ClCompile Include="DAO\EquipamentoDAO.cpp" />
     <ClCompile Include="DAO\MaterialDAO.cpp" />
     <ClCompile Include="DAO\NotificacaoDAO.cpp" />
@@ -156,6 +158,7 @@
     <ClCompile Include="Models\Buraco.cpp" />
     <ClCompile Include="Models\Cargo.cpp" />
     <ClCompile Include="Models\Cidadao.cpp" />
+    <ClCompile Include="Models\Despacho.cpp" />
     <ClCompile Include="Models\Equipamento.cpp" />
     <ClCompile Include="Models\Material.cpp" />
     <ClCompile Include="Models\Notificacao.cpp" />
@@ -181,6 +184,7 @@
   <ItemGroup>
     <ClInclude Include="Controller\BuracoController.h" />
     <ClInclude Include="Controller\CidadaoController.h" />
+    <ClInclude Include="Controller\DespachoController.h" />
     <ClInclude Include="Controller\EquipamentoController.h" />
     <ClInclude Include="Controller\MaterialController.h" />
     <ClInclude Include="Controller\NotificacaoController.h" />
@@ -190,6 +194,7 @@
     <ClInclude Include="DAO\BuracoDAO.h" />
     <ClInclude Include="DAO\CargoDAO.h" />
     <ClInclude Include="DAO\CidadaoDAO.h" />
+    <ClInclude Include="DAO\DespachoDAO.h" />
     <ClInclude Include="DAO\EquipamentoDAO.h" />
     <ClInclude Include="DAO\MaterialDAO.h" />
     <ClInclude Include="DAO\NotificacaoDAO.h" />
@@ -198,6 +203,7 @@
     <ClInclude Include="Models\Buraco.h" />
     <ClInclude Include="Models\Cargo.h" />
     <ClInclude Include="Models\Cidadao.h" />
+    <ClInclude Include="Models\despacho.h" />
     <ClInclude Include="Models\Equipamento.h" />
     <ClInclude Include="Models\Material.h" />
     <ClInclude Include="Models\Notificacao.h" />

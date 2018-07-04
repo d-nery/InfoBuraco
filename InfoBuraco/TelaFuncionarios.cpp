@@ -18,10 +18,10 @@ namespace InfoBuraco {
 
         for (auto user : *users) {
             System::Diagnostics::Debug::Print("Adicionando Funcionario");
-            // String^ patrimonio = conv_sysstring(equip->getNome());
-            // String^ custo = conv_sysstring(std::to_string(equip->getCusto()));
-            //bool alocado = (buraco->getDespacho() != nullptr);
-            // this->funcionariossGrid->Rows->Add(gcnew array<System::String^> { patrimonio, custo });
+            String^ nome = conv_sysstring(user->getName());
+            String^ login = conv_sysstring(user->getLogin());
+            String^ cargo = conv_sysstring(user->getCargo()->getName());
+            this->funcionariosGrid->Rows->Add(gcnew array<System::String^> { nome, login, cargo });
         }
     }
 

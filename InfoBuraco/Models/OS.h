@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Buraco.h"
+#include "Despacho.h"
 
 #include "OSDAO.h"
 #include "OSController.h"

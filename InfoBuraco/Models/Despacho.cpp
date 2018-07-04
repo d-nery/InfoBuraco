@@ -9,6 +9,10 @@ namespace InfoBuraco {
         return this->id_despacho;
     }
 
+    boost::posix_time::ptime Despacho::getDataDespacho() {
+        return this->data_despacho;
+    }
+
     int Despacho::getDuracaoConserto() {
         return this->duracao_conserto;
     }
@@ -29,7 +33,7 @@ namespace InfoBuraco {
         return this->materiais;
     }
 
-    std::vector<Equipamentos*> Despacho::getEquipamentos() {
+    std::vector<Equipamento*> Despacho::getEquipamentos() {
         return this->equipamentos;
     }
 }

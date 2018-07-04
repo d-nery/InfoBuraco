@@ -3,9 +3,10 @@
 #include <string>
 #include <vector>
 
+#include "boost/date_time.hpp"
+
 #include "Material.h"
 #include "Equipamento.h"
-#include "OS.h"
 
 #include "DespachoDAO.h"
 #include "DespachoController.h"
@@ -37,7 +38,6 @@ namespace InfoBuraco {
         int custo_deslocamento;
         int custo_conserto;
 
-        std::vector<OS*> oses;
         std::vector<Material*> materiais;
         std::vector<Equipamento*> equipamentos;
     };

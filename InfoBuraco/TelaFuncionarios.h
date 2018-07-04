@@ -179,7 +179,6 @@ namespace InfoBuraco {
             this->addBtn->Size = System::Drawing::Size(36, 34);
             this->addBtn->TabIndex = 4;
             this->addBtn->UseVisualStyleBackColor = false;
-            this->addBtn->Click += gcnew System::EventHandler(this, &TelaFuncionarios::addBtn_Click);
             // 
             // label1
             // 

@@ -211,7 +211,7 @@ namespace InfoBuraco {
             this->panel4->Controls->Add(this->funcionariosBtn);
             this->panel4->Controls->Add(this->ordensBtn);
             this->panel4->Controls->Add(this->equipamentosBtn);
-            this->panel4->Location = System::Drawing::Point(105, 98);
+            this->panel4->Location = System::Drawing::Point(105, 86);
             this->panel4->Name = L"panel4";
             this->panel4->Size = System::Drawing::Size(585, 260);
             this->panel4->TabIndex = 23;
@@ -400,7 +400,7 @@ namespace InfoBuraco {
             // 
             this->panel5->Controls->Add(this->pictureBox1);
             this->panel5->Dock = System::Windows::Forms::DockStyle::Bottom;
-            this->panel5->Location = System::Drawing::Point(0, 475);
+            this->panel5->Location = System::Drawing::Point(0, 452);
             this->panel5->Name = L"panel5";
             this->panel5->Size = System::Drawing::Size(784, 87);
             this->panel5->TabIndex = 27;
@@ -408,7 +408,7 @@ namespace InfoBuraco {
             // panel1
             // 
             this->panel1->Dock = System::Windows::Forms::DockStyle::Bottom;
-            this->panel1->Location = System::Drawing::Point(0, 562);
+            this->panel1->Location = System::Drawing::Point(0, 539);
             this->panel1->Name = L"panel1";
             this->panel1->Size = System::Drawing::Size(784, 22);
             this->panel1->TabIndex = 26;
@@ -419,7 +419,7 @@ namespace InfoBuraco {
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::Color::Linen;
             this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-            this->ClientSize = System::Drawing::Size(784, 584);
+            this->ClientSize = System::Drawing::Size(784, 561);
             this->ControlBox = false;
             this->Controls->Add(this->panel5);
             this->Controls->Add(this->panel1);
@@ -428,7 +428,7 @@ namespace InfoBuraco {
             this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
             this->MinimumSize = System::Drawing::Size(800, 600);
             this->Name = L"TelaDashboard";
-            this->Text = L"p";
+            this->Text = L"InfoBuraco";
             this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
             this->Load += gcnew System::EventHandler(this, &TelaDashboard::Dashboard_Load);
             this->lateral_menu->ResumeLayout(false);

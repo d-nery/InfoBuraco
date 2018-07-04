@@ -11,9 +11,3 @@ Turma 1 - Grupo 4:
 * João Morales
 
 -------------------------------
-
-## Introdução
-
-## Como usar
-
-...

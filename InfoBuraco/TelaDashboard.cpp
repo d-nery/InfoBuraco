@@ -56,5 +56,6 @@ namespace InfoBuraco {
         delete this->telaListaNotificacao;
         delete this->telaListaMateriais;
         delete this->telaFuncionarios;
+        delete this->telaListaOS;
     }
 }

@@ -57,7 +57,7 @@ namespace InfoBuraco {
 
         try {
             conn = mySQL.getConnection();
-            pstmt = conn->prepareStatement("SELECT * FROM usuario WHERE login = ?;");
+            pstmt = conn->prepareStatement("SELECT * FROM usuario;");
 
             resultSet = pstmt->executeQuery();
             while (resultSet->next()) {
