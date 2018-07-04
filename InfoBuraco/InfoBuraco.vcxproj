@@ -144,6 +144,7 @@
     <ClCompile Include="Controller\NotificacaoController.cpp" />
     <ClCompile Include="Controller\OSController.cpp" />
     <ClCompile Include="Controller\SecurityController.cpp" />
+    <ClCompile Include="Controller\UsuarioController.cpp" />
     <ClCompile Include="DAO\BuracoDAO.cpp" />
     <ClCompile Include="DAO\CargoDAO.cpp" />
     <ClCompile Include="DAO\CidadaoDAO.cpp" />
@@ -166,6 +167,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TelaEquipamento.cpp" />
     <ClCompile Include="MySQL.cpp" />
+    <ClCompile Include="TelaFuncionarios.cpp" />
     <ClCompile Include="TelaListaMateriais.cpp" />
     <ClCompile Include="TelaListaNotificacao.cpp" />
     <ClCompile Include="TelaMaterial.cpp" />
@@ -181,6 +183,7 @@
     <ClInclude Include="Controller\NotificacaoController.h" />
     <ClInclude Include="Controller\OSController.h" />
     <ClInclude Include="Controller\SecurityController.h" />
+    <ClInclude Include="Controller\UsuarioController.h" />
     <ClInclude Include="DAO\BuracoDAO.h" />
     <ClInclude Include="DAO\CargoDAO.h" />
     <ClInclude Include="DAO\CidadaoDAO.h" />
@@ -211,6 +214,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MySQL.h" />
+    <ClInclude Include="TelaFuncionarios.h" />
     <ClInclude Include="TelaListaMateriais.h">
       <FileType>CppForm</FileType>
     </ClInclude>
