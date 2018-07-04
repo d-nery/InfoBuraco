@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 #include "Usuario.h"
 
@@ -13,5 +14,7 @@ namespace InfoBuraco {
         virtual ~UsuarioDAO();
 
         Usuario* getUser(std::string login, std::string password="");
+        std::vector<Usuario*>* getAll();
+        void insertUsuario(Usuario* usuario);
     };
 }
