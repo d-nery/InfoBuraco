@@ -41,6 +41,7 @@ namespace InfoBuraco {
     private: System::Windows::Forms::DataGridViewCheckBoxColumn^  colunaAlocado;
     private: System::Windows::Forms::DataGridViewButtonColumn^  colunaDetailsBtn;
     private: System::Windows::Forms::Button^  closeBtn;
+	private: System::Windows::Forms::DataGridView^  materiaisGrid;
 
 
 
