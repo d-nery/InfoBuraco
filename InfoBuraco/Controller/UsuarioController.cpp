@@ -6,7 +6,7 @@ namespace InfoBuraco {
 
 	UsuarioController::~UsuarioController() {}
 
-	Usuario* UsuarioController::buscarUsuario(std::string login, std::string password = "") {
+	Usuario* UsuarioController::buscarUsuario(std::string login, std::string password) {
 		Usuario* usuario = nullptr;
 		UsuarioDAO usuarioDAO;
 
@@ -24,7 +24,7 @@ namespace InfoBuraco {
 		return usuarios;
 	}
 
-	Usuario* UsuarioController::criarUsuario(std::string nome, std::string login, std::string password = "") {
+	Usuario* UsuarioController::criarUsuario(std::string nome, std::string login, std::string password) {
 		Usuario* usuario = nullptr;
 		UsuarioDAO usuarioDAO;
 
@@ -38,9 +38,9 @@ namespace InfoBuraco {
 
 		usuario = new Usuario();
 
-		usuario->setName = nome;
-		usuario->setLogin = login;
-		usuario->setPassword = password;
+		usuario->setName(nome);
+		usuario->setLogin(login);
+		usuario->setPassword(password);
 		//usuario->despacho = nullptr;
 
 		usuarioDAO.insertUsuario(usuario);
