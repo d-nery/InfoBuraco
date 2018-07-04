@@ -48,7 +48,7 @@ namespace InfoBuraco {
     private: System::Windows::Forms::Panel^  panel4;
     private: System::Windows::Forms::PictureBox^  pictureBox9;
     private: System::Windows::Forms::PictureBox^  pictureBox8;
-    private: System::Windows::Forms::PictureBox^  pictureBox7;
+
 
     private: System::Windows::Forms::PictureBox^  pictureBox10;
     private: System::Windows::Forms::Button^  equipamentosBtn;
@@ -58,6 +58,7 @@ namespace InfoBuraco {
     private: System::Windows::Forms::Button^  funcionariosBtn;
     private: System::Windows::Forms::Button^  equipesBtn;
     private: System::Windows::Forms::Button^  notificacoesBtn;
+    private: System::Windows::Forms::Button^  materiaisBtn;
 
     private:
         /// <summary>
@@ -89,9 +90,9 @@ namespace InfoBuraco {
             this->equipamentosBtn = (gcnew System::Windows::Forms::Button());
             this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
             this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
-            this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
             this->panel5 = (gcnew System::Windows::Forms::Panel());
             this->panel1 = (gcnew System::Windows::Forms::Panel());
+            this->materiaisBtn = (gcnew System::Windows::Forms::Button());
             this->lateral_menu->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox10))->BeginInit();
             this->panel3->SuspendLayout();
@@ -100,7 +101,6 @@ namespace InfoBuraco {
             this->panel4->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
             this->panel5->SuspendLayout();
             this->SuspendLayout();
             // 
@@ -200,6 +200,7 @@ namespace InfoBuraco {
             // panel4
             // 
             this->panel4->Anchor = System::Windows::Forms::AnchorStyles::None;
+            this->panel4->Controls->Add(this->materiaisBtn);
             this->panel4->Controls->Add(this->notificacoesBtn);
             this->panel4->Controls->Add(this->equipesBtn);
             this->panel4->Controls->Add(this->funcionariosBtn);
@@ -207,7 +208,6 @@ namespace InfoBuraco {
             this->panel4->Controls->Add(this->equipamentosBtn);
             this->panel4->Controls->Add(this->pictureBox9);
             this->panel4->Controls->Add(this->pictureBox8);
-            this->panel4->Controls->Add(this->pictureBox7);
             this->panel4->Location = System::Drawing::Point(105, 101);
             this->panel4->Name = L"panel4";
             this->panel4->Size = System::Drawing::Size(585, 260);
@@ -360,21 +360,11 @@ namespace InfoBuraco {
             this->pictureBox8->TabIndex = 9;
             this->pictureBox8->TabStop = false;
             // 
-            // pictureBox7
-            // 
-            this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
-            this->pictureBox7->Location = System::Drawing::Point(153, 137);
-            this->pictureBox7->Name = L"pictureBox7";
-            this->pictureBox7->Size = System::Drawing::Size(125, 121);
-            this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-            this->pictureBox7->TabIndex = 8;
-            this->pictureBox7->TabStop = false;
-            // 
             // panel5
             // 
             this->panel5->Controls->Add(this->pictureBox1);
             this->panel5->Dock = System::Windows::Forms::DockStyle::Bottom;
-            this->panel5->Location = System::Drawing::Point(0, 452);
+            this->panel5->Location = System::Drawing::Point(0, 475);
             this->panel5->Name = L"panel5";
             this->panel5->Size = System::Drawing::Size(784, 87);
             this->panel5->TabIndex = 27;
@@ -382,10 +372,36 @@ namespace InfoBuraco {
             // panel1
             // 
             this->panel1->Dock = System::Windows::Forms::DockStyle::Bottom;
-            this->panel1->Location = System::Drawing::Point(0, 539);
+            this->panel1->Location = System::Drawing::Point(0, 562);
             this->panel1->Name = L"panel1";
             this->panel1->Size = System::Drawing::Size(784, 22);
             this->panel1->TabIndex = 26;
+            // 
+            // materiaisBtn
+            // 
+            this->materiaisBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(77)), static_cast<System::Int32>(static_cast<System::Byte>(136)),
+                static_cast<System::Int32>(static_cast<System::Byte>(155)));
+            this->materiaisBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"materiaisBtn.BackgroundImage")));
+            this->materiaisBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+            this->materiaisBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->materiaisBtn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(132)),
+                static_cast<System::Int32>(static_cast<System::Byte>(2)), static_cast<System::Int32>(static_cast<System::Byte>(2)));
+            this->materiaisBtn->FlatAppearance->BorderSize = 0;
+            this->materiaisBtn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(232)),
+                static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(28)));
+            this->materiaisBtn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(196)),
+                static_cast<System::Int32>(static_cast<System::Byte>(32)), static_cast<System::Int32>(static_cast<System::Byte>(20)));
+            this->materiaisBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->materiaisBtn->Font = (gcnew System::Drawing::Font(L"Noto Sans", 10, System::Drawing::FontStyle::Bold));
+            this->materiaisBtn->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+            this->materiaisBtn->Location = System::Drawing::Point(153, 133);
+            this->materiaisBtn->Name = L"materiaisBtn";
+            this->materiaisBtn->Size = System::Drawing::Size(125, 124);
+            this->materiaisBtn->TabIndex = 29;
+            this->materiaisBtn->Text = L"Materiais";
+            this->materiaisBtn->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+            this->materiaisBtn->UseVisualStyleBackColor = false;
+            this->materiaisBtn->Click += gcnew System::EventHandler(this, &TelaDashboard::materiaisBtn_Click);
             // 
             // TelaDashboard
             // 
@@ -393,7 +409,7 @@ namespace InfoBuraco {
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::Color::Linen;
             this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-            this->ClientSize = System::Drawing::Size(784, 561);
+            this->ClientSize = System::Drawing::Size(784, 584);
             this->ControlBox = false;
             this->Controls->Add(this->panel5);
             this->Controls->Add(this->panel1);
@@ -414,7 +430,6 @@ namespace InfoBuraco {
             this->panel4->ResumeLayout(false);
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
             this->panel5->ResumeLayout(false);
             this->ResumeLayout(false);
 
@@ -429,5 +444,6 @@ namespace InfoBuraco {
     private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
     private: System::Void equipamentosBtn_click(System::Object^ sender, System::EventArgs^ e);
     private: System::Void notificacoesBtn_Click(System::Object^  sender, System::EventArgs^  e);
+    private: System::Void materiaisBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

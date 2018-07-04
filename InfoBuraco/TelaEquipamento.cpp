@@ -2,6 +2,7 @@
 #include <sstream>
 
 #include "TelaEquipamento.h"
+#include "TelaNovoEquipamento.h"
 #include "Equipamento.h"
 #include "EquipamentoController.h"
 
@@ -25,7 +26,12 @@ namespace InfoBuraco {
     }
 
     System::Void TelaEquipamento::addBtn_Click(System::Object^ sender, System::EventArgs^  e) {
-        //TelaNotificacao^ telaNotificacao = gcnew TelaNotificacao(this->usuario_logado);
-        //telaNotificacao->ShowDialog();
+        TelaNovoEquipamento^ telaNovoEquipamento = gcnew TelaNovoEquipamento(this->usuario_logado);
+        telaNovoEquipamento->ShowDialog();
     }
+
+    System::Void TelaEquipamento::closeBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+        this->Visible = false;
+    }
+
 }

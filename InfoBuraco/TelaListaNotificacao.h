@@ -54,6 +54,7 @@ namespace InfoBuraco {
     private: System::Windows::Forms::DataGridViewTextBoxColumn^  colunaReclamacao;
     private: System::Windows::Forms::DataGridViewTextBoxColumn^  colunaRespondida;
     private: System::Windows::Forms::DataGridViewButtonColumn^  colunaDetailsBtn;
+    private: System::Windows::Forms::Button^  closeBtn;
 
 	private:
 		/// <summary>
@@ -77,6 +78,7 @@ namespace InfoBuraco {
             this->colunaRespondida = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->colunaDetailsBtn = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
             this->panel2 = (gcnew System::Windows::Forms::Panel());
+            this->closeBtn = (gcnew System::Windows::Forms::Button());
             this->addBtn = (gcnew System::Windows::Forms::Button());
             this->label1 = (gcnew System::Windows::Forms::Label());
             this->panel1->SuspendLayout();
@@ -91,7 +93,7 @@ namespace InfoBuraco {
             this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
             this->panel1->Location = System::Drawing::Point(0, 0);
             this->panel1->Name = L"panel1";
-            this->panel1->Size = System::Drawing::Size(827, 501);
+            this->panel1->Size = System::Drawing::Size(662, 501);
             this->panel1->TabIndex = 2;
             // 
             // notificationsGrid
@@ -108,7 +110,7 @@ namespace InfoBuraco {
             this->notificationsGrid->Location = System::Drawing::Point(0, 94);
             this->notificationsGrid->Name = L"notificationsGrid";
             this->notificationsGrid->ReadOnly = true;
-            this->notificationsGrid->Size = System::Drawing::Size(827, 407);
+            this->notificationsGrid->Size = System::Drawing::Size(662, 407);
             this->notificationsGrid->TabIndex = 1;
             this->notificationsGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &TelaListaNotificacao::notificationsGrid_CellContentClick);
             // 
@@ -147,13 +149,31 @@ namespace InfoBuraco {
             // panel2
             // 
             this->panel2->BackColor = System::Drawing::Color::PapayaWhip;
+            this->panel2->Controls->Add(this->closeBtn);
             this->panel2->Controls->Add(this->addBtn);
             this->panel2->Controls->Add(this->label1);
             this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
             this->panel2->Location = System::Drawing::Point(0, 0);
             this->panel2->Name = L"panel2";
-            this->panel2->Size = System::Drawing::Size(827, 94);
+            this->panel2->Size = System::Drawing::Size(662, 94);
             this->panel2->TabIndex = 4;
+            // 
+            // closeBtn
+            // 
+            this->closeBtn->BackColor = System::Drawing::Color::Transparent;
+            this->closeBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"closeBtn.BackgroundImage")));
+            this->closeBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+            this->closeBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->closeBtn->FlatAppearance->BorderSize = 0;
+            this->closeBtn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+            this->closeBtn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
+            this->closeBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->closeBtn->Location = System::Drawing::Point(12, 12);
+            this->closeBtn->Name = L"closeBtn";
+            this->closeBtn->Size = System::Drawing::Size(36, 34);
+            this->closeBtn->TabIndex = 5;
+            this->closeBtn->UseVisualStyleBackColor = false;
+            this->closeBtn->Click += gcnew System::EventHandler(this, &TelaListaNotificacao::closeBtn_Click);
             // 
             // addBtn
             // 
@@ -166,7 +186,7 @@ namespace InfoBuraco {
             this->addBtn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
             this->addBtn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
             this->addBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->addBtn->Location = System::Drawing::Point(779, 12);
+            this->addBtn->Location = System::Drawing::Point(614, 12);
             this->addBtn->Name = L"addBtn";
             this->addBtn->Size = System::Drawing::Size(36, 34);
             this->addBtn->TabIndex = 4;
@@ -179,7 +199,7 @@ namespace InfoBuraco {
             this->label1->AutoSize = true;
             this->label1->Font = (gcnew System::Drawing::Font(L"Renner*", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label1->Location = System::Drawing::Point(337, 30);
+            this->label1->Location = System::Drawing::Point(255, 30);
             this->label1->Name = L"label1";
             this->label1->Size = System::Drawing::Size(169, 35);
             this->label1->TabIndex = 3;
@@ -189,12 +209,13 @@ namespace InfoBuraco {
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-            this->ClientSize = System::Drawing::Size(827, 501);
+            this->ClientSize = System::Drawing::Size(662, 501);
+            this->ControlBox = false;
             this->Controls->Add(this->panel1);
             this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
             this->MinimumSize = System::Drawing::Size(570, 540);
             this->Name = L"TelaListaNotificacao";
-            this->Text = L"Notifica��es";
+            this->Text = L"Notificações";
             this->Load += gcnew System::EventHandler(this, &TelaListaNotificacao::load);
             this->panel1->ResumeLayout(false);
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->notificationsGrid))->EndInit();
@@ -207,5 +228,6 @@ namespace InfoBuraco {
     private: System::Void load(System::Object^  sender, System::EventArgs^  e);
     private: System::Void addBtn_Click(System::Object^  sender, System::EventArgs^  e);
     private: System::Void notificationsGrid_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e);
+    private: System::Void closeBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

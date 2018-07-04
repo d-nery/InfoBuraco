@@ -140,6 +140,7 @@
     <ClCompile Include="Controller\BuracoController.cpp" />
     <ClCompile Include="Controller\CidadaoController.cpp" />
     <ClCompile Include="Controller\EquipamentoController.cpp" />
+    <ClCompile Include="Controller\MaterialController.cpp" />
     <ClCompile Include="Controller\NotificacaoController.cpp" />
     <ClCompile Include="Controller\OSController.cpp" />
     <ClCompile Include="Controller\SecurityController.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="DAO\CargoDAO.cpp" />
     <ClCompile Include="DAO\CidadaoDAO.cpp" />
     <ClCompile Include="DAO\EquipamentoDAO.cpp" />
+    <ClCompile Include="DAO\MaterialDAO.cpp" />
     <ClCompile Include="DAO\NotificacaoDAO.cpp" />
     <ClCompile Include="DAO\OSDAO.cpp" />
     <ClCompile Include="DAO\UsuarioDAO.cpp" />
@@ -154,6 +156,7 @@
     <ClCompile Include="Models\Cargo.cpp" />
     <ClCompile Include="Models\Cidadao.cpp" />
     <ClCompile Include="Models\Equipamento.cpp" />
+    <ClCompile Include="Models\Material.cpp" />
     <ClCompile Include="Models\Notificacao.cpp" />
     <ClCompile Include="Models\OS.cpp" />
     <ClCompile Include="Models\Usuario.cpp" />
@@ -163,15 +166,18 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TelaEquipamento.cpp" />
     <ClCompile Include="MySQL.cpp" />
+    <ClCompile Include="TelaListaMateriais.cpp" />
     <ClCompile Include="TelaListaNotificacao.cpp" />
     <ClCompile Include="TelaMaterial.cpp" />
     <ClCompile Include="TelaNotificacao.cpp" />
+    <ClCompile Include="TelaNovoEquipamento.cpp" />
     <ClCompile Include="TelaNovoMaterial.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller\BuracoController.h" />
     <ClInclude Include="Controller\CidadaoController.h" />
     <ClInclude Include="Controller\EquipamentoController.h" />
+    <ClInclude Include="Controller\MaterialController.h" />
     <ClInclude Include="Controller\NotificacaoController.h" />
     <ClInclude Include="Controller\OSController.h" />
     <ClInclude Include="Controller\SecurityController.h" />
@@ -179,6 +185,7 @@
     <ClInclude Include="DAO\CargoDAO.h" />
     <ClInclude Include="DAO\CidadaoDAO.h" />
     <ClInclude Include="DAO\EquipamentoDAO.h" />
+    <ClInclude Include="DAO\MaterialDAO.h" />
     <ClInclude Include="DAO\NotificacaoDAO.h" />
     <ClInclude Include="DAO\OSDAO.h" />
     <ClInclude Include="DAO\UsuarioDAO.h" />
@@ -186,6 +193,7 @@
     <ClInclude Include="Models\Cargo.h" />
     <ClInclude Include="Models\Cidadao.h" />
     <ClInclude Include="Models\Equipamento.h" />
+    <ClInclude Include="Models\Material.h" />
     <ClInclude Include="Models\Notificacao.h" />
     <ClInclude Include="Models\OS.h" />
     <ClInclude Include="Models\Usuario.h" />
@@ -203,6 +211,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MySQL.h" />
+    <ClInclude Include="TelaListaMateriais.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="TelaListaNotificacao.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -210,6 +221,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TelaNotificacao.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="TelaNovoEquipamento.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TelaNovoMaterial.h">
@@ -240,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaNotificacao.resx">
       <DependentUpon>TelaNotificacao.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNovoEquipamento.resx">
+      <DependentUpon>TelaNovoEquipamento.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

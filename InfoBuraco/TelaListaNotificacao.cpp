@@ -19,7 +19,7 @@ namespace InfoBuraco {
         std::vector<Notificacao*>* notificacoes = notificacaoCtrl.getAll();
 
         for (auto notif : *notificacoes) {
-            System::Diagnostics::Debug::Print("Adicionando Notificacao"); 
+            System::Diagnostics::Debug::Print("Adicionando Notificacao");
             String^ data = conv_sysstring(boost::posix_time::to_simple_string(notif->get_data_notificacao()));
             String^ cid = conv_sysstring(notif->getCidadao()->getNome());
             String^ reclamacao = conv_sysstring(notif->get_reclamacao());
@@ -38,4 +38,7 @@ namespace InfoBuraco {
 
     }
 
+    System::Void TelaListaNotificacao::closeBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+        this->Visible = false;
+    }
 }

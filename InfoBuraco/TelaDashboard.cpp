@@ -4,7 +4,6 @@
 #include "TelaListaNotificacao.h"
 
 namespace InfoBuraco {
-
     TelaDashboard::TelaDashboard(Usuario* user, Login^ org_login) {
         InitializeComponent();
 
@@ -29,6 +28,10 @@ namespace InfoBuraco {
 
     System::Void TelaDashboard::notificacoesBtn_Click(System::Object^  sender, System::EventArgs^  e) {
         this->telaListaNotificacao->Visible = true;
+    }
+
+    System::Void TelaDashboard::materiaisBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+
     }
 
     TelaDashboard::~TelaDashboard() {
