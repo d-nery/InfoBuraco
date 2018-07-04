@@ -33,7 +33,7 @@ namespace InfoBuraco {
     }
 
     System::Void TelaDashboard::materiaisBtn_Click(System::Object^  sender, System::EventArgs^  e) {
-        this->telaListaMateriais->Visible = false;
+        this->telaListaMateriais->Visible = true;
     }
 
     TelaDashboard::~TelaDashboard() {

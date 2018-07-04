@@ -20,6 +20,24 @@ namespace InfoBuraco {
             this->usuario_logado = usuario_logado;
         }
 
+		property String^ patrimonio_txt {
+			String^ get() {
+				return patrimonio_tb->Text;
+			}
+			void set(String^ txt) {
+				patrimonio_tb->Text = txt;
+			}
+		}
+
+		property String^ custo_txt {
+			String^ get() {
+				return custo_tb->Text;
+			}
+			void set(String^ txt) {
+				custo_tb->Text = txt;
+			}
+		}
+
     protected:
         ~TelaNovoEquipamento() {
             if (components) {
@@ -108,6 +126,7 @@ namespace InfoBuraco {
             this->ok_btn->TabIndex = 10;
             this->ok_btn->Text = L"Cadastrar";
             this->ok_btn->UseVisualStyleBackColor = true;
+			this->ok_btn->Click += gcnew System::EventHandler(this, &TelaNovoEquipamento::okBtn_Click);
             // 
             // cancel_btn
             // 
@@ -117,6 +136,7 @@ namespace InfoBuraco {
             this->cancel_btn->TabIndex = 11;
             this->cancel_btn->Text = L"Cancelar";
             this->cancel_btn->UseVisualStyleBackColor = true;
+			this->cancel_btn->Click += gcnew System::EventHandler(this, &TelaNovoEquipamento::cancelBtn_Click);
             // 
             // TelaNovoEquipamento
             // 
@@ -140,6 +160,9 @@ namespace InfoBuraco {
 
         }
 #pragma endregion
+		private: System::Void okBtn_Click(System::Object^ sender, System::EventArgs^  e);
+		private: System::Void cancelBtn_Click(System::Object^ sender, System::EventArgs^  e);
+		private: System::Void TelaNovoEquipamento_Load(System::Object^  sender, System::EventArgs^  e) {}
         
     };
 

@@ -19,8 +19,10 @@ namespace InfoBuraco {
         for (auto material : *materiais) {
             System::Diagnostics::Debug::Print("Adicionando Material");
             String^ patrimonio = conv_sysstring(material->getNome());
+			String^ unidade = conv_sysstring(material->getUnidade());
             String^ custo = conv_sysstring(std::to_string(material->getCusto()));
-            this->materiaisGrid->Rows->Add(gcnew array<System::String^> { patrimonio, custo });
+			String^ quantidade = conv_sysstring(std::to_string(material->getQuantidade()));
+            this->materiaisGrid->Rows->Add(gcnew array<System::String^> { patrimonio, unidade, custo, quantidade });
         }
     }
 
